@@ -1,0 +1,124 @@
+<!-- 
+
+    animation: dùng để xác định 1 cái chuyển cho 1 thành phần
+        1. animation-name: tên của cái animation, cái tền là do các bạn đặt tên cho nó
+        2. animation-duration: xác định thời gian hoàn thành một chuyển động, mặc định là 0s
+
+        3. animation-timing-function: xác định tốc chuyển động thành phần
+            3.1 linear: chuyển động đều từ đầu tới cuối
+            3.2 ease: chuyển động ban đầu chậm, sau đó sẽ nhanh dần và đến lúc gần kết thúc thì chậm dần
+            3.3 ease-in: chuyển động ban đầu chậm, sau đó nhanh
+            3.4 ease-out: chuyển động ban đầu nhanh, sau đó chậm lại
+            3.5 ease-in-out: chuyển động bân đầu chậm, sau đó nhanh, và chầm đàn lúc kết thúc
+
+        4. animation-delay: xác định thời gian sau bao lâu thì bắt đầu thực hiện
+
+        5. animation-iteration-count: xác định số lần thực hiện chuyển động
+            5.1 số tự nhiên vd: 1, 2, 3...
+            5.2 infinite: chuyển ko giới hạn số lần
+
+        6. animation-direction: xác định hướng chuyển động
+            6.1 normal: chuyển động bình thường (mặc định)
+            6.2 alternate: chuyển động đảo ngược
+    
+    @keyframes tên animation {
+        giá trị {css}
+    }
+
+
+    tranform: dùng để chuyển đổi 2 chiều hay 3 chiều của 1 thành phần
+        1. rotate: xoay tròn
+        2. scale: làm to nhỏ thành phần
+        3. skew: làm nghiêng thành phần
+        4. translate: xác định 1 cái chuyển động
+
+    transition: nó dùng để xác định 1 quá trình chuyển động khi có 1 hành động nào đó
+        1. transition-property: xác định hiệu ứng của quá trình chuyển đổi các thuộc tính css
+            1.1 width và height
+            1.2 all
+        2. transition-timing-function: xác định tốc độ chuyển động
+            2.1 linear: chuyển động đều từ đầu tới cuối
+            2.2 ease: chuyển động ban đầu chậm, sau đó sẽ nhanh dần và đến lúc gần kết thúc thì chậm dần
+            2.3 ease-in: chuyển động ban đầu chậm, sau đó nhanh
+            2.4 ease-out: chuyển động ban đầu nhanh, sau đó chậm lại
+            2.5 ease-in-out: chuyển động bân đầu chậm, sau đó nhanh, và chầm đàn lúc kết thúc
+        3. transition-duration: xác định quá trình chuyển động trong bao lâu
+        4. transition-delay: xác định cái thời bắt đầu thực hiện quá trình
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style lang="">
+        .container {
+            background-color: aqua;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            /* animation-name: myAnimation;
+            animation-duration: 5s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate; */
+
+            /* animation: name duration timing-function delay iteration-count direction; */
+            animation: myAnimation 8s ease-in-out 1s infinite alternate;
+        }
+
+        @keyframes myAnimation {
+            0% {left: 0; top: 0;}
+            25% {background-color: red; left: 300px; top: 0;transform: rotate(180deg);}
+            50% {background-color: green; left: 300px; top: 300px; transform: scale(2); }
+            75% {background-color: yellow; left: 0; top: 300px; transform: rotate(360deg);}
+            100% {background-color: aqua; left: 0; top: 0;}
+        }
+
+
+        .custom-tranform {
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+            /* có đơn vị là deg */
+            /* transform: translate(X, Y) */
+            /* transform: scale(1.5, 2); */
+            /* transform: rotate(50deg); */
+            /* transform: skew(20deg, 20deg); */
+            /* transform: translate(20px, 10px); */
+
+        }
+
+        .custom-transition {
+            height: 100px;
+            width: 100px;
+            background-color: yellowgreen;
+            /* transition-property: all;
+            transition-timing-function: linear;
+            transition-delay: 2s;
+            transition-duration: 5s; */
+
+            /* transition: property duration timing delay */
+            transition: all 2s linear 1s;
+        }
+
+        .custom-transition:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div class="container"></div> -->
+
+
+    <!-- <div class="custom-tranform"></div> -->
+
+    <div class="custom-transition"></div>
+</body>
+</html>
