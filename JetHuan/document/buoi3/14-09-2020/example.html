@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid green;
+            border-radius: 5px;
+        }
+
+        .header-custom {
+            display: flex;
+        } 
+
+        .header-custom div {
+            border: 1px solid aqua;
+            border-radius: 5px;
+            margin: 5px;
+            flex-grow: 1;
+        } 
+
+        .nav-custom {
+            display: flex;
+        }
+
+        .nav-custom .nav-child-1 {
+            flex: 2
+        }
+
+        .nav-custom .nav-child-2 {
+            flex: 1
+        }
+
+        .nav-custom div {
+            border: 1px solid red;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .custom-footer {
+            display: flex;
+        }
+        .custom-footer .footer-1 {
+            border: 1px solid pink;
+            border-radius: 5px;
+            margin: 5px;
+            flex: 1;
+        }
+        .custom-footer .footer-2 {
+            flex: 2;
+        }
+  
+        .custom-footer .footer-2 div {
+            border: 1px solid pink;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <!--this is header -->
+        <div class="header-custom">
+            <div>block 1</div>
+            <div>block 2</div>
+        </div>
+
+        <!-- this is nav -->
+
+        <div class="nav-custom">
+            <div class="nav-child-1">nav 1</div>
+            <div class="nav-child-2">nav 2</div>
+        </div>
+
+
+        <div class="custom-footer">
+            <div class="footer-1">footer 1</div>
+            <div class="footer-2">
+                <div>footer child 1</div>
+                <div>footer child 2</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

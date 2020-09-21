@@ -1,0 +1,160 @@
+<!-- 
+1. flexbox: 
+là kiểu dàn trang và nó tự động cân đối kích thước của các phần tử bên trong
+
+container: là thằng chứa hay gọi là thằng cha
+item: là các thành phần trong container(item được chưa trong container)
+
+sử dụng flex
+    display: flex
+có các thuộc tính:
+1. justyfi: nó căn chỉnh các item theo trục x
+    justyfi-content:
+        flex-start
+        flex-end
+        center
+        space-around
+        space-between 
+2. align-items: nó căn chỉnh theo trục y 
+    flex-start
+    flex-end
+    center
+
+3. flex-direction: nó quy định hướng hiển thị
+    column: hiển thị theo cột (chiều dọc)
+    column-reverse: đảo chiều hiển thị (chiều dọc)
+    row: hiển thị theo dòng (chiều ngang)
+    row-reverse: đảo chiều hiện thị (chiều ngang)
+
+4. flex-wrap: nó cho phép có đưuọc xuống dòng hay ko
+        wrap: cho phép xuống dòng
+        nowrap: ko cho phép xuống dòng
+
+5. flex: flex-grow flex-shrink flex-basic
+    chỉ sử dụng cho item
+    flex-grow: ý nghĩa là giúp cho các item nở ra cho phù hợp với container
+    flex-shrink: ý nghĩa là giúp cá item co lại cho phù hợp vs container
+    flex-basic: ý nghĩa là quy định độ rộng của item ngay từ đầu (witdh 200px)
+
+6. align-self: tương đồng với align-items, 
+tuy nhiên nó sử dụng cho từng item, thay như align-items sử dụng cho container
+
+7. align-content: nó đặc biệt ở chỗ là phải có thuộc tính flex-wrap đi cùng
+    căn các item theo trục y, tuy nhiên nó chỉ hoạt động khi có flex-wrap đi cùng
+
+8. order: dùng để sắp hay thay đổi thứ tự các item, 
+các cái item này phải nằm trong container
+ -> tạm thời dưng lại, sẽ giải thích vào buổi sau
+
+responsive => @media
+
+@media là gi?
+
+>
+@media screen and (max-width: 375px) {
+    color: while
+}
+<
+@media screen and (min-width: 768pxpx) {
+    color: while
+}
+768< x < 1024
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    color: while
+}
+
+
+
+
+< x < y
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .custom-flex {
+            border: 3px solid aqua;
+            height: 250px;
+            border-radius: 5px;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: flex-start;
+            flex-wrap: wrap;
+            align-content: center; */
+        }
+
+        .custom-flex div {
+            border: 1px solid red;
+            height: 50px;
+            flex: 1;
+            /* flex: 1; chỉ đại dienj cho flex-grow */
+            /* flex: 300px; tự hieur là đại diện cho flex-bacsic */
+            /* flex: 1 1 auto; */
+            /* flex: 1 200px; 1 dại diện cho flex-grow, 200px đại diện cho flex-basic */
+            /* flex: 1 auto; */
+            /* flex: 1 1;1 đầu đại cho flex-grow, 1 thứ 2 là đại diện cho flex-shrink */
+            /* flex: 1 1 600px; */
+            /* flex: 3 1 auto; */
+        }
+
+        /* .custom-flex .custom-div1 {
+            flex: 50%;
+        } */
+
+        .child1 {
+            /* align-self: center; */
+            /* flex-grow: 1;
+            flex-shrink: 6; */
+            /* order: 4; */
+        }
+        .child2 {
+            /* align-self: center; */
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+            /* align-self: center; */
+            /* order: 4; */
+        }
+        .child3 {
+            /* align-self: center; */
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+            order: -4;
+        }
+        .child4 {
+            /* align-self: center; */
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+            /* align-self: flex-end; */
+            /* order: -1; */
+        }
+
+        @media screen and (max-width: 768px) {
+            .custom-flex {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (min-width: 900px) {
+            .custom-flex {
+                flex-direction: column;
+            }
+            .custom-flex div{
+                color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-flex">
+        <div class="child1">div 1</div>
+        <div class="child2">div 2</div>
+        <div class="child3"> div 3</div>
+        <div class="child4">div 4</div>
+        <div class="child5">div 5</div>
+    </div>
+</body>
+</html>
