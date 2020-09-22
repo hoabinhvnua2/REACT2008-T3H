@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    background: radial-gradient(#fff, #ffd6d6);
+}
+a{
+    text-decoration: none;
+}
+.container{   
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+.phan-tren{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;   
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+#tui-sach{
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+}
+.logo-top{
+    height: 60px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+}
+.col-2{
+    flex-basis: 50% ;
+    min-width: 300px;
+    
+}
+.col-2 img{
+    width: 100%;
+}
+.col-2 h1{
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+.vao-ngay{
+    color: aliceblue;
+    background-color: orange;
+    display: inline-block;
+    align-items: center;
+    padding: 8px 20px;
+    margin:  30px 0;
+    border-radius: 16px;
+}
+.small-container{
+    display: flex;
+    margin: 100px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-3{
+    flex-basis: 25%;
+    min-width: 250px;
+}
+.col-3 img{
+    width: 100%;
+}
+.title{
+    text-align: center;
+    margin: 0 auto 30px;/* 0 là top, auto là left right để căn giữa, 80px là bottom*/
+    color:#555;
+}
+.title::after{
+    content: "";
+    width: 90px;
+    height: 5px;
+    display: block;
+    background-color: tomato;
+    margin: 0 auto;
+}
+.col-4{
+    flex-basis: 23%;
+    min-width: 200px;
+    margin-bottom: 10px;
+}
+.col-4 img{
+    width: 100%;
+}
+.offer{
+    margin-top: 20px;
+    background: radial-gradient(#fff, #ffd6d6); 
+}
+.col-2 .offer-img{
+    width: 80%;
+    padding: 40px;
+}
+p{
+    color: #555;
+}
+.nhan-xet{
+    padding-top: 5px;
+}
+.nhan-xet .col-3{
+    text-align: center;
+    padding :40px 20px;
+    box-shadow:  0 0 20px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.nhan-xet .col-3 p{
+    font-size: 14px;
+    margin:10px 0;
+}
+.fa{
+    color: tomato;
+}
+
+.nhan-xet .col-3 img{
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+h3{
+    font-weight: 550;    
+    color: #555;
+}
+.fa.fa-quote-left{
+    font-size: 40px;
+}
+.nha-tai-tro .row{
+    margin-bottom: 50px;
+}
+.row .col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100);
+}
+ .row .col-5 img:hover{
+    filter: grayscale(0);
+}
+.chung-chi {
+    padding: 30px 0;
+    background: #000;
+}
+.chung-chi .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.chung-chi .row p{
+    color: #fff;
+    font-weight: 250;
+}
+.chung-chi .row h3{
+    color: #fff;
+}
+.chung-chi .download{
+    width: 30%;
+    min-width: 300px;
+}
+.chung-chi .download img{
+    width: 40%;
+    
+}
+.chung-chi .logo-bottom{
+    text-align: center;
+    width: 30%;
+    min-width: 300px;
+
+}
+.logo-bottom img{
+    width: 70%;
+}
+.useful-link, .follow-us{
+    width: 18%;
+    text-align: center;
+    min-width: 200px;
+
+}
