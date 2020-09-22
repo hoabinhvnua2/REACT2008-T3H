@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <META charset="UTF-8"></META>
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>RED STORE</title>
+        <link rel="stylesheet" href="text2_css.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+    <div class="container">  
+        <div class="phantren">
+            <div class="logo">
+             <img src="New folder/images/logo.png" width="125px">
+            </div>
+            <!-- gio tao menu -->
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">PRODUCTS</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">ACCOUNT</a></li>
+                </ul>
+            </nav>
+            <img src="New folder/images/cart.png" width="30px" height="30px">
+            <img src="New Folder/images/menu.png" class="menu-icon" onclick="menutoggle()"
+            >
+        </div>
+    </div>
+    <!-- Gio den phan gioi thieu san pham cua web -->
+    <div class="small-container">
+        <h2 class="title">Featured Products</h2>
+        <div class="row">
+            <div class="col-4">
+                <img src="New Folder/images/product-1.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="danh-gia">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="New Folder/images/product-2.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="danh-gia">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="New Folder/images/product-3.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="danh-gia">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="New Folder/images/product-4.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="danh-gia">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>           
+        </div>
+    </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download  App for Android and Ios mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="New Folder/images/play-store.png" alt="">
+                            <img src="New Folder/images/app-store.png" alt="">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="New Folder/images/logo-white.png">
+                        <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>You Tube</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyright">Copyright 2020 - Easy Tutorials</p>
+            </div>
+        </div>
+
+    <!-- su dung JS cho cai menu an? -->
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutoggle(){
+            if(MenuItems.style.maxHeight == "0px")
+                {
+                    MenuItems.style.maxHeight = "200px";
+                }
+            else
+                {
+                    MenuItems.style.maxHeight = "0px";
+                }
+        }
+    </script>
+    </body>
+</html>
