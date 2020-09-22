@@ -1,9 +1,0 @@
-tìm hiểu 
-1.em
-2.rem
-3 %
-4 px
-5 vw
-margin: 0 auto là căn trên dưới 0, 2 bên auto, 2 bên auto thường để cho cái thành phần đó nằm vào giữa.
-
-possition: stick
