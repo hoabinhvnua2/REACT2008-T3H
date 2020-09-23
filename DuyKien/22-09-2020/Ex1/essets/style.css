@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+svg{
+    width:60% ;
+    height: 60%;
+}
+.clock{
+    text-align: center;
+    position: relative;
+}
+.clock__block { 
+    overflow: hidden;
+}
+.active {
+    width: 600px;
+    height:600px;
+    position: absolute;
+    top:20%;
+    left:30%; 
+    display: flex;
+    justify-content: center;
+}
+.clock__center {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 49.7%;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 4;
+    transform: translate(-50%,-50%);
+}
+.clock__hours{
+    z-index: 2;
+    animation: hourMove 21600s linear infinite; 
+    transition: 21600s all;
+   
+}
+.clock__hoursun {
+    background-color: lightsalmon;
+    width: 15px;
+    height:280px;
+    margin-top: 20px;
+}
+
+.clock__seconds {
+    z-index: 1;
+     animation: hourMove 3600s linear infinite; 
+     transition:  3600s all;
+}
+.clock__secondsun {
+    width: 15px;
+    height:313px;
+    background-color: red;
+}
+.clock__minute {
+    z-index: 2;
+    animation: hourMove 20s linear infinite;
+    transition: 20s all linear;
+}
+.clock__minute .clock__minuteun {
+    margin-top: 70px;
+    height: 250px;
+    width: 05px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+@keyframes hourMove {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
