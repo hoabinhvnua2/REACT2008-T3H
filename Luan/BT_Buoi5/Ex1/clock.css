@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+}
+
 .container {
     height: 400px;
     width: 400px;
@@ -32,17 +39,22 @@
 }
 
 .center {
-    background-color: black;
     position: absolute;
-    top: calc(50% - 10px);
-    left: calc(50% - 10px);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    background: white;
+    border: 2px solid #1b1b1b;
+    border-radius: 100px;
+    margin: auto;
+    z-index: 1;
 }
 
-.kim-gio {
+.hour {
     width: 8px;
     height: 75px;
     background-color: green;
@@ -64,7 +76,7 @@
     }
 }
 
-.kim-phut {
+.minute {
     width: 6px;
     height: 87px;
     background-color: black;
@@ -86,7 +98,7 @@
     }
 }
 
-.kim-giay {
+.second {
     width: 4px;
     height: 100px;
     background-color: red;
