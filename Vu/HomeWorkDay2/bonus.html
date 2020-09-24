@@ -9,20 +9,37 @@
         margin: 0;
         padding: 0;
       }
-      .container .head {
-        text-align: center;
-        border-bottom: 1px solid black;
+      
+      h1{
+        text-align: center;      
       }
+
+      .head{
+        position: relative;
+      }
+
+        h1::after{
+          content: '';
+        position: absolute;
+        background-color: turquoise;
+        bottom: -20px;
+        left: 720px;
+        width: 71px;
+        height: 10px;
+      }
+
 
       .container .list-item ul li {
         list-style: none;
       }
 
-      .list-item ul li {
+      ul{
         display: flex;
-        align-items: center;
         justify-content: center;
-        padding: 10px;
+        padding: 30px;
+      }
+      ul li {
+        padding: 15px;
       }
 
       .images-list {
