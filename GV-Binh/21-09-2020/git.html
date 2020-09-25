@@ -1,0 +1,47 @@
+git là gì?
+    nó là 1 cái hệ thống quản lý các phiên bản phân tán phổ biến nhất hiện nay
+    github, gitlab... là 1 nới để lưu trữ cái source code
+
+1. Branch:(nhánh) nó đại diện cho 1 phiên hay 1 chức năng nào đó
+2. Commit: hành động dùng lệnh để thêm các thay đổi vào git
+3. Checkout: dùng để chuyển giữa các branch hoặc dùng để tạo nhánh
+4. Fetch: dùng để nạp các nhánh mới xuống local
+5. Head: các cái commit ở đầu của mỗi branch
+6. Status: xem trạng thái của Commit
+7. Master: là nhánh chính, nhánh to nhất
+8. Merge: kết hợp các nhánh lại với nhau
+9. Origin: là phiên bản mặc định của repository
+10 Pull: là kéo code trên repository
+11. Push: là đẩy code lên repossitory
+12. Remote: là bản sao của 1 nhánh, và xử dụng link của repository để tạo đường dẫn
+13. Repository: nó là kho lưu trữ toàn bộ source code
+14. Stash: lưu trữ những thay đổi khi chưa muốn push code lên
+15. Tags: dùng để đánh tag version quan trọng
+16. Upstream: đề cập đến nơi mà bạn muốn push code
+
+Các lệnh trong git:
+
+git config: dùng để config name và mail
+    1. git config --global user.email = "tranhoabinh.tha.hua@gmail.com"
+    2. git config --global user.name = "bungbu"
+
+git init: dùng để khởi tạo 1 project
+
+git clone: dùng để tải repository về local
+git pull: dùng để kéo code mới nhất trên repository
+git push: dùng để đẩy code mới nhất từ local lên repository
+git commit: dùng để giải thích và đánh dấu đoạn code mới nhất 
+git add: dùng để add tất cả các file thêm mới hoặc các file đã được thay đổi
+git checkout -b : tạo 1 nhánh mới
+
+quy trình để push code lên repo
+B0: pull code từ nhánh master về nhánh của chúng ta trước
+    git pull origin master
+B1: kiểm tra xem có thay đổi gì ko?
+    git status
+B2: add nhưng thay để chuẩn bị đẩy lên repo
+    git add .
+B3: commit mes để giải thích và chú thích đoạn code mình sắp đẩy lên
+    git commit -m "first commit"
+B4: đẩy code lên repo
+    git push origin name-branch
