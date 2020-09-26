@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes clock-ration {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: gainsboro;
+            margin: auto;
+        }
+        
+        .xoay {
+            height: 100%;
+            width: 100%;
+            background-color: aliceblue;
+            background-image: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg);
+            background-repeat: no-repeat;
+            background-size: 350px;
+            position: relative;
+            background-position: center;
+            border-radius: 50%;
+        }
+        
+        .hour {
+            height: 100%;
+            width: 4%;
+            position: absolute;
+            margin-left: 50%;
+            animation: clock-ration 43200s infinite linear;
+        }
+        
+        .hour::before {
+            content: '';
+            background-color: blue;
+            top: 21%;
+            height: 41%;
+            width: 100%;
+            position: absolute;
+        }
+        
+        .minutes {
+            height: 100%;
+            width: 3%;
+            position: absolute;
+            margin-left: 50%;
+            animation: clock-ration 3600s infinite linear;
+        }
+        
+        .minutes::before {
+            content: '';
+            background-color: chartreuse;
+            top: 19%;
+            height: 43%;
+            width: 100%;
+            position: absolute;
+        }
+        
+        .seconds {
+            height: 100%;
+            width: 4%;
+            position: absolute;
+            margin-left: 50%;
+            animation: clock-ration 60s infinite linear;
+        }
+        
+        .seconds::before {
+            content: '';
+            background-color: coral;
+            top: 15%;
+            height: 47%;
+            width: 100%;
+            position: absolute;
+        }
+        
+        .radio {
+            position: absolute;
+            background-color: darkblue;
+            height: 8%;
+            width: 4%;
+            margin-left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="xoay">
+            <div class="hour"></div>
+            <div class="minutes"></div>
+            <div class="seconds"></div>
+            <div class="radio"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
