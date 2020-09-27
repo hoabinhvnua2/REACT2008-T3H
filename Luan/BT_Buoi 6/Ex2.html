@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let n = prompt("Nhap gia tri n:");
+        let primeFlag;
+
+        function checkPrime(n) {
+            
+            if(n < 2)
+            {
+                primeFlag = 0;
+            } else if (n == 2) 
+            {
+                primeFlag = 1;
+            } else if (n>2)
+            {
+                for (let i = 2; i < (n - 1); i++)
+                {
+                    if (n % i == 0)
+                    {
+                        primeFlag = 0;
+                        break;
+                    } else if (n % i != 0) 
+                    {
+                        primeFlag = 1;
+                    }
+                }
+
+            }
+        }
+
+            checkPrime(n);
+        
+            if(primeFlag == 1) {
+                console.log(n + " la so nguyen to");
+            } else {
+                console.log(n + " khong phai so nguyen to");
+            }
+
+
+    </script>
+
+</body>
+</html>
