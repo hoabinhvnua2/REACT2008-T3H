@@ -1,0 +1,339 @@
+/* ======== TAB OF CONTENT =============== */
+/* 1.Reset CSS */
+* {
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+  body{
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+    display: block;
+
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  
+  ul li {
+    margin: 0;
+    padding: 0; }
+  
+  ol {
+    margin: 0;
+    padding: 0; }
+  
+  a {
+    text-decoration: none;
+    font-size: 17px;
+    text-decoration: none;
+    cursor: pointer; }
+  img {
+    width: 100%;
+    display: block; }
+  
+  button {
+    cursor: pointer; }
+  
+  .dflex {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .d-flex {
+        display: flex;
+    }
+
+    /* 2. Header CSS */
+    .header {   
+        height: 60px;
+        background-color: #0066CC;
+        
+    }
+    .header__nav {
+        height: 60px;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+    .header__nav .header__logo {
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .header__nav .header__button {
+        display: none;
+    }
+    .header__list .header__item{
+        padding-right: 20px;
+    }
+    .header__list .header__item a {
+        color: white;
+    }
+    .header__list .header__item .active_color{
+        color: goldenrod;
+    }
+    @media(max-width:767px){
+        .header__nav .header__button{
+            display: block;
+        }
+       .header__nav .header__list{
+            display: none;
+        }
+    }
+/* 3.Banner  */
+.banner{
+    background-image: url(../Img/Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+}
+ @media (max-width:768px){
+     .banner {
+        height: 75vh;
+     }
+ }
+
+/* 4.About US */
+
+.about {
+    padding: 2rem 0 4rem 0;
+}
+.about .about__main {
+    
+}
+.about .about__main .about__block {
+
+}
+.about__block  span {
+    background-color: #0066CC;
+    height: 20px;
+    width: 50px;
+}
+.about__block .about__text {
+    
+}
+
+.about__block h6 {
+    padding: 2rem 0;
+    font-size: 20px;
+}
+.about__block p {
+    font-size: 17px;
+}
+
+/* 5. Education  */
+.education {
+    padding: 4rem 0;
+}
+.education__icon {
+    
+}
+.education .education__block {
+   position: relative;
+}
+.education__blockun {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transform: translateX(-25px);
+  
+}
+.education__blockun .education__block--item{
+    display: flex;
+    color: white;padding-bottom: 2rem;
+}
+.education__block--item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.education__block--item .education__block__title {
+    padding-left: 2rem;
+}
+.education__block__title h2 {
+    padding-bottom: 1rem;
+}
+.education__blockuntxt {
+    color: white;
+    font-size: 2rem;
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+
+}
+
+.education .col-lg-6{
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width:767px){
+    .education__img {
+        height: 80vh;
+    }
+    .education__blockun{
+        transform: translateX(10px);
+        padding: 0 1rem;
+    }
+    .education__block--item {
+        
+    }
+    .education__block__title {
+        text-align: center;
+    }
+}
+@media(min-width:768px) and (max-width:991px){
+    .education__blockun{
+        transform: translateX(22px);
+        padding: 0 1rem;
+    }
+    .education__img {
+        height: 50vh;
+    }
+}
+
+/* 6. News */
+.news {
+    padding: 2rem 0;
+}
+.news .news__main {
+
+}
+.news__main .line {
+
+}
+.news__main h1 {
+    padding: 15px 0;
+}
+.news__main .news__block {
+    border: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+.news__main .news__block img {}
+.news__main .news__block h3 {
+    font-size: 1.4rem;
+    padding: 10px;
+}
+.news__main .news__block a {
+    padding: 10px;
+    font-size: 12px;
+    color: black;
+
+}
+.news__main .news__block  p{
+    padding: 10px;
+    
+}
+@media (max-width:767px) {
+    .news__main .news__block {
+        margin-bottom: 10px;
+    }
+}
+/* 7.Contact  */
+.contact {
+    padding: 20px 0;
+}
+.contact__main h5 {
+    font-size: 15px;
+    font-weight: 400;
+}
+.contact__block {
+
+}
+.contact__block h3 {
+    padding: 10px 0;
+}
+.contact__block .contact__input {
+    padding: 10px 0;
+}
+.contact__block .contact__input .contact__input1 {
+    margin-right: 20px;
+    flex: calc(100%/3);
+   
+}
+.contact__block .contact__input .contact__input1 input {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid  #CCCCCC ;
+}
+.contact__block .texa {
+    width: 100%;
+    height: 150px;
+}
+.contact__block .link {
+   font-size: 17px;
+   display: block;
+   color: white;
+   margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(100px);
+}
+.contact__block .link a{
+
+    background-color: goldenrod;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+}
+@media (max-width:991px){
+    .contact__block .contact__input {
+        display: block;
+    }
+    .contact__block .contact__input .contact__input1{
+        margin-bottom: 20px;
+       
+    }
+    .contact__block .contact__input .contact__input1 input {
+        width: 100%;
+    }
+    .contact__block .link {
+        transform: translateX(0);
+        justify-content: center;
+    }
+}
+
+/* 8. Footer */
+.footer {
+    padding: 40px 0;
+    background-color: black;
+    color:whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+}
+.footer .footer__main {}
+.footer .footer__main .footer__block {}
+.footer__block h3 {
+    padding-bottom: 15px;
+}
+.footer__block .footer__list {
+    
+}
+.footer__block .footer__list .footer__item{
+    padding-bottom: 10px;
+}
+.footer__list .footer__item .fooer__input {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid gray;
+ }
+ .fooer__input input {
+     width: 100%;
+ }
+ .fooer__input a {
+    position: absolute;
+    top: 35%;
+    font-size: 10px;
+    right:5px;
+    background-color: white;
+    color: black;
+ }
+ .fooer__end {
+     text-align: center;
+     padding: 10px 0;
+     color: whitesmoke;
+     background-color: black;
+
+ }
