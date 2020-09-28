@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+   function primeNumber(n){
+      var Prime = true;
+       
+        if(n < 2 ){
+           return false;
+        }
+        for(let i = 2; i < n - 1; i++){
+            if(n % i == 0 ){
+                 return false;
+                break;
+            }
+            return true;
+        }   
+        if(Prime == true){
+            console.log(n + "la so nguyen to");
+
+        } else{
+            console.log(n + "khong phai la so nguyen to");
+        }
+       
+   }
+   primeNumber(n);
+   
+  
+</script>
+</html>
