@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1 Javascript cơ bản</title>
+</head>
+<body>
+    <h1>Bài 1 Javascript cơ bản</h1>
+    <script>
+        var heightOfMinh = 1.6;
+        var weightOfMinh = 47;
+        var heightOfToan = 1.7;
+        var weightOfToan = 54;
+
+        function getBMI(height, weight) {
+            return (weight / Math.pow(height, 2));
+        }
+
+        var bmiMinh = getBMI(heightOfMinh, weightOfMinh);
+        var bmiToan = getBMI(heightOfToan, weightOfToan);
+
+        console.log("chi so BMI cua Minh: " + bmiMinh);
+        console.log("chi so BMI cua Toan: " + bmiToan);
+
+        if(bmiMinh < bmiToan) {
+            console.log("chi so BMI cua Minh nho hon Toan");
+        }
+        else if(bmiMinh > bmiToan) {
+            console.log("chi so BMI cua Minh lon hon Toan");
+        }
+        else {
+            console.log("chi so BMI cua Minh bang Toan");
+        }
+    </script>
+</body>
+</html>

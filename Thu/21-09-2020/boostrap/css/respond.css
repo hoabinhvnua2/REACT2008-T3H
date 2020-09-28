@@ -1,0 +1,219 @@
+@media screen and (max-width: 1024px) and (min-width: 768px)
+{
+    #custom-col-edu,
+    #custom-col-commu,
+    .col-lg-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .custom-flex-input{
+        flex: 0 0 100%;
+        max-width: 97%;
+    }
+    .text-commu {
+        padding: 56px 0px 0px 110px;
+    }
+    .form-control {
+        width: 100%;
+        height: 120%;
+        font-size: 1.5rem;
+    }
+    .custom-padding-input{
+        margin-bottom: 15px;
+    }
+    textarea{
+        margin-top: 15px;
+    }
+}
+@media screen and (min-width: 768px)
+{
+    .container2{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 767px) and (min-width: 576px)
+{
+    .container2{
+        display: none !important;
+    }
+    .navbar-light .navbar-brand ,
+    .custom-navbar-brand,
+    .nav-link{
+        font-size: 1.4rem;
+    }
+    .custom-heading-h2::before {
+        content: " ";
+        position: absolute;
+        width: 44px;
+        height: 4px;
+        background-color: rgb(10, 116, 236);
+        top: 52%;
+        left: 0%;
+    }
+    #custom-col-edu,
+    #custom-col-commu{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .text-commu {
+        padding: 56px 0px 0px 110px;
+    }
+    .custom-flex-input{
+        flex: 0 0 100%;
+        max-width: 97%;
+    }
+    .form-control {
+        width: 100%;
+        height: 120%;
+        font-size: 1.5rem;
+    }
+    .custom-padding-input{
+        margin-bottom: 15px;
+    }
+    textarea{
+        margin-top: 15px;
+    }
+    .col-sm-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 575px) {
+    /*HEADER*/
+    header {
+        background-color: white;
+    }
+    .container1 {
+        display: none !important;
+    }
+    .container2 {
+        display: inherit !important;
+    }
+    .navbar-light .navbar-brand:hover,
+    .navbar-light .navbar-brand:focus {
+        color:#1274D0 !important; 
+    }
+    .navbar-light .navbar-brand {
+        margin: auto;
+        color: #1274D0;
+    }
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: tomato;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color:#181819;
+    }
+    .nav-icon {
+        display: none;
+    }
+    .navbar-search {
+        font-size: 1.4rem;
+        color: black;
+    }
+    .navbar{
+        padding: .5rem 1rem;
+    }
+    /*ABOUT*/
+    .custom-container {
+        padding-right:0;
+        padding-left:0;
+    }
+    .custom-col-padding,
+    .custom-col-padding {
+        padding: 0 10px;
+    }
+    .custom-heading-h2::before {
+        content: " ";
+        position: absolute;
+        width: 44px;
+        height: 4px;
+        background-color: #0A74EC;
+        top: 46%;
+        left: 0;
+    }
+
+    /*EDU*/
+    .custom-edu {
+        padding: 0 10px;
+    }
+    .text-commu {
+        padding: 40px 40px 40px 68px;
+        text-align: center;
+        background-image: url(Communication.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .image-phone {
+        display: none !important;
+    }
+    .text-edu {
+        margin-bottom: 12px;
+    }
+    .text-edu-heading{
+        font-size: 2.2rem;
+    }
+    .text-edu-heading::before {
+        content: " ";
+        position: absolute;
+        width: 36px;
+        height: 3px;
+        background-color: white;
+        top: 53%;
+        left: 2%;
+        transform: translateY(-50%);
+    }
+    .custom-img-position1 {
+        position: absolute;
+        top: 20%;
+        left: -14%;
+        transform: translateX(-50%);
+    }
+    .custom-img-position2 {
+        position: absolute;
+        top: 14%;
+        left: -14%;
+        transform: translateX(-50%);
+    }
+    .custom-container-new{
+        margin-top: 530px;
+        padding: 10px;
+    }
+    .custom-col-child:nth-child(1),
+    .custom-col-child:nth-child(2),
+    .custom-col-child:nth-child(3){
+        padding: 10px 0 0 0;
+    }
+    .form-control {
+        width: 100%;
+        height: 100%;
+        font-size: 1.5rem;
+    }
+    .custom-padding-input{
+        margin-bottom: 10px;
+    }
+    textarea{
+        width: 100%;
+        margin-top: 15px;
+    }
+    .custom-text-about, .custom-text-contact {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width: 415px) and (min-width: 375px) {
+    .text-edu-heading::before {
+        content: " ";
+        position: absolute;
+        width: 36px;
+        height: 3px;
+        background-color: white;
+        top: 53%;
+        left: 14%;
+        transform: translateY(-50%);
+    }
+}
+@media screen and (max-width: 415px) and (min-width: 414px){
+    .custom-container-new {
+        margin-top: 462px;
+        padding: 10px;
+    }
+}
