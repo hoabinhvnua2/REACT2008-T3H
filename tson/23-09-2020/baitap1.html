@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+        <input type="number" id="cct" placeholder="chiều cao của toàn (m)"> <br>
+        <input type="number" id="cnt" placeholder="cân nặng của toàn"> <br> <br>
+        <input type="number" id="ccm" placeholder="chiều cao của minh (m)"> <br>
+        <input type="number" id="cnm" placeholder="cân nặng của minh"> <br> <br>
+        <input type="button" value="kiểm tra" onclick="kiemtra()">
+    </form>
+    <script>
+
+        function kiemtra() {
+            var cct = document.getElementById('cct').value;
+            var cnt = document.getElementById('cnt').value;
+            var ccm = document.getElementById('ccm').value;
+            var cnm = document.getElementById('cnm').value;
+            var bmitoan;
+            var bmiminh;
+
+            bmitoan = cnt / (cct * cct);
+            bmiminh = cnm / (ccm * ccm);
+
+            console.log('BMI của Toàn: ', bmitoan);
+            console.log('BMI của Minh: ', bmiminh);
+
+            if(bmitoan > bmiminh)
+                console.log('BMI của toàn cao hơn minh');
+            else
+                console.log('BMI của minh cao hơn toàn');
+        }
+    </script>
+</body>
+</html>

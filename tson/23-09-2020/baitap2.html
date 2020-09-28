@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <input type="number" id="number">
+        <input type="button" value="kiểm tra" onclick="kiemtra()">
+    </form>
+    
+
+    <script>
+        
+        function kiemtra() {
+            var num = document.getElementById('number').value;
+            var kt = true;
+
+            if(num < 2) {
+                kt = false;
+            }
+            else {
+                for(var i = 2; i < num-1; i++) {
+                    if(num % i == 0) {
+                        kt = false;
+                        break;
+                    }
+                }
+            }
+
+            if(kt == true)
+                console.log('là số nguyên tố');
+            else
+                console.log('không phải số nguyên tố');
+
+
+        }
+        
+    </script>
+</body>
+</html>
