@@ -1,0 +1,248 @@
+header {
+    background: #0372d3;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header #logo {
+    font-size: 35px;
+    margin: 0;
+}
+
+#navbarNav li.nav-item.active a {
+    color: #ffb400;
+}
+
+#navbarNav li.nav-item a {
+    color: #fff;
+}
+
+.header-search span {
+    color: #fff;
+}
+
+main{ padding-bottom: 80px; }
+main img{max-width: 100%;}
+.p-none{ padding: 0; }
+
+#slider img {
+    max-width: 100%;
+}
+
+#about-us {
+    padding: 50px 0;
+}
+
+h2.section-heading, h2.section-heading-2 {
+    position: relative;
+    font-size: 18px;
+    color: #808080;
+    padding: 0 0 0 50px;
+}
+
+h2.section-heading:before,h2.section-heading-2:before {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #0372d3;
+    display: inline-block;
+    position: absolute;
+    top: calc((100% - 3px)/2);
+    left: 0;
+}
+
+h2.section-heading-2 { color: #ddf5f2; text-transform: initial; margin-bottom: 40px; }
+h2.section-heading-2:before { background: #fff; }
+
+#about-us strong {
+    font-size: 18px;
+}
+
+#about-us p {
+    font-size: 14px;
+}
+
+#our-business #our-business-banner{
+    background: url('./images/5AVVaKY.jpg') center center no-repeat;
+    background-size: cover;
+}
+#our-business #our-business-block{
+    background: url('./images/Communication.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#our-business--content {
+    min-height: 500px;
+    padding: 50px 20px 50px 50px;
+    position: relative;
+}
+
+#our-business--content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.15);
+    z-index: 1;
+}
+
+#our-business--content > div, #our-business--content > h2 {
+    position: relative;
+    z-index: 2;
+}
+
+.ob-content-img {
+    flex: 1 1 50px; 
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+    line-height: 50px;
+    left: -75px;
+}
+
+.ob-content-descript {
+    color: #fff;
+}
+
+.ob-content-descript p{ color: #fff;  }
+
+#news {
+    padding: 50px 0 80px;
+}
+
+#lasted-news, #contact-short {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-item {
+    padding-bottom: 15px;
+    border: 1px solid #dfdfdf;
+}
+
+.post-item a:hover,.post-item a:focus{ text-decoration: none; }
+
+.post-item-title a {
+    color: #000;
+    padding: 10px;
+    display: block;
+    min-height: 68px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.post-item-shortcontent {
+    padding: 0 10px 10px;
+    font-size: 14px;
+}
+
+a.post-more {
+    padding: 0 10px;
+    color: #808080;
+    font-size: 14px;
+}
+
+#contact-message {
+    min-height: 200px;
+}
+
+#contact button[type="submit"] {
+    background: #ffb400;
+    border: 1px solid #ffb400;
+    min-width: 200px;
+    padding: 10px 0;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+footer {
+    background: #1c1a1a;
+    color: #c2c5c4;
+    padding: 30px 0;
+}
+
+h3.footer_heading {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#footer-top strong {
+    color: #fff;
+}
+
+#footer-top p {
+    font-size: 14px;
+}
+
+#footer-top ul {
+    padding: 0;
+    list-style-position: inside;
+    list-style: none;
+}
+
+#footer-top ul li a {
+    color: #c2c5c4;
+}
+
+#footer-top ul li a:before {content: "\f054";font-family: FontAwesome;font-size: 10px;margin-right: 5px;}
+
+section#footer-bottom {
+    padding: 20px 0 0;
+    border-top: 2px solid #fff;
+}
+
+input[name="email_newsletter"] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #c2c5c4;
+    border-radius: 0 0 5px 5px;
+    width: 100%;
+    padding-right: 68px;
+}
+
+#submit_newsletter {
+    position: absolute;
+    top: -3px;
+    right: 4px;
+    border: none;
+}
+
+footer form {
+    position: relative;
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+    header #logo { font-size: 25px; }
+    .navbar{ padding: 0; }
+}
+@media (max-width: 767px){
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    header #logo { font-size: 23px; }
+    #our-business > .d-flex{
+        flex-wrap: wrap;
+    }
+    #our-business-banner{ min-height: 220px; }
+    #our-business--content{ padding: 50px 20px; }
+    .ob-content-img{ position: static; left: 0; margin-right: 15px; }
+    .ob-content-descript{ width: calc(100% - 65px); }
+
+    .post-item{ margin-bottom: 15px; }
+    #mb-none{ display: none !important; }
+    nav#mb-search {
+        position: absolute;
+        top: calc(100% + 15px);
+        right: 0;
+        width: 100vw;
+        background: #0672d3;
+        padding: 10px 0;
+    }
+}
