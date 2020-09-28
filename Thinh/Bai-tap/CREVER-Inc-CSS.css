@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #0072D3;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-icon {
+    width: 28px;
+    height: 28px;
+    display: none;
+    align-self: center;
+}
+
+.header .menu {
+    margin: auto 30px;
+    display: flex;
+}
+
+.header .logo-main{
+    align-self: center;
+}
+
+.header .logo-main h3 {
+    color: white;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: auto 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav ul li .menu-2 {
+    color: white;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul li .menu-1 {
+    color: rgb(243, 163, 84);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fa.fa-search {
+    color: white;
+}
+
+.pic-top img {
+    width: 100%;
+    margin: 0;
+}
+
+.about-us {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.about-us p {
+    margin: 0 0 0 5px;
+    font-size: 18px;
+}
+
+.gach-ngang {
+    width: 40px;
+    height: 3px;
+    background-color: #0072D3;
+    margin: auto 5px;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.mid-1 {
+    margin-bottom: 50px;
+}
+
+.mid-1 .col-lg-6 .pic-mid {
+    width: 100%;
+}
+
+.mid-2 {
+    margin-bottom: 30px;
+    height: auto;
+}
+
+.mid-2 .col-lg-6 {
+    padding: 0;
+
+}
+
+.mid-2 .col-lg-6 .pic-1 {
+    width: 100%;
+    z-index: 1;
+}
+
+.mid-2 .col-lg-6 .pic-2 {
+    width: 100%;
+    z-index: 2;
+}
+
+.mid-2 .mid-2a .pic-icon-3 {
+    height: 80%;
+    padding: 3px;
+}
+
+.mid-2 .mid-2a .mid-2a-2 {
+    position: relative;
+}
+
+.mid-2 .mid-2a .pic-icon-4 {
+    position: absolute;
+    left: -4%;
+    top: 95px;
+    height: 60px;
+    width: 60px;
+    z-index: 4;
+    border-radius: 50%;
+}
+
+.mid-2 .khung {
+    height: 65px;
+    width: 65px;
+    position: absolute;
+    left: -4%;
+    top: 170px;
+    z-index: 3;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid-2 .text-in-pic {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    z-index: 5;
+    color: azure;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.form-thong-tin {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-top {
+    width: 30%;
+    margin: 5px;
+}
+
+#message {
+    width: 505px;
+    margin: 6px;
+}
+
+.bottom .col-lg-6 .map {
+    width: 100%;
+}
+
+.container .send-button {
+    width: 100%;
+    /* display: flex;
+    justify-items: center;
+    justify-content: center; */
+    position: absolute;
+    left: 400px;
+}
+
+.container .btn.btn-warning {
+    font-size: 20px;
+    font-weight: 450;
+    color: white;
+    padding: 10px 20px;
+}
+
+.bottom-end.container-fluid {
+    background-color: black;
+    height: auto;
+    margin-top: 140px;
+}
+
+.bottom-end.container-fluid .col-lg-3 {
+    margin-top: 20px;
+}
+
+.bottom-end.container-fluid h5 {
+    color: white;
+}
+
+.bottom-end.container-fluid p {
+    font-size: 15px;
+    color: white;
+}
+
+.bottom-end.container-fluid ul {
+    list-style-type: none;
+    color: white;
+}
+
+.bottom-end.container-fluid .form-control {
+    background-color: black;
+}
+
+.bottom-end.container-fluid .thanh-ngang {
+    width: 100%;
+    border: 1px solid white;
+
+
+}
+
+.bottom-end.container-fluid .copy-right {
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+@media (max-width: 576px) {
+    .header {
+        background-color: white;
+        height: 90px;
+    }
+
+    .header .menu {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        width: 28px;
+        display: inline-block;
+    }
+
+    .header .logo-main h3 {
+        color: #0072D3;
+        font-size: 24px;
+    }
+    .header .search{
+        display: flex;
+        align-items:center;
+    }
+    .fa.fa-search {
+        color: black;
+    }
+    .header nav{
+        display: block;
+        position: absolute;
+        left:0px;
+        top: 90px;
+        animation-direction: 2s;
+    }
+    #listMenu{
+        display: none;
+    }
+    .header nav ul{
+        border: 1px solid #0072D3;
+        background-color: aliceblue;
+        width: 100px;
+        text-align: left;
+        padding: 0 10px 10px 10px;
+    }
+    nav ul li .menu-2 {
+        font-weight: 400;
+    }
+    
+    nav ul li .menu-1 {
+        font-weight: 400;
+    }
+    nav ul li .menu-2 {
+        color: #0072D3;
+    }
+    
+
+    .mid-2 .col-lg-6 .pic-2 {
+        height: 350px;
+    }
+
+    .mid-2 .text-in-pic {
+        position: absolute;
+        height: auto;
+        width: 180px;
+        left: auto;
+        right: 30px;
+        top: 30px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .mid-2 .text-in-pic p {
+        font-size: 13px;
+    }
+
+    .mid-2 .text-in-pic h3 {
+        font-size: 20px;
+    }
+
+    .mid-2 .khung {
+        left: 20px;
+        top: 230px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .mid-2 .mid-2a .pic-icon-4 {
+        left: 20px;
+        top: 105px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .form-top {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .container .send-button {
+        width: 100%;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        position: none;
+        left: 0px;
+    }
+
+    .bottom .col-lg-6 .map {
+        margin-top: 100px;
+    }
+
+    .bottom-end.container-fluid {
+        margin-top: 50px;
+    }
+
+}
+@media (max-width: 768px) and (min-width:576px) {
+    .header .logo-main h3 {
+        font-size: 20px;
+    }
+    nav ul li .menu-2 {
+        font-size: 12px;
+    }
+    
+    nav ul li .menu-1 {
+        font-size: 12px;
+    }
+    .gach-ngang {
+        width: 30px;
+    }
+    .about-us p {
+        font-size: 13px;
+    }
+    .mid-1 .col-lg-6 h4{
+        font-size: 13px;
+    }
+    .mid-1 .col-lg-6 p{
+        font-size: 8px;
+    }
+    .mid-2 .text-in-pic {
+        position: absolute;
+        height: auto;
+        width: 480px;
+        left: auto;
+        right: 10px;
+        top: 50px;
+    margin: 0;
+    }
+    .mid-2 .mid-2a .pic-icon-4 {
+        left: 40px;
+        top: 105px;
+        height: 50px;
+        width: 50px;
+    }
+    .mid-2 .khung{
+        left: 40px;
+        top: 200px;
+        height: 50px;
+        width: 50px;
+    }
+    .mid-2 .mid-2a .pic-icon-3 {
+        height: 80%;
+        padding: 3px;
+    }
+    .container .send-button {
+        width: 100%;
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        position: none;
+        left: 0px;
+    }
+    .bottom .col-lg-6 .map {
+        margin-top: 100px;
+    }
+}

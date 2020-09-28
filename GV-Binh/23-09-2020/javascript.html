@@ -1,0 +1,272 @@
+<!-- Javascript nó được viết tắt là JS và JAVA khác hoàn toàn với Javascript
+
+JS là gì? thì JS là một ngôn ngữ lập trình kịch bản dựa vào các tài liệu như HTML
+input hoặc là tương tác với thẻ button ...
+ví dụ: click chuột, keyup, keydown, enter ...
+
+Tại sao phải học JS: 
+    1. có thể lập trình kịch cho web
+    2. có thể dễ dàng học và sử các thư viện Jquery... và framework như React js, Angular js, Angular 2+, Vue js
+    3. có thể update skill back-end đó là Node js.
+    4. có thể tự học 1 cách dễ ràng React native
+    5. có thê lập trình được phần mềm trên desktop
+Viết 1 chương trình đầu tiên: 
+
+Giới thiệu về hàm default và Khai báo biến:
+
+Giới thiệu về toán tử:
+    1. toán tử toán học là các phép tính + - * / ++ --
+    2. toán tử gán dùng đẻ gán giá trị cho biến
+        2.1 toán tử gán =
+        2.2 toán tử gán +=
+        2.3 toán tử gán -=
+        2.4 toán tử gán *=
+        2.5 toán tử gán /=
+        2.6 toán tử gán %=
+    3. Toán tử so sánh
+        3.1 so sánh lớn hơn a > b
+        3.2 so sánh nhỏ hơn a < b
+        3.3 so sánh lớn hơn hoặc bằng a >= b
+        3.4 so sánh nhỏ hơn hoặc bằng a <= b
+        3.5 so sánh bằng (chỉ so sánh giá trị) a == b
+        3.6 so sánh khác (chỉ so sánh giá trị) a != b
+        3.7 so sánh bằng (so sánh cả về giá trị và kiểu) a === b
+        3.8 so sánh khác (so sánh cả về giá trị và kiểu) a !== b
+    4. Toán tử lý luận
+        4.1 toán tử and &&
+        4.2 toán tử OR ||
+        4.3 Toán tử NOT !
+Câu lệnh điều hay gọi là lệnh rẽ nhánh
+    1. câu lệnh if, else, else if
+    nếu có ăn thì mới làm đc việc
+
+    if( điều kiện ) {
+        nếu đúng thì chạy vào đây
+    } else {
+        nếu sai thì chạy vào đây nhé
+    }
+
+    if(2000k) {
+
+    } else if (1500k) {
+
+    } else if (100k) {
+
+    } else {
+        ở nhà
+    }
+
+    2. switch case: tuy nhiên khác if ở chỗ sẽ chạy nhanh hơn nếu như có nhiều điều kiện
+        switch(điều kiện) {
+            case 5:
+                // làm cái gì đấy
+                break;
+            case: 10
+                //làm cái gì đấy
+                break;
+            default: 
+                // làm cái gì đó còn lại
+        }
+
+Giới thiệu về function (hàm) trong JS
+    function là một phương pháp lập trình truyền thống trong các ngôn ngữ lập trình
+    mỗi hàm chỉ nên thực hiện 1 chức duy nhất
+    cần phải khai báo hàm thì mới có thẻ dùng đc, nó giống như khai báo biến
+    có bao nhiêu cách để khai báo 1 function
+    1. các cách khai báo hàm
+        function nameFunction() {}
+        var nameFunction = function() {}
+    2. hàm có tham số và không có tham sô và có tham số mặc định
+        function nameFuction() {} -> đây là hàm ko có tham số truyền vào
+        function nameFuction(a, b, c, d) {} -> đây là hàm có tham sô truyền vào
+        function nameFunction(a = 0, b, c , d) {}
+    3. hàm có kết quả trả về(có từ khóa return) và hàm ko có kết quả trả về(ko có return)
+        function nameFunction() {
+            return ...;
+        }
+        function nameFunction() {}
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- thẻ style nên để trong thể head -->
+    <style>
+        /* viết mã CSS */
+    </style>
+</head>
+<body>
+    <!--trên này viết các thẻ HTML -->
+    <input type="text" name="" id="">
+    <div></div>
+
+
+
+    <!-- nên để cặp thẻ script trong thẻ body và nên để dưới cùng -->
+    <script>
+        // hàm alert dùng để hiển thị popup, show thông tin cho người dùng trên trang
+        // alert("Xin chào bạn! Bạn đang tham gia khóa học REACT.");
+        // consle.log dùng để show ra thông tin trên dev tool tab console
+        console.log('Hello Binh!');
+        // hàm prompt hiển thị popup tương tự alert, tuy nhiien người có thể nhập thông hoặc cancel
+        // prompt('Các bạn đã làm bài tập về nhà chưa?');
+        // hoisting: là cách mà JS tự động chuyển code khai báo lên trên top
+        // use strict: dùng để kiểm tra sự chặt chẽ hơn của các dòng code
+
+        // khai báo biến: là 1 hành động đặt tên cho 1 biến và các đặt tên này phải tuân theo chuẩn gg
+        // var, let, const
+
+        // cách viết tên biến nếu có 1 chữ thì viết thường
+        // nếu có 2 chữ trở lên thì viết như sau userName
+        // chú ý: phép gán chỉ có 1 dấu '='
+        // undefine là biến đã được khai báo nhưng chưa có giá trị
+        // not defined là chưa khai biến
+        // tên biến được bao gồm bởi số, chữ cái hoa hoặc thường và được 1 ký tự đặc
+        // dao là _
+        // public nhưng nếu có dấu _đứng tên biến thì chúng tá hiểu biến đó là private
+        var userName = 'Đây là lớp học Javascript!';
+        var firstName = 'Hoa Binh!';
+        var _lastName;
+        var firstName1;
+        // var x = 2 , y = 4, c = 4, k; 
+
+        console.log(userName);
+        console.log(firstName);
+        // let userName1;
+        // const userName2;
+
+        // document.write(): dùng để viết value lên trang
+        // document.write(userName);
+
+        var a = 5;
+        var b = 10;
+        var c;
+        console.log('Đây là phép cộng: ', a + b);
+        console.log('Đây là phép trừ: ', a - b);
+        console.log('Đây là phép chia: ', b/a);
+        console.log('Đây là phép nhân: ', b*a);
+        console.log('Đây là phép lấy dư: ', b%a);
+        // toán tử  ++ sẽ giúp tăng lên 1 đơn vị
+        //  khi ++ đứng trước thì nó sẽ cộng cái biến đấy lên 1 rồi mới in ra
+        // còn  a++ tức là ++ đứng sau thì nó lại thực cái in ra trước khi nó +
+        // console.log('Toán tử ++ : ', a++);
+        // a đã = 6;
+        // console.log('Toán tử ++ : ', ++a);
+        // console.log('kết quả của a: ', a);
+
+        // console.log('Toán tử -- : ', --b);
+        // console.log('Toán tử -- : ', b--);
+        // console.log('kết quả b: ', b);
+
+        // var ketQua = a + b; 
+        //  sử dụng toán tử gán +=
+        // console.log(a += b);
+        // sử dụng phép toán -=
+        // console.log(a -= b);
+        // sử dụng phép toán là  /= nó tướng ứng là b = b/a
+        // console.log('phép toán /= : ', b/=a);
+        // phép *=
+        // console.log('phép toán *= : ', b*=a);
+
+        // ví dụ
+        // if (k || b) {
+        //     console.log('toán tử && đã đực thực thi');
+        // }
+
+        // nếu mà a == 5 thí hiển thị là điều kiện đúng còn ko thì hiển thị là sai
+
+        if(a === 8) {
+            console.log('Điều kiện đúng!');
+        } else {
+            console.log('Điều kiện sai!');
+        }
+
+        // nếu a bằng 5 thì hiển thị tôi là 5
+        // nếu b bằng 10 thì hiện thị tôi là 10
+        // ngược lại tôi không là gì?
+
+        if (a ===105) {
+            console.log('Tôi là 5');
+        } else if ( b === 0) {
+            console.log('Tôi là 10');
+        } else {
+            console.log('Tôi không là gì');
+        }
+
+
+        // nếu a bằng 5 thì sẽ khai báo thêm biến k và nếu k băng a thì show ra chữa perfect
+        if (a === 5) {
+            var k = 5;
+            if(a === k) {
+                console.log('Perfect');
+            } else {
+                console.log('A không băng k');
+            }
+        }
+
+        // đầu tiên là truyền vào điều kiện sau lấy điều kiện đi so sánh vs các case
+        // nếu đúng thì làm cái gì đó và dừng hẳn.
+        // nếu ko có case nào đưuọc thwucj hiện thì sẽ thực hiện theo default(cái mặc định)
+
+        switch(c) {
+            case 5:
+                console.log('tôi là 5 nè');
+                break;
+            case 10: 
+                console.log('tôi là 10');
+                break;
+            default: 
+                console.log('tôi không là gi');
+        }
+        // cách khai báo biến thứ 1
+        // function tinhTong() {
+        //     var sum = a + b;
+        //     console.log('tính tổng băng hàm: ', sum);
+        // }
+
+        function tinhTong() {
+            var sum = a + b;
+            return sum;
+        }
+        // cách thứ 2
+        var tinhHieu = function() {
+            var hieu = b - a;
+            console.log('Tinh hiệu bằng hàm: ', hieu);
+        }
+
+        // tinhTong();
+        // tinhHieu();
+        // param -> gọi tham số truyền vào khi khởi tạo hàm
+        function tinhNhan(soThuNhat, soThuHai) {
+            console.log('soThuNhat: ', soThuNhat);
+            console.log('soThuHai: ', soThuHai);
+            console.log('Tính nhân bằng hàm: ', soThuNhat*soThuHai);
+            // var kq = soThuNhat*soThuHai;
+            // return kq;
+        }
+        // argument
+        // tinhNhan(a, b)
+
+
+        // tổng(a + b) - nhân(a*b)
+        function tinhToan() {
+            var tong = tinhTong();
+            var nhan = tinhNhan(a, b);
+            console.log(tong);
+            console.log(nhan);
+            var tinh = tong - nhan;
+
+            return tinh;
+        }
+
+        var ketQua = tinhToan();
+        alert(ketQua);
+    </script>
+</body>
+</html>
+

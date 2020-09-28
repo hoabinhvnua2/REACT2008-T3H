@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @-webkit-keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @-moz-keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @-o-keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .items-container {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            align-items: center;
+            background-color: #CECED0;
+            padding: 6%;
+            border-radius: 20%;
+        }
+        
+        .items-clock {
+            background-image: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 350px;
+            background-color: aliceblue;
+            position: relative;
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .clock-ratio {
+            padding-bottom: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .items-clock-second {
+            width: 2%;
+            height: 100%;
+            margin-left: -1%;
+            position: absolute;
+            left: 50%;
+            animation: rotation 60s infinite linear;
+            animation: rotation 60s infinite linear;
+            animation: rotation 60s infinite linear;
+            animation: rotation 60s infinite linear;
+        }
+        
+        .items-clock-second:before {
+            content: "";
+            background-color: red;
+            width: 100%;
+            height: 46%;
+            top: 16%;
+            position: absolute;
+        }
+        
+        .items-clock-minute {
+            width: 3%;
+            height: 100%;
+            margin-left: -1.5%;
+            position: absolute;
+            left: 50%;
+            animation: rotation 3600s infinite linear;
+            animation: rotation 3600s infinite linear;
+            animation: rotation 3600s infinite linear;
+            animation: rotation 3600s infinite linear;
+        }
+        
+        .items-clock-minute:before {
+            content: "";
+            background-color: navajowhite;
+            width: 100%;
+            height: 46%;
+            top: 16%;
+            position: absolute;
+        }
+        
+        .items-clock-hour {
+            width: 4%;
+            height: 100%;
+            margin-left: -2%;
+            position: absolute;
+            left: 50%;
+            animation: rotation 43200s infinite linear;
+            animation: rotation 43200s infinite linear;
+            animation: rotation 43200s infinite linear;
+            animation: rotation 43200s infinite linear;
+        }
+        
+        .items-clock-hour:before {
+            content: "";
+            background-color: peru;
+            width: 100%;
+            height: 41%;
+            top: 21%;
+            position: absolute;
+        }
+        
+        .clock-nut {
+            position: absolute;
+            top: 46%;
+            left: 46%;
+            width: 8%;
+            height: 8%;
+            background-color: #000000;
+            border-radius: 50%;
+            border-radius: 50%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="items-container">
+        <div class="items-clock">
+            <div class="items-clock-hour"></div>
+            <div class="items-clock-minute"></div>
+            <div class="items-clock-second"></div>
+            <div class="clock-nut"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
