@@ -33,3 +33,15 @@ git push: dùng để đẩy code mới nhất từ local lên repository
 git commit: dùng để giải thích và đánh dấu đoạn code mới nhất 
 git add: dùng để add tất cả các file thêm mới hoặc các file đã được thay đổi
 git checkout -b : tạo 1 nhánh mới
+
+quy trình để push code lên repo
+B0: pull code từ nhánh master về nhánh của chúng ta trước
+    git pull origin master
+B1: kiểm tra xem có thay đổi gì ko?
+    git status
+B2: add nhưng thay để chuẩn bị đẩy lên repo
+    git add .
+B3: commit mes để giải thích và chú thích đoạn code mình sắp đẩy lên
+    git commit -m "first commit"
+B4: đẩy code lên repo
+    git push origin name-branch

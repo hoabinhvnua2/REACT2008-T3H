@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.khung{
+    height: 750px;
+    width: 750px;
+    background-color: #555;
+    position: relative;
+    margin: 20px;
+    border-radius: 50px;
+    display: flex;
+    justify-items: center;
+
+}
+.container {
+    display: inline-block;
+    margin: auto;
+    padding: 60px;
+    background-color: white;
+    height: 600px;
+    width: 600px;
+    border: 4px solid #555;
+    border-radius: 50%;
+}
+
+.container .all-cl {
+    position: absolute;
+    z-index: 1;
+    height: 600px;
+    width: 600px;
+}
+
+.container .clock {
+    height: 100%;
+}
+
+.kim-s {
+    position: absolute;
+    z-index: 4;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    animation-name: hieu-ung-1;
+    animation-timing-function: linear;
+    /* kiểu chạy */
+    animation-duration: 60s;
+    /*tốc độ*/
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hieu-ung-1 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+.kim-m {
+    position: absolute;
+    z-index: 3;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    animation-name: hieu-ung-1;
+    animation-timing-function: linear;
+    /* kiểu chạy */
+    animation-duration: 3600s;
+    /*tốc độ*/
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    /*số lần lặp*/
+    /* hướng di chuyển (alternate: chạy xuôi sau đó chạy ngược ở vòng 2) */
+}
+
+@keyframes hieu-ung-1 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+.kim-h {
+    position: absolute;
+    z-index: 2;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    animation-name: hieu-ung-1;
+    animation-timing-function: linear;
+    /* kiểu chạy */
+    animation-duration: 216000s;
+    /*tốc độ*/
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    /*số lần lặp*/
+    /* hướng di chuyển (alternate: chạy xuôi sau đó chạy ngược ở vòng 2) */
+}
+
+@keyframes hieu-ung-1 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.kim-s .kim-giay {
+    margin-top: 70px;
+    height: 230px;
+    width: 05px;
+    border-radius: 20px;
+    background-color: black;
+}
+.kim-m .kim-phut {
+    margin-top: 100px;
+    height: 200px;
+    width: 20px;
+    border-radius: 20px;
+    background-color:blue;
+}
+.kim-h .kim-gio {
+    margin-top: 150px;
+    height: 150px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: pink;
+}
