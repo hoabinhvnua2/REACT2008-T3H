@@ -1,0 +1,212 @@
+<!-- 
+
+    1. Biến toàn cục, biến cục bộ
+        1.1 biến toàn cục là biến ko thuộc về 1 hàm nào và có thể sử dụng ở mọi chỗ;
+        1.2 biến cục bộ bộ là biến thuộc về 1 hàm nào đó;
+
+    2. hàm setTimeout và setInterval
+        2.1 setTimeout dùng để set một khoảng thời gian để thực hiện 
+        một hành đông nào đó và nó chỉ thực hiện duy nhất 1 lần
+            clearTimeout: xóa các cài đặt setTimeout
+        2.2 setInterval tương tự như setTimeout, tuy nhiên nó sẽ chạy mãi mãi,
+            cleaInterval: xóa cài đặt của setInterval
+
+    3. vòng lặp
+        3.1 for
+        3.2 while
+        3.3 do while
+        3.4 forEach
+
+    4. DOM
+        DOM là viết tắt của từ document object model, và nó chứa các elememt (p, h1)
+        4.1 DOM element (id, class, tag name, attr ...) 
+            getElementById('id') -> cái này nó trả về 1 obj, id là duy nhất
+            getElementByClassName('className') -> nó sẽ trả về 1 mảng
+            getElementByTagName('tagName') -> nó trả về 1 mảng
+        4.2 DOM HTML: hỗ trợ việc lấy ra nội dung của HTML (innerHTML, textContent, attributeName ...)
+        4.3 DOM CSS: thay đổi các thuộc tính css bằng javascript
+
+    5. Event-mouse
+        5.1 click - onclick
+        5.2 dblclick - ondblclick
+        5.3 mouseout: khi con chuột rời khỏi thẻ html
+        5.4 mousemove: xảy ra khi con chuột di chuyển bên trong thẻ html 
+        5.5 mouseover: xảy ra khi con chuột đi vào thẻ html
+    6. Event-key
+        6.1 keydown
+        6.2 keyup
+        6.3 keypress
+
+    7. event focus: là khi con trỏ chuột đang chọn vào ô input
+    8. event blur: ngược lại với focus, tức con trỏ chuột ko chọn vào o input đó nữa
+    9. event copy, pase, cut, input
+    10. change: có sự thay về value, cái này hay được dùng với select
+
+    11. onload, scroll ...;
+
+
+    hàm addEventListener: dùng để thêm 1 sự kiện (evnet) cho thành phần trong document
+    
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p class="container text-danger text-right">Xin chào các bạn 1</p>
+    <p class="container text-danger text-right">Xin chào các bạn 2</p>
+    <p class="container text-danger text-right">Xin chào các bạn 3</p>
+
+    <button id="clickMe" onclick="showClickMe()">Click me</button>
+    <br>
+    <button id="loveMe" ondblclick="myLove()">Love me</button>
+    <br>
+
+    <!-- <input type="text" placeholder="user name" id="userName" onkeyup="myName()"> -->
+    <input type="text" placeholder="user name" id="userName" onkeydown="myInput(event)">
+    <br>
+    <select name="" id="" onchange="myChange()">
+        <option value="1">Huấn</option>
+        <option value="2">Hiền</option>
+        <option value="3">Sinh</option>
+    </select>
+    <!-- <p id="myName" class="container text-danger text-right">Xin chào các bạn 3</p> -->
+    <script>
+        function myChange() {
+            console.log('Bạn vừa change!');
+        }
+        function myInput(e) {
+            if (e.keyCode === 13) {
+                console.log('Bạn vừa nhấn phím Enter');
+            } else {
+                console.log('Bạn vừa nhấn phím ' + e.key)
+            }
+        }
+        function myFocus() {
+            console.log('bạn vừa focus vào tôi');
+        }
+        function myBlur() {
+            console.log('bạn vừa blur khỏi tôi');
+        }
+        // document.getElementById('userName').addEventListener('keyup', function() {
+        //     console.log('my name');
+        // })
+        function myName() {
+            console.log('my name');
+        }
+        // đây là biến toàn cục
+        var userName = "React";
+        var age = '2011';
+
+
+        // Lưu ý không được đặt tên biến là "name"
+
+        console.log('biến userName toàn cục: ', userName);
+        // console.log('biến name cục bộ: ', naming);
+        function showHello() {
+            // alert('Xin chào tất cả các bạn!');
+        }
+
+        setTimeout(showHello, 1000);
+
+        // setTimeout(function() {}, timeout);
+
+        var obj = setInterval(function() {
+            console.log("Tôi là javascript!");
+            // clearInterval(obj);
+        }, 3000);
+
+        setTimeout(function() {
+            clearInterval(obj);
+        }, 6000);
+
+
+        // callback: 
+        function showName() {
+            // đây là biến cục bộ
+            var naming = 'Nam';
+        }
+        // call hàm
+        showName();
+        // call back hiểu đơn giản là 1 hầm được gọi trong 1 hàm khác.
+        var arrayName = [1, 2, 3, 4, 5];
+        var arrayLenght = arrayName.length;
+        // B1: tìm tới thằng arrayName
+        // B2: nó đếm sô phần tử của arrayName
+
+        // trước khi đặt biến
+        // 0 -> nó thực hiện B1 và B2
+        // 1 -> nó lại thực hiên B1 và B2
+        // ...
+
+        // sau khi đặt biến
+
+        // trước khi chạy for thì đã có độ dài của mảng
+        // 0 -> có luôn lenght
+        // 1 -> có luôn lenght
+        for (let index = 0; index < arrayLenght; index++) {
+            console.log('phần tử thứ '+ index, arrayName[index]);  
+        }
+
+
+        // khi nào thì dùng while và khi nào dùng do while
+        var a = 11;
+        while (a < 10) {
+            console.log('tôi là a: ', a);
+            // tăng a lên sau mỗi vòng lặp
+            a++;
+        }
+
+        do {
+            console.log('Tôi là b đây!');
+            a++;
+        } while(a < 10);
+
+
+        var objSinhVien = [
+            {
+                name: 'Thư',
+                age: 20
+            },
+            {
+                name: 'Huấn',
+                age: 32
+            }
+        ];
+
+        objSinhVien.forEach(function(value, index) {
+            console.log('Value: ', value);
+            console.log('Index: ', index);
+        })
+        
+
+        // var objById = document.getElementById('myName').innerHTML;
+        // var objById = document.getElementById('myName').textContent;
+        var objByTagName = document.getElementsByTagName('p');
+        console.log(objByTagName[1].innerHTML);
+        objByTagName[1].style.color = 'red';
+        objByTagName[2].style.color = 'aqua';
+        
+        var click = document.getElementById('clickMe');
+        // console.log(click);
+        // click.addEventListener('click', function() {
+        //     alert('click me');
+        // })
+
+        // document.getElementById('loveMe').addEventListener('dblclick', function() {
+        //     alert('yeah!');
+        // })
+        function myLove() {
+            alert('yeah!');
+        }
+
+        function showClickMe() {
+            alert('Xin chào, bạn vừa click vào tôi!');
+        }
+    </script>
+</body>
+</html>
