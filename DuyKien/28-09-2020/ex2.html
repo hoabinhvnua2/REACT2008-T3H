@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra số nguyên tố </title>
+</head>
+<body>
+    <div class="so_a">
+        Nhập số muốn chọn <span> <input class="so1" type="text" value=""></span>
+    </div>
+
+    <button onclick="checksnt(numbera.value);" > Kết quả </button>
+
+    <script>
+
+       const numbera = document.querySelector('.so1');
+        
+        function checksnt(number){
+            
+            if (number<2) {
+                console.log(number +  "Đâu phải số ngto");
+            } else
+                if (number===2) {
+                       console.log(number + "là số ngto"); 
+                }
+                else
+                    if((number%2)===0){
+                        console.log(number + " Đâu phải số ngto");
+                    }
+                    else {
+                        dem = 0 ;
+                        var math = Math.sqrt(number);
+                        for (let i = 0; i <= math; i++) {
+                            if (number % i === 0) {
+                                dem++;
+                            }
+                            if (dem>0) {
+                                console.log(number + "Đâu phải số ngto");
+                                return false;
+                            }
+                            
+                        }
+                        if (dem===0) {
+                            console.log(number  +  "là số ngto");
+                        }
+                    }
+             {
+                
+            }
+            
+        }
+        
+          
+        
+    </script>
+</body>
+</html>
