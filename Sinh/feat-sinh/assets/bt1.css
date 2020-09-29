@@ -1,0 +1,100 @@
+@keyframes animate1{
+    0% {
+        transform: rotate(0deg);
+      }
+      12.5%{
+        transform: rotate(45deg);
+      }
+      25%{
+        transform: rotate(90deg);
+      }
+      37.5%{
+        transform: rotate(135deg);
+      }
+      50%{
+        transform: rotate(180deg);
+      }
+      62.5%{
+        transform: rotate(225deg);
+      }
+      75%{
+        transform: rotate(270deg);
+      }
+      87.5%{
+        transform: rotate(315deg);
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+
+}
+
+.clock{
+    width: 400px;
+    height: 400px;
+    background: #dfdfdf;
+    border-radius: 10px;
+    position: relative;
+}
+.clock img{ 
+    width: calc(100% - 40px);
+    height: calc(100% - 40px); 
+    background: #fff;
+    padding: 20px;
+    border-radius: 50%;
+}
+.clock #center{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    z-index: 5;
+    left: calc((100% - 20px)/2);
+    top: calc((100% - 20px)/2);
+}
+.clock #hour{
+    width: 12px;
+    height: 180px;
+    background-size: 50%;
+    position: absolute;
+    z-index: 4;
+    left: calc((100% - 12px)/2);
+    top: calc((100% - 180px)/2);
+    transition: all 0s;
+    background: -webkit-linear-gradient(top, black 50%, transparent 50%);
+    background: -moz-linear-gradient(top, black 50%, transparent 50%);
+    background: -ms-linear-gradient(top, black 50%, transparent 50%);
+    background: linear-gradient(top, black 50%, transparent 50%);
+    animation: animate1 21600s linear 3600s infinite normal;
+}
+.clock #minute{
+    width: 8px;
+    height: 240px;
+    background: #000;
+    position: absolute;
+    z-index: 3;
+    left: calc((100% - 8px)/2);
+    top: calc((100% - 240px)/2);
+    transition: all 0s;
+    background: -webkit-linear-gradient(top, black 50%, transparent 50%);
+    background: -moz-linear-gradient(top, black 50%, transparent 50%);
+    background: -ms-linear-gradient(top, black 50%, transparent 50%);
+    background: linear-gradient(top, black 50%, transparent 50%);
+    animation: animate1 3600s linear 60s infinite normal;
+}
+.clock #second{
+    width: 3px;
+    height: 280px;
+    background: #000;
+    position: absolute;
+    z-index: 2;
+    left: calc((100% - 3px)/2);
+    top: calc((100% - 280px)/2);
+    transition: all 0s;
+    background: -webkit-linear-gradient(top, black 50%, transparent 50%);
+    background: -moz-linear-gradient(top, black 50%, transparent 50%);
+    background: -ms-linear-gradient(top, black 50%, transparent 50%);
+    background: linear-gradient(top, black 50%, transparent 50%);
+    animation: animate1 60s linear 0s infinite normal;
+}

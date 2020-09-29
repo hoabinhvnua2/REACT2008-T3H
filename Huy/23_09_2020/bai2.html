@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2 Javascript cơ bản</title>
+</head>
+<body>
+    <h1>Bài 2 javascript cơ bản</h1>
+    <script>
+        var a = 13;
+        var b = 6;
+        var c = 2;
+        var d = 9;
+
+        function isPrime(x) {
+            if(x < 2) {
+                return false;
+            }
+            if(x == 2 || x == 3) {
+                return true;
+            }
+            for(let i = 2; i <= Math.sqrt(x); i++) {
+                if(x % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+         
+        function primeNumber(n) {
+            if(isPrime(n)) {
+                console.log(n + " la so nguyen to");
+            }
+            else {
+                console.log(n + " khong la so nguyen to");
+            }
+        }
+
+        primeNumber(a);
+        primeNumber(b);
+        primeNumber(c);
+        primeNumber(d);
+    </script>
+</body>
+</html>

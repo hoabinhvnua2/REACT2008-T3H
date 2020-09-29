@@ -1,0 +1,235 @@
+/*HEADING*/
+header {
+    background-color: #1274D0;
+}
+.navbar {
+    padding: 0 0;
+}
+.navbar-light .navbar-brand:hover,
+.custom-navbar-brand:hover,
+.navbar-light .navbar-brand:focus {
+    color: white !important; 
+}
+.navbar-light .navbar-brand,
+.custom-navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* margin: auto; */
+    text-decoration: none;
+}
+.navbar-light .navbar-nav .nav-link, 
+.nav-link {
+    color: white;
+    font-size: 1.5rem;
+    padding: .8rem 1rem;
+}
+.navbar-light .navbar-nav .nav-link:hover,
+.nav-link:hover {
+    color: yellow;
+}
+.far.fa-search {
+    color: white;
+}
+
+/*ABOUT*/
+.row{
+    margin: 0;
+}
+.custom-container {
+    margin-top: 62px;
+    /* word-spacing: 5px; */
+    /* position: relative; */
+}
+.custom-heading-h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    padding-left: 52px;
+    position: relative;
+}
+.custom-heading-h2::before{
+    content: " ";
+    position: absolute;
+    width: 44px;
+    height: 4px;
+    background-color: #0A74EC;
+    top: 48%;
+    left: 0;
+}
+.custom-text-about,
+.custom-text-contact {
+    font-size: 2.5rem;
+}
+.custom-text-about.small{
+    font-size: 1.5rem;
+}
+.custom-edu{
+    margin-top: 72px;
+    position: relative;
+}
+#custom-col-edu,
+#custom-col-commu{
+    padding-left: 0;
+    padding-right: 0;
+    /* position: relative; */
+}
+.custom-edu-imgae{
+    width: 100%;
+}
+.cusstom-img-border{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.custom-img-position1{
+    position: absolute;
+    top: 20%;
+    left: -8%;
+    transform: translateX(-50%);
+}
+.custom-img-position2 {
+    position: absolute;
+    top: 30%;
+    left: -8%;
+    transform: translateX(-50%);
+}
+.text-commu{
+    color: white;
+    position: absolute;
+    top:0;
+    padding: 56px 0px 0px 56px;
+}
+.text-edu{
+    margin-bottom: 20px;
+    position: relative;
+}
+.text-edu-heading{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 44px;
+}
+.text-edu-consul{
+    font-size: 3rem;
+    line-height: 1.5;
+}
+.text-edu-descript{
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+.text-busi{
+    position: relative;
+}
+.text-edu-heading::before{
+    content: " ";
+    position: absolute;
+    width: 36px;
+    height: 3px;
+    background-color: white;
+    top: 53%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+.custom-heading-h1{
+    margin-top: 28px;
+    font-size: 3rem;
+}
+.card-text,
+.card-title{
+    word-spacing: 0;
+    font-size: 1.6rem;
+}
+.custom-col{
+    /* padding-right: 0; */
+    padding-left: 0;
+}
+.custom-col-child:nth-child(1){
+    padding-right: 12px;
+}
+.custom-col-child:nth-child(2){
+    padding: 0px 6px;
+}
+.custom-col-child:nth-child(3){
+    padding-left: 12px;
+}
+.more {
+    color: #6c757d;
+    cursor: pointer;
+}
+.form-control {
+    width: 90%;
+    height: 140%;
+    font-size: 1.5rem;
+}
+textarea{
+    margin-top: 35px;
+    width: 97%;
+    border: 1px solid #ced4da;
+    color: #495057;
+    font-size: 1.5rem;
+    padding: .375rem .75rem;
+    height: 90px;
+    border-radius: 2px;
+}
+/* .img-fluid{
+    width: 100%;
+    height: 100%;
+} */
+.custom-btn-send{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn{
+    padding: 0.25rem 2rem;
+    font-size: 1.5rem;
+}
+/*FOOTER*/
+footer{
+    background-color: #191919;
+}
+.custom-footer{
+    padding-bottom: 15px;
+}
+.custom-heading-h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.custom-space-icon{
+    padding-left: 5px;
+}
+.custom-col ul li {
+    margin-bottom: 10px;
+}
+.custom-col-final{
+    padding-right: 0;
+}
+.custom-font{
+    font-size: 1.25rem;
+}
+.input-email{
+    position: relative;
+}
+.input-email .form-control{
+    outline: none;
+    border: none;
+    border-bottom: 1px white solid;
+    background-color: #191919;
+    width: 100%;
+    height: 100%;
+}
+.input-email .btn{
+    position: absolute;
+    left: 100%;
+    transform: translateX(-100%);
+    bottom: 17%;
+    padding: 0rem 1.2rem;
+}
+.custom-p{
+    margin-bottom: 0;
+    text-align: center;
+    font-size:1.5rem ;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

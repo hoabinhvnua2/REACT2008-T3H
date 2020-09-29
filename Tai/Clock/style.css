@@ -1,0 +1,135 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.look{
+    width: 750px;
+    height: 750px;
+    margin: 100px auto 0px auto;
+    background-color: grey;
+    border-radius: 50%;
+    display: flex;
+    justify-items: center;
+}
+.container{
+    display: inline-block;
+    width: 650px;
+    height: 650px;
+    margin: 20px auto 0px auto;
+    background-color: white;
+    padding: 30px;
+    border: 4px solid black;
+    border-radius: 50%;
+
+}
+.container .clock{
+    position: absolute;
+    z-index: 1;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+}
+.kim-s .kim-s-1{
+    margin-top: 100px;
+    height: 300px;
+    width: 5px;
+    border-radius: 20px;
+    background-color: black;
+    
+}
+.kim-s{
+    position: absolute;
+    z-index: 4;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    /* tên của animation */
+    animation-name: part-1;
+    /* hình thức chạy */
+    animation-timing-function: linear;
+    /* tốc độ */
+    animation-duration: 60s;
+    /* thời gian bắt đầu */
+    animation-delay: 0s;
+    /* lặp lại */
+    animation-iteration-count: infinite;
+}
+@keyframes part-1{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.kim-p .kim-p-1{
+    margin-top: 100px;
+    height: 300px;
+    width: 9px;
+    border-radius: 20px;
+    background-color: black;
+    
+}
+.kim-p{
+    position: absolute;
+    z-index: 3;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    /* tên của animation */
+    animation-name: part-2;
+    /* hình thức chạy */
+    animation-timing-function: linear;
+    /* tốc độ */
+    animation-duration: 3600s;
+    /* thời gian bắt đầu */
+    animation-delay: 0s;
+    /* lặp lại */
+    animation-iteration-count: infinite;
+}
+@keyframes part-2{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.kim-h .kim-h-1{
+    margin-top: 100px;
+    height: 250px;
+    width: 10px;
+    border-radius: 20px;
+    background-color: black;
+    
+}
+.kim-h{
+    position: absolute;
+    z-index: 2;
+    height: 600px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    /* tên của animation */
+    animation-name: part-3;
+    /* hình thức chạy */
+    animation-timing-function: linear;
+    /* tốc độ */
+    animation-duration: 216000s;
+    /* thời gian bắt đầu */
+    animation-delay: 0s;
+    /* lặp lại */
+    animation-iteration-count: infinite;
+}
+@keyframes part-3{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
