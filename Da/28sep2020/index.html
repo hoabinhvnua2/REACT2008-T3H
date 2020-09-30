@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Só Nguyên Tố</title>
+</head>
+<body>
+    <div>
+        <p>Nhập số: <input id="input" type="text"> </p>
+        <input type="button" value="Kiểm tra" id="get_input" onclick="kiem_tra_snt()" />
+      </div>
+    <script language="javascript">
+        function kiem_tra_snt()
+        {
+            var n = document.getElementById("input").value; 
+            var flag = true;
+            if (n < 2){
+                flag = false;
+            }
+            else if (n == 2){
+                flag = true;
+            }
+            else if (n % 2 == 0){
+            flag = false;
+            }
+            else{
+                for (var i = 3; i < n-1; i+=2)
+                {
+                    if (n % i == 0){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag == true){
+                document.write(n + " là số nguyên tố <br/>");
+            }
+            else{
+                document.write(n + " không phải là số nguyên tố <br/>");
+            }
+        }
+    </script>
+    </body>
+  </html>
+  
+</body>
+</html>
