@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./28-09.css">
+</head>
+<body>
+    <div class="app container">
+        <h4>NhatQuang's Calculator</h4><hr>
+        <div class="row custom-row">
+            <input id="firstNum" onfocus="numFocus(id)"  type="text" class="col-md-3 custom-input" value="">
+            <div  class="col-md-2 custom-md-1 "><h3 id="math" value="?" >?</h3></div>
+            <input id="secondNum" onfocus="numFocus(id)" type="text" class="col-md-3 custom-input" value="">
+            <div class="col-md-1 custom-md-1 "><h3>=</h3></div>
+            <input id="result" type="text" class="col-md-3 custom-input" placeholder="Result">
+        </div>
+        <div class="row-btn">
+            <div class="row custom-row">
+            <button id="num1" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="1">1</button>
+            <button id="num2" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="2">2</button>
+            <button id="num3" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="3">3</button>
+            <button id="sum" onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="+">+</button>
+            </div>
+            <div class="row custom-row">
+                <button id="num4" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="4">4</button>
+                <button id="num5" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="5">5</button>
+                <button id="num6" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="6">6</button>
+                <button id="sub"  onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="-">-</button>
+            </div>
+            <div class="row custom-row">
+                <button id="num7" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="7">7</button>
+                <button id="num8" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="8">8</button>
+                <button id="num9" onclick="myValue(id)" class="custom-btn col-md-3 num-cor" value="9">9</button>
+                <button id="mul"  onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="*">*</button>
+            </div>
+            <div class="row custom-row">
+                <button id="del"  onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="del">C</button>
+                <button id="num0" onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="0">0</button>
+                <button id="total" onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="=">=</button>
+                <button id="divi" onclick="myValue(id)" class="custom-btn col-md-3 corlorYellow" value="/">/</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./28-09.js"></script>
+</body>
+</html>
