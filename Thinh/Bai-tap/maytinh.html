@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Casio vs0.999</title>
+    <style>
+        .may-tinh {
+            height: 600px;
+            width: 500px;
+            border: 2px solid #000;
+            border-radius: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: center;
+        }
+
+        .may-tinh .nhap {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+        }
+        .may-tinh .nhap h5{
+            display: inline-block;
+        }
+        .may-tinh .number {
+            width: 74%;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .may-tinh .number input {
+            width: 32.7%;
+            margin: 1px;
+        }
+
+        #clear,
+        #number0,
+        #bang {
+            background-color: rgb(245, 245, 124);
+        }
+
+        .may-tinh .phep-tinh {
+            width: 25%;
+            height: 400px;
+        }
+
+        .may-tinh .phep-tinh input {
+            width: 100%;
+            height: 98px;
+            margin: 1px;
+            background-color: rgb(245, 245, 124);
+        }
+
+        #ketQua {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="may-tinh">
+        <div class="nhap">
+            <div class="nb1">
+                <h5>Số thứ nhât:</h5>
+                <input id="input1" type="text" onfocus="myFunctionOne()" >
+            </div>
+            <div class="nb2">
+                <h5>Số thứ hai</h5>
+                <input id="input2" type="text" onfocus="myFunctionTwo()" onclick="">
+            </div>
+        </div>
+        <div class="number">
+            <input type="button" id="number1" value="1" onclick="evClickIp('1')"></input>
+            <input type="button" id="number2" value="2" onclick="evClickIp('2')"></input>
+            <input type="button" id="number3" value="3" onclick="evClickIp('3')"></input>
+            <input type="button" id="number4" value="4" onclick="evClickIp('4')"></input>
+            <input type="button" id="number5" value="5" onclick="evClickIp('5')"></input>
+            <input type="button" id="number6" value="6" onclick="evClickIp('6')"></input>
+            <input type="button" id="number7" value="7" onclick="evClickIp('7')"></input>
+            <input type="button" id="number8" value="8" onclick="evClickIp('8')"></input>
+            <input type="button" id="number9" value="9" onclick="evClickIp('9')"></input>
+            <input type="button" id="clear" value="c" onclick="clearAll()"></input>
+            <input type="button" id="number0" value="0" onclick="eventClick('0')"></input>
+            <input type="button" id="bang" value="=" onclick="ketQuaLa()"></input>
+        </div>
+        <div class="phep-tinh">
+            <div class="phepCong">
+                <input type="button"  onclick="tong()" value="+"></input>
+            </div>
+            <div class="phepTru">
+                <input value="-" type="button"  onclick="hieu()"></input>
+            </div>
+            <div class="phepNhan">
+                <input value="*" type="button" id="nhan" onclick="nhan()"></input>
+            </div>
+            <div class="phepChia">
+                <input value="/" type="button" id="chia" onclick="chia()"></input>
+            </div>
+        </div>
+        <input id="ketQua" placeholder="kết quả">
+    </form>
+    <script>
+        var inputValue1;
+        var inputValue2;
+        function myFunctionOne() {
+            inputValue1 = document.getElementById('input1');
+            console.log(inputValue1);
+        }
+        function myFunctionTwo() {
+            inputValue2 = document.getElementById('input2');
+            console.log(inputValue2);
+        }
+        function eventClick(a) {
+            if (inputValue1) {
+                console.log(inputValue1);
+                inputValue1.value += a;
+            }
+            else {
+                return false;
+            };
+        }
+        function eventClick2(a) {
+                if (inputValue2) {
+                    inputValue2.value += a;
+                }
+                else return false;
+        }
+            function evClickIp(a) {
+                if(inputValue2 != undefined && inputValue1 == undefined)
+                {
+                    alert("moi ban nhap so thu nhat truoc");
+                    inputValue2 = undefined;
+                }
+                if (inputValue2 === undefined){
+                    eventClick(a);
+                }
+                else{
+                    eventClick2(a);
+                };
+              
+        } 
+        function clearAll(){
+            document.getElementById('input1').value = null;
+            document.getElementById('input2').value = null;
+            inputValue1 = undefined;
+            inputValue2 = undefined;
+        }
+        var tongCong;
+        function tong(){
+            tongCong = parseInt(inputValue1.value) + parseInt(inputValue2.value);
+        }
+        function hieu(){
+            tongCong = parseInt(inputValue1.value) - parseInt(inputValue2.value);
+        }
+        function nhan(){
+            tongCong = parseInt(inputValue1.value) * parseInt(inputValue2.value);
+        }
+        function chia(){
+            tongCong = parseInt(inputValue1.value) / parseInt(inputValue2.value);
+        }
+        function ketQuaLa(){
+            document.getElementById('ketQua').value = tongCong;
+        }
+    </script>
+</body>
+
+</html>
