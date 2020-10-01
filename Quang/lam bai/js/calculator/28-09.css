@@ -1,0 +1,54 @@
+.app{
+    margin-top: 20vh;
+    width: 30vw;
+    border-radius: 5px;
+    border: solid 1px silver;
+    box-shadow:1px 1px 1px 1px slategrey;
+    background-color: whitesmoke;
+    padding: 0;
+}
+.custom-input{
+    border: silver solid 1px;
+    border-radius: 10px;
+    margin: 20px 2px;
+    box-shadow:1px 1px 1px 1px slategrey;
+    left: -4px;
+}
+.custom-row{
+    flex-wrap: nowrap;
+    width: 95%;
+    margin: auto;
+   
+}
+.custom-row:last-child{
+    margin-bottom: 4px;
+}
+h4{
+    text-align: center;
+}
+h3{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.custom-md-1{
+    padding: 0;
+}
+.custom-btn{
+    height: 90px;
+    border: silver solid 3px;;
+    margin: 1px;
+    padding: 20px;
+}
+.custom-btn:hover{
+    opacity: 0.5;
+}
+.custom-btn::selection{
+
+}
+.num-cor{
+    background-color: white;
+}
+.corlorYellow{
+    background-color: orange;
+}
