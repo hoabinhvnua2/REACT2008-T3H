@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bài tập 1</h2>
+    <form id="form_bmi">
+        <input type="text" id="name" placeholder="Nhập tên"/>
+        <input type="text" id="height" placeholder="Nhập chiều cao" />
+        <input type="text" id="weight" placeholder="Nhập cân nặng" />
+        <button type="submit" id="submit_bmi">Tính</button>
+        <input type="reset" id="reset_form" style="display: none;" />
+    </form>
+
+    <h2>Bài tập 2</h2>
+    <form id="form_snt">
+        <input type="number" id="snt" placeholder="Nhập số"/>
+        <button type="submit" id="submit_snt">Kiểm tra</button>
+        <input type="reset" id="reset_form_2" style="display: none;" />
+    </form>
+    <script>
+        var user = [];
+        var form = document.getElementById('form_bmi');
+
+        function sosanhBMI(){
+            console.log('Chỉ số BMI của '+user[0][0]+' là '+user[0][1]);
+            console.log('Chỉ số BMI của '+user[1][0]+' là '+user[1][1]);
+            if(user[0][1] > user[1][1]){
+                console.log('Chỉ số BMI của '+user[1][0]+' nhỏ hơn ' + user[0][0]);
+            }
+            else if(user[0][1] < user[1][1]){
+                console.log('Chỉ số BMI của '+user[1][0]+' lớn hơn ' + user[0][0]);
+            }
+            else{
+                console.log('Chỉ số BMI của '+ user[1][0] + 'và ' + user[0][0] + ' bằng nhau');
+            }
+        }
+
+        form.addEventListener('submit',function(e){
+            e.preventDefault();
+            var name = document.getElementById('name');
+            var height = document.getElementById('height');
+            var weight = document.getElementById('weight');
+            var temp = [];
+            temp.push(name.value);
+            height = parseInt(height.value);
+            weight = parseInt(weight.value);
+            var chiSoBMI = weight/(height*height);
+            temp.push(chiSoBMI);
+            user.push(temp);
+            var reset = document.getElementById('reset_form');
+            reset.click();
+            var userNumber = user.length;
+            if(userNumber == 2){
+                sosanhBMI(); 
+            }
+        });
+        
+        function ktsnt(n){
+            if(n == 1) console.log(n+' Không là số nguyên tố ');
+            else if(n < 4) console.log(n+'  là số nguyên tố ');
+            else{
+                var checkNt = true;
+                for(var i = 2; i < n; i++){
+                    var isUoc = n % i;
+                    if(isUoc == 0){
+                        checkNt = false;
+                        i = n;
+                    }
+                }
+                if(!checkNt) console.log(n+' Không là số nguyên tố ');
+                else console.log(n+'  là số nguyên tố ');
+            }
+        }
+
+        var form_2 = document.getElementById('form_snt');
+        form_2.addEventListener('submit',function(e){
+            e.preventDefault();
+            var snt = document.getElementById('snt');
+            snt = parseInt(snt.value);
+            ktsnt(snt);
+        });
+    </script>
+</body>
+</html>
