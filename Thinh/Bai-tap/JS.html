@@ -37,16 +37,18 @@
             var c = document.getElementById("soSanh")
             c.innerHTML = "Chi so BMI cua Dung cao hon Minh";
         }
-             
-            let e = 0;
-            var f = document.getElementById("nhapSo").value;    
-            var n2 = document.getElementById("ketQua");
-        
-        function ktSoNguyenTo(f){
+
+        var n2 = document.getElementById("ketQua");
+        function ktSoNguyenTo(){
+            // để biến đếm bên ngoài hàm, khi mà tăng lên 1 thì mãi mãi nó sẽ khác 0
+            var e = 0;
+            // lấy giá trị của ô input khi chưa gọi hàm có thể nó sẽ nhận giá trị là undifine;
+            let f = document.getElementById("nhapSo").value; 
             if(f < 2)
             {
                 var n1 = document.getElementById("ketQua");
                 n1.innerHTML = "Day k phai so nguyen to"; 
+                alert('ko phải nguyen to');
             }
             else
             {
@@ -54,52 +56,25 @@
                 { 
                     if(f % index == 0)
                     {
-                        return ++e; 
+                        e++;
+                        console.log(e);
+                        break; 
                     }
                     // return e;
                 }
                 console.log(e);
                 if(e == 0)
                 {
-                    n2.innerHTML = "Day la so nguyen to";
+                    // n2.innerHTML = "Day la so nguyen to";
+                    alert('Day la so nguyen to"')
                 }
                 else
                 {
-                    n2.innerHTML = "Day khong phai la so nguyen to";
+                    // n2.innerHTML = "Day khong phai la so nguyen to";
+                    alert('Day khong la so nguyen to"')
                 }
             }
         }
-    //     function ktSoNguyenTo(x){
-    //   let e = 0;
-    //   / var f ; /
-    //   if(x < 2)
-    //   {
-    //     // console.log("snt");
-    //   }
-    //   else
-    //   {
-    //     for (let index = 2; index < (x-1); index++)
-    //     {
-    //       if(x % index == 0)
-    //       {
-    //         e++;
-    //       }
-    //     }
-
-    //     if(e==0)
-    //     {
-    //                 var n2 = document.getElementById("ketQua");
-    //                 n2.innerHTML = "Day la so nguyen to";
-    //             }
-    //     if(e!=0)
-    //     {
-    //                 var n3 = document.getElementById("ketQua");
-    //                 n3.innerHTML = "Day khong phai la so nguyen to";
-    //             }
-    //   }
-    //     }
-    // var i  = document.getElementById("nhapSo").value;
-    // ktSoNguyenTo(i);
     </script>
 </body>
 </html>
