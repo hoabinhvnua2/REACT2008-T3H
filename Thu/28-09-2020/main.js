@@ -36,46 +36,6 @@ function pusharr(e)
         arr.push("/");
     }
 }
-/* function minus(e)
-{
-    var arrayLen = arr.length;
-    for (let index = 0; index < arrayLen; index++) {
-        if((typeof arr[index]) == "string")
-        {
-            arr.splice(index,1);
-            console.log(arr);
-            break;
-        }
-    }
-    arr.push("-");
-}
-function mul(e)
-{
-    var arrayLen = arr.length;
-    for (let index = 0; index < arrayLen; index++) {
-        if((typeof arr[index]) == "string")
-        {
-            arr.splice(index,1);
-            console.log(arr);
-            break;
-        }
-    }
-    arr.push("*");
-}
-function div(e)
-{
-    var arrayLen = arr.length;
-    for (let index = 0; index < arrayLen; index++) {
-        if((typeof arr[index]) == "string")
-        {
-            arr.splice(index,1);
-            console.log(arr);
-            break;
-        }
-    }
-    arr.push("/");
-}
- */
 function getnumber2(e)
 {
     num2 = parseInt(e.target.value);
