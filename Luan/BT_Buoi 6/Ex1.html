@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let Toan_height = prompt("Hay nhap chieu cao cua Toan:");
+        let Toan_weight = prompt("Hay nhap can nang cua Toan:");
+        let Minh_height = prompt("Hay nhap chieu cao cua Minh:");
+        let Minh_weight = prompt("Hay nhap can nang cua Minh:");
+
+        function calc_BMI(height,weight) 
+        {
+            let BMI = weight/(height*height/10000);
+        }
+
+        let Toan_BMI = calc_BMI(Toan_height,Toan_weight);
+        let Minh_BMI = calc_BMI(Minh_height,Minh_weight);
+
+        function BMI_compare() 
+        {
+            if(Toan_BMI > Minh_BMI) {
+                console.log ("Chi so BMI cua Toan cao hon Minh");
+            } else if (Toan_BMI == Minh_BMI) {
+                console.log ("Chi so BMI cua Toan bang Minh");
+            } else {
+                console.log ("Chi so BMI cua Minh cao hon Toan");
+            }
+        }
+
+        BMI_compare();
+
+    </script>
+    
+</body>
+</html>

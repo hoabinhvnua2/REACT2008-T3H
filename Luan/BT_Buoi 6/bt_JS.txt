@@ -1,0 +1,10 @@
+Bài 1: Tạo hàm tính chỉ số BMI của Toan và Minh. SỬ dụng if else để so sánh chỉ số BMI của Minh và Toàn
+sau đó log ra tab console kết quả BMI của Minh, của Toàn và kết quả so sánh BMI của 2 bạn
+Bài 2: Tạo hàm tìm ra số nguyên tố có tham số truyền vào, sau đó log ra tab console số ... là số nguyên tố 
+và ngược lại số ... không là sô nguyên tố
+
+
+Kiến thức cần đọc trước
+	+ Vòng lặp
+	+ Event
+	+ Dom
