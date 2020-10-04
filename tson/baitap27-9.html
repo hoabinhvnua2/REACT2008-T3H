@@ -34,32 +34,10 @@
         
 
         <script>
-            function isOperator(character){
-                if (character == "+" || character == "-" || character == "*" || character == "/"){
-                    return true;
-                }
-
-                return false;
-            }
-
-            function checkString(operation, character){
-
-                if (operation[operation.length - 1] == character){
-                    return false;
-                }
-
-                return true;
-            }
 
             function hienthi(character){
 
                 var oldValue = document.getElementById('ketqua').value;  /*1*/
-            
-                if (isOperator(character) == true){
-                    if (checkString(oldValue, character) == false){
-                        return;
-                    }
-                }
 
                 var newValue = oldValue + character;
 
