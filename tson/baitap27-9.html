@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+
+    <div id="container">
+        <div>
+            <input style="font-size: 30px;" type="text" id="ketqua" disabled >
+            <div class="so">
+                <button id="btn1" onclick="hienthi('1')">1</button>
+                <button id="btn2" onclick="hienthi('2')">2</button>
+                <button id="btn3" onclick="hienthi('3')">3</button>
+                <button id="btn+" class="color" onclick="hienthi('+')">+</button>
+                <button id="btn4" onclick="hienthi('4')">4</button>
+                <button id="btn5" onclick="hienthi('5')">5</button>
+                <button id="btn6" onclick="hienthi('6')">6</button>
+                <button id="btn-" class="color" onclick="hienthi('-')">-</button>
+                <button id="btn7" onclick="hienthi('7')">7</button>
+                <button id="btn8" onclick="hienthi('8')">8</button>
+                <button id="btn9" onclick="hienthi('9')">9</button>
+                <button id="btn*" class="color" onclick="hienthi('*')">*</button>
+                <button id="btnc" class="color" onclick="reset()">c</button>
+                <button id="btn0" class="color" onclick="hienthi('0')">0</button>
+                <button id="btn=" class="color" onclick="ketquapheptinh()">=</button>
+                <button id="btn/" class="color" onclick="hienthi('/')">/</button>
+            </div>
+        </div>
+            
+        
+
+        <script>
+            function isOperator(character){
+                if (character == "+" || character == "-" || character == "*" || character == "/"){
+                    return true;
+                }
+
+                return false;
+            }
+
+            function checkString(operation, character){
+
+                if (operation[operation.length - 1] == character){
+                    return false;
+                }
+
+                return true;
+            }
+
+            function hienthi(character){
+
+                var oldValue = document.getElementById('ketqua').value;  /*1*/
+            
+                if (isOperator(character) == true){
+                    if (checkString(oldValue, character) == false){
+                        return;
+                    }
+                }
+
+                var newValue = oldValue + character;
+
+                document.getElementById('ketqua').value = newValue;
+            }
+            
+            function ketquapheptinh(){
+
+                var value = document.getElementById('ketqua').value;
+
+                document.getElementById('ketqua').value = eval(value);
+            }
+
+            function reset(){
+                checkString(document.getElementById('ketqua').value);
+                document.getElementById('ketqua').value = '';
+
+                
+            }
+        </script>
+    </div>
+</body>
+</html>
