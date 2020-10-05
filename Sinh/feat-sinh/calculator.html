@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/calculate.css">
+</head>
+
+<body>
+    <div class="calculator" id="calculator">
+        <div class="calculator-width-auto">
+            <div class="calculator-inner">
+                <div class="calculator-result">
+                    <input type="number" class="value" id="value" value='0' />
+                </div>
+                <div class="calculator-keys">
+                    <button class="button" id="num_1" onclick="getValue(1)">1</button>
+                    <button class="button" id="num_2" onclick="getValue(2)">2</button>
+                    <button class="button" id="num_3" onclick="getValue(3)">3</button>
+                    <button class="button button-operator" onclick="getMethod('+')">+</button>
+                    <button class="button" id="num_4" onclick="getValue(4)">4</button>
+                    <button class="button" id="num_5" onclick="getValue(5)">5</button>
+                    <button class="button" id="num_6" onclick="getValue(6)">6</button>
+                    <button class="button button-operator" onclick="getMethod('-')">-</button>
+                    <button class="button" id="num_7" onclick="getValue(7)">7</button>
+                    <button class="button" id="num_8" onclick="getValue(8)">8</button>
+                    <button class="button" id="num_9" onclick="getValue(9)">9</button>
+                    <button class="button button-operator" id="btn_times" onclick="getMethod('x')">x</button>
+                    <button class="button button-operator" id="btn_clear" onclick="getMethod('c')">c</button>
+                    <button class="button button-operator" id="num_0" onclick="getValue(0)">0</button>
+                    <button class="button button-operator" id="btn_equal" onclick="getMethod('=')">=</button>
+                    <button class="button button-operator" id="btn_divide" onclick="getMethod('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var number = '', method = '';
+        var input_value = document.getElementById('value');
+        function getValue(a){
+            if(input_value.value == 0 || input_value.value == '' || method == '='){
+                input_value.value = a;
+                if(method == '=') method = '';
+            }
+            else{
+                input_value.value += a;
+            }
+        }
+
+        function getMethod(c){
+            let action = c;
+            if(action == '='){
+                let b = parseInt(input_value.value);
+                let a = parseInt(number);
+                ketqua(a,b);
+            }
+            else if(action == 'c'){
+                input_value.value = '';
+                number = '';
+                method = '';
+            }
+            else{
+              method = c;
+              number = input_value.value ;
+              input_value.value = '';
+            }
+            console.log(event.target.className);
+        }
+
+        function ketqua(a,b){
+            let c = 0;
+            switch (method){
+                case '+': {
+                    c = a + b;
+                    break;
+                }
+                case '-': {
+                    c = a - b;
+                    break;
+                }
+                case 'x': {
+                    c = a * b;
+                    break;
+                }
+                case '/': {
+                    c = a / b;
+                    break;
+                }
+            }
+            input_value.value = c;
+            method = '=';
+        }
+    </script>
+</body>
+
+</html>
