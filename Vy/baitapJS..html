@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài Tập JS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HTML -->
+  <div class="box">
+    <label>Số nguyên tố</label>
+    <input type="text" id="number">
+    <input onclick="soNguyenTo()" typle="submit" id="result" value="Kết quả">
+  </div>
+  <div class="box">
+    <label>Máy tính cầm tay</label>
+    <div class="calculator">
+      <input type="text" id="calResult" value=""></input>
+      <div id="cal-button">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input class="bg-yellow" type="button" value="+">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input class="bg-yellow" type="button" value="-">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input class="bg-yellow" type="button" value="*">
+        <input class="bg-yellow" id="clean" type="button" value="C">
+        <input class="bg-yellow" type="button" value="0">
+        <input class="bg-yellow" id="plus" type="button" value="=">
+        <input class="bg-yellow" type="button" value="/">
+      </div>
+    </div>
+  </div>
+  <!-- JS -->
+  <script src="js/custom.js"></script>
+</body>
+</html>

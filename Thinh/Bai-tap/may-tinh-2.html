@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính Casio vs0.999</title>
+    <style>
+        .may-tinh {
+            height: 600px;
+            width: 500px;
+            border: 2px solid #000;
+            border-radius: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: center;
+        }
+
+        .may-tinh .nhap {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100px;
+        }
+        .may-tinh .nhap h5{
+            display: inline-block;
+        }
+        .may-tinh .number {
+            width: 74%;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .may-tinh .number input {
+            width: 32.7%;
+            margin: 1px;
+        }
+
+        #clear,
+        #number0,
+        #bang {
+            background-color: rgb(245, 245, 124);
+        }
+
+        .may-tinh .phep-tinh {
+            width: 25%;
+            height: 400px;
+        }
+
+        .may-tinh .phep-tinh input {
+            width: 100%;
+            height: 98px;
+            margin: 1px;
+            background-color: rgb(245, 245, 124);
+        }
+
+        #ketQua {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="may-tinh">
+        <div class="nhap">
+            <div class="nb1">
+                <h5>Số thứ nhât:</h5>
+                <input id="input1" type="text" onfocus="myFunction(id)" >
+            </div>
+            <div class="nb2">
+                <h5>Số thứ hai</h5>
+                <input id="input2" type="text" onfocus="myFunction(id)">
+            </div>
+        </div>
+        <div class="number">
+            <input type="button" id="number1" value="1" onclick="evClickIp(id)"></input>
+            <input type="button" id="number2" value="2" onclick="evClickIp(id)"></input>
+            <input type="button" id="number3" value="3" onclick="evClickIp(id)"></input>
+            <input type="button" id="number4" value="4" onclick="evClickIp(id)"></input>
+            <input type="button" id="number5" value="5" onclick="evClickIp(id)"></input>
+            <input type="button" id="number6" value="6" onclick="evClickIp(id)"></input>
+            <input type="button" id="number7" value="7" onclick="evClickIp(id)"></input>
+            <input type="button" id="number8" value="8" onclick="evClickIp(id)"></input>
+            <input type="button" id="number9" value="9" onclick="evClickIp(id)"></input>
+            <input type="button" id="clear" value="c" onclick="clearAll()"></input>
+            <input type="button" id="number0" value="0" onclick="evClickIp(id)"></input>
+            <input type="button" id="bang" value="=" onclick="ketQuaLa()"></input>
+        </div>
+        <div class="phep-tinh">
+            <div class="phepCong">
+                <input type="button"  onclick="tong()" value="+"></input>
+            </div>
+            <div class="phepTru">
+                <input value="-" type="button"  onclick="hieu()"></input>
+            </div>
+            <div class="phepNhan">
+                <input value="*" type="button" id="nhan" onclick="nhan()"></input>
+            </div>
+            <div class="phepChia">
+                <input value="/" type="button" id="chia" onclick="chia()"></input>
+            </div>
+        </div>
+        <input id="ketQua" placeholder="kết quả">
+    </form>
+    <script>
+        var outPut;
+        function myFunction(e){
+            outPut = document.getElementById(e);
+            console.log(outPut);
+        }
+        var evClickIp = function(e){
+            var numb = document.getElementById(e).value; 
+            outPut.value += numb;
+        }
+        function clearAll(){
+            document.getElementById('input1').value = null;
+            document.getElementById('input2').value = null;
+            inputValue1 = undefined;
+            inputValue2 = undefined;
+        }
+        var tongCong;
+        function tong(){
+            tongCong = parseInt(input1.value) + parseInt(input2.value);
+        }
+        function hieu(){
+            tongCong = parseInt(input1.value) - parseInt(input2.value);
+        }
+        function nhan(){
+            tongCong = parseInt(input1.value) * parseInt(input2.value);
+        }
+        function chia(){
+            tongCong = parseInt(input1.value) / parseInt(input2.value);
+        }
+        function ketQuaLa(){
+            document.getElementById('ketQua').value = tongCong;
+        }
+    </script>
+</body>
+</html>
