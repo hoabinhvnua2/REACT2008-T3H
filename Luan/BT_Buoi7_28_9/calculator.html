@@ -1,0 +1,72 @@
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="./calculator.js" ></script>
+
+</head>
+
+ 
+<body>
+
+    <div class="container">
+
+        <form name="form">
+
+        <div class="display">
+
+            <input type="text" placeholder="0" name="displayResult" value="" readonly />
+
+        </div>
+
+            <div class="buttons">
+
+              <div class="row">
+                  <input type="button" name="b7" value="7" onClick="calc_Click(b7.value)">
+                  <input type="button" name="b8" value="8" onClick="calc_Click(b8.value)">
+                  <input type="button" name="b9" value="9" onClick="calc_Click(b9.value)">
+                  <input type="button" name="add" value="+" class="yellow-button" onClick="calcAdd(add.value)">
+                </div>
+
+                <div class="row">
+                  <input type="button" name="b4" value="4" onClick="calc_Click(b4.value)">
+                  <input type="button" name="b5" value="5" onClick="calc_Click(b5.value)">
+                  <input type="button" name="b6" value="6" onClick="calc_Click(b6.value)">
+                  <input type="button" name="sub" value="-" class="yellow-button" onClick="calcSub(sub.value)">
+                </div>
+
+                <div class="row">
+                  <input type="button" name="b1" value="1" onClick="calc_Click(b1.value)">
+                  <input type="button" name="b2" value="2" onClick="calc_Click(b2.value)">
+                  <input type="button" name="b3" value="3" onClick="calc_Click(b3.value)">
+                  <input type="button" name="mul" value="*" class="yellow-button" onClick="calcMul(mul.value)">
+                </div>
+
+                <div class="row">
+                  <input type="button" name="c" value="c" class="yellow-button" onClick="calcClear()">
+                  <input type="button" name="b0" value="0" class="yellow-button" onClick="calc_Click(b0.value)">
+                  <input type="button" name="equal" value="=" class="yellow-button" onClick="equalMethod(equal.value)">
+                  <input type="button" name="div" value="/" class="yellow-button" onClick="calDiv(div.value)">
+                </div>
+
+            </div>
+
+        
+
+        </form>
+
+    </div>
+
+ 
+
+</body>
+
+    
+
+</html>

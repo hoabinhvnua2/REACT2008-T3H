@@ -1,0 +1,69 @@
+<!-- 
+    Data type
+        1. string: là 1 chuối ký tự và được đựt trong dấu '' or ""
+            1.1 tìm kiếm chuỗi con
+                1.1.1 indexOf(): dùng để tìm 1 chuỗi con trong chuỗi cha 
+                    và được tính từ 0
+                1.1.2 lastIndexOf(): dùng để tìm chuỗi con cuối cùng trong chuỗi cha
+                1.1.3 search(): giống với hàm indexOf()
+            1.2 Cắt chuỗi
+                1.2.1 slice(start, end)
+                1.2.2 substring(start, end) giống hàm slice() tuy nhiên thâm số truyền vào 
+                    phải luôn lớn hơn 0
+                1.2.3 substr(start, length) start là ví trí bắt đầu và length là sô ký tự muốn lấy 
+            1.3 chuyển thành Hoa hoặc thường
+                1.3.1 toUpperCase() chuyển thành chữ in hoa
+                1.3.2 toLowerCase() chuyển thành chữ thường
+            1.4 nối chuỗi 
+             1.4.1 + nối chuỗi
+             1.4.2 concat() nối chuỗi
+            1.5 thay thế chuỗi
+                1.5.1  replace(str_find, str_replace)
+                    str_find là chuỗi cần tìm để thay thế
+                    str_replace là chuỗi dùng để thay thế
+
+        2. number
+            2.1 parseInt(): chuyển string sang dạng sô nguyên (Number())
+            2.1 parseFloat(): chuyển string sang dạng số thưc
+            2.3 toString(): chuyển number sang dạng chuỗi
+        3. array: một mảng chưa các giá trị
+            3.1 push(): thêm phần tử vào mảng
+            3.2 pop(): xóa phần tử mảng
+            3.3 splice(vị_trí_thêm, số_phần_tử_xóa, value1, value2)
+            3.4 sort(): sắp sếp lại mảng
+            3.5 reverse(): hàm đảo ngược mảng
+            3.6 shift(): xóa phần tử đầu tiên của mảng
+            3.7 unshift(): thêm 1 phần tử vào dầu tiên của mảng
+
+        4. Date
+            momentjs -> date
+        5. Object là đối tượng, js ko phải là 1 ngôn ngữ lập trình hướng đối tượng
+            các cách khởi tạo
+            var date = new Date();
+            var date = {};
+
+            trong đối tượng thì bao gồm thuộc tính và phương thức
+
+            thuộc tính của đối tượng có thể hiểu là các biến được lưu trữ trong đối tượng
+            phương thức có thể hiểu là các hàm(function) được lưu trữ trong đối tượng
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- JS cho mình 1 cái obj là "event" chú phải viết đúng là event -->
+    <input type="text" id="firstName" onblur="myFocusName(event)">
+    <br>
+    <button onclick="myClick('1')">1</button>
+    <!-- event nó là 1 cái object do js nó hỗ trợ (là mặc định) -->
+    <div id="result"></div>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="./myScript.js"></script>
+</body>
+</html>

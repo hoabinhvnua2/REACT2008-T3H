@@ -342,6 +342,10 @@ hr {
 }
 
 @media only screen and (max-width: 771px) {
+    .navbar {
+        background-color: #5a5ae2;
+    }
+
     .banner {
         margin-top: 80px;
         height: 250px;

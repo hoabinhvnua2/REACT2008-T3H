@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Bài 1: Tạo hàm tính chỉ số BMI của Toan và Minh. SỬ dụng if else để so sánh chỉ số BMI của Minh và Toàn
+sau đó log ra tab console kết quả BMI của Minh, của Toàn và kết quả so sánh BMI của 2 bạn -->
+        <h1> Tính Chỉ Số BMI    </h1>
+        <div class="Toan">
+             Nhập chỉ số BMI <span> <input id="BmiToan" type="text" value="1" placeholder="BMI của Toàn"></span>
+        </div>
+        <div class="Minh">
+            Nhập chỉ số BMI <span><input id="BmiMinh" type="text" placeholder="BMT của Minh" value=""></span>
+        </div>
+
+        <div class="resutlt">
+        </div>
+    </div>
+</body>
+    <script>
+        function show_BMI (){
+            const  bmi_toan = 23;
+            const  bmi_minh = 22
+            const kq = bmi_toan - bmi_minh; 
+            
+            if (bmi_toan>bmi_minh) {
+                console.log("Chỉ số BMI lớn hơn là " + bmi_toan);
+                console.log("Chỉ số BMI lớn hơn là " + bmi_minh);
+                console.log(" Chỉ số BMI của Toàn lớn hơn Minh là " + kq);
+                
+            }
+            else{
+                console.log("Số tuổi mà bì");
+            }
+        }
+        show_BMI();
+    </script>
+</html>
