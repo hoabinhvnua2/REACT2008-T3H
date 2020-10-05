@@ -68,25 +68,25 @@
         <div class="nhap">
             <div class="nb1">
                 <h5>Số thứ nhât:</h5>
-                <input id="input1" type="text" onfocus="myFunctionOne()" >
+                <input id="input1" type="text" onfocus="myFunction(id)" >
             </div>
             <div class="nb2">
                 <h5>Số thứ hai</h5>
-                <input id="input2" type="text" onfocus="myFunctionTwo()" onclick="">
+                <input id="input2" type="text" onfocus="myFunction(id)">
             </div>
         </div>
         <div class="number">
-            <input type="button" id="number1" value="1" onclick="evClickIp('1')"></input>
-            <input type="button" id="number2" value="2" onclick="evClickIp('2')"></input>
-            <input type="button" id="number3" value="3" onclick="evClickIp('3')"></input>
-            <input type="button" id="number4" value="4" onclick="evClickIp('4')"></input>
-            <input type="button" id="number5" value="5" onclick="evClickIp('5')"></input>
-            <input type="button" id="number6" value="6" onclick="evClickIp('6')"></input>
-            <input type="button" id="number7" value="7" onclick="evClickIp('7')"></input>
-            <input type="button" id="number8" value="8" onclick="evClickIp('8')"></input>
-            <input type="button" id="number9" value="9" onclick="evClickIp('9')"></input>
+            <input type="button" id="number1" value="1" onclick="evClickIp(id)"></input>
+            <input type="button" id="number2" value="2" onclick="evClickIp(id)"></input>
+            <input type="button" id="number3" value="3" onclick="evClickIp(id)"></input>
+            <input type="button" id="number4" value="4" onclick="evClickIp(id)"></input>
+            <input type="button" id="number5" value="5" onclick="evClickIp(id)"></input>
+            <input type="button" id="number6" value="6" onclick="evClickIp(id)"></input>
+            <input type="button" id="number7" value="7" onclick="evClickIp(id)"></input>
+            <input type="button" id="number8" value="8" onclick="evClickIp(id)"></input>
+            <input type="button" id="number9" value="9" onclick="evClickIp(id)"></input>
             <input type="button" id="clear" value="c" onclick="clearAll()"></input>
-            <input type="button" id="number0" value="0" onclick="evClickIp('0')"></input>
+            <input type="button" id="number0" value="0" onclick="evClickIp(id)"></input>
             <input type="button" id="bang" value="=" onclick="ketQuaLa()"></input>
         </div>
         <div class="phep-tinh">
@@ -106,42 +106,15 @@
         <input id="ketQua" placeholder="kết quả">
     </form>
     <script>
-        var inputValue1;
-        var inputValue2;
-        function myFunctionOne() {
-            inputValue1 = document.getElementById('input1');
+        var outPut;
+        function myFunction(e){
+            outPut = document.getElementById(e);
+            console.log(outPut);
         }
-        function myFunctionTwo() {
-            inputValue2 = document.getElementById('input2');
+        var evClickIp = function(e){
+            var numb = document.getElementById(e).value; 
+            outPut.value += numb;
         }
-        function eventClick(a) {
-            if (inputValue1) {
-                inputValue1.value += a;
-            }
-            else {
-                return false;
-            };
-        }
-        function eventClick2(a) {
-                if (inputValue2) {
-                    inputValue2.value += a;
-                }
-                else return false;
-        }
-            function evClickIp(a) {
-                if(inputValue2 != undefined && inputValue1 == undefined)
-                {
-                    alert("moi ban nhap so thu nhat truoc");
-                    inputValue2 = undefined;
-                }
-                if (inputValue2 === undefined){
-                    eventClick(a);
-                }
-                else{
-                    eventClick2(a);
-                };
-              
-        } 
         function clearAll(){
             document.getElementById('input1').value = null;
             document.getElementById('input2').value = null;
@@ -150,21 +123,20 @@
         }
         var tongCong;
         function tong(){
-            tongCong = parseInt(inputValue1.value) + parseInt(inputValue2.value);
+            tongCong = parseInt(input1.value) + parseInt(input2.value);
         }
         function hieu(){
-            tongCong = parseInt(inputValue1.value) - parseInt(inputValue2.value);
+            tongCong = parseInt(input1.value) - parseInt(input2.value);
         }
         function nhan(){
-            tongCong = parseInt(inputValue1.value) * parseInt(inputValue2.value);
+            tongCong = parseInt(input1.value) * parseInt(input2.value);
         }
         function chia(){
-            tongCong = parseInt(inputValue1.value) / parseInt(inputValue2.value);
+            tongCong = parseInt(input1.value) / parseInt(input2.value);
         }
         function ketQuaLa(){
             document.getElementById('ketQua').value = tongCong;
         }
     </script>
 </body>
-
 </html>
