@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var age;
+        var d = new Date();
+        function getage(id){
+            age = document.getElementById(id).value;
+            if (d.getFullYear() < age){
+                alert("Nhap sai du lieu");
+            }else
+                document.getElementById("showAge").innerText= d.getFullYear() - age;
+        }
+    </script>
+</head>
+<body>
+    <h3>How old are you?</h3>
+    <input id="day" onblur="getage(id)" type="number" placeholder="year of birth?">
+    <p>Your age is: <span id="showAge">...</span> </p>
+</body>
+</html>

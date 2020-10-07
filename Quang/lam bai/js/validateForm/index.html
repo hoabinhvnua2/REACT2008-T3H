@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <p>First Name <input type="text" onblur="checkText(id)" id="firstName" > Last Name <input type="text"  onblur="checkText(id)" id="lastName"></p>
+        <p>Email <input type="email" onblur="checkEmail(id)" id="email" ></p>
+        <p>Gender <input type="radio"  id="male" onclick="gender()" >Male <input type="radio" onclick="gender()" id="felmale">Felmale </p>
+        <p>Date of birth</p>
+        <input type="date" id="date" onchange="birthDay()">
+        <p>From <select id="select" onchange="queQuan()">
+            <option  value="0">Select</option>
+            <option  value="1">Da Nang</option>
+            <option  value="2">Ha Noi</option>
+            <option  value="3">Ho Chi Minh</option>
+            <option  value="4">Hai Phong</option>
+            <option  value="5">Da Lat</option>
+            <option  value="6">Quang Nam</option>
+            <option  value="7">Hue</option>
+        </select></p>
+    </form>
+    <button id="btn" onclick="validator(id)"> O K </button>
+    <script src="./ap.js"></script>
+</body>
+</html>
