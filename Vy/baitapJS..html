@@ -4,40 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bài Tập JS</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Css -->
-  <style>
-    body{
-      padding: 50px;
-    }
-    .box{
-      margin-bottom: 50px;
-    }
-    #number{
-      width: 200px;
-      height: 30px;
-      border-radius: 5px;
-      border: 2px solid #ccc;
-    }
-    #result{
-      width: 60px;
-      height: 30px;
-      text-align: center;
-      border-radius: 5px;
-      border: 2px solid #ccc;
-      background: #ccc;
-      cursor: pointer;
-    }
-    label{
-      display: block;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: brown;
-      text-transform: uppercase;
-    }
-  </style>
 
   <!-- HTML -->
   <div class="box">
@@ -47,59 +16,29 @@
   </div>
   <div class="box">
     <label>Máy tính cầm tay</label>
+    <div class="calculator">
+      <input type="text" id="calResult" value=""></input>
+      <div id="cal-button">
+        <input type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <input class="bg-yellow" type="button" value="+">
+        <input type="button" value="4">
+        <input type="button" value="5">
+        <input type="button" value="6">
+        <input class="bg-yellow" type="button" value="-">
+        <input type="button" value="7">
+        <input type="button" value="8">
+        <input type="button" value="9">
+        <input class="bg-yellow" type="button" value="*">
+        <input class="bg-yellow" id="clean" type="button" value="C">
+        <input class="bg-yellow" type="button" value="0">
+        <input class="bg-yellow" id="plus" type="button" value="=">
+        <input class="bg-yellow" type="button" value="/">
+      </div>
+    </div>
   </div>
   <!-- JS -->
-  <script>
-    function BMI(){
-  var mCanNang = 70,
-    mChieuCao = 1.7,
-    tCanNang = 60,
-    tChieuCao = 1.65,
-    mBMI = mCanNang/(mChieuCao*mChieuCao),
-    tBMI = tCanNang/(tChieuCao*tChieuCao);
-  
-    console.log('Chỉ số BMI của Minh là: ' + mBMI);
-    console.log('Chỉ số BMI của Minh là: ' + tBMI);
-  
-    if(mBMI > tBMI){
-      console.log('Chỉ số BMI của Minh lớn hơn của Toàn');
-    }
-  else{
-    console.log('Chỉ số BMI của Toàn lớn hơn của Minh');
-  }
-  
-}
-BMI();
-
-function soNguyenTo(number){
-    // var number = document.getElementById('number').value;
-    var flag = true;
-    if(number < 2){
-      flag = false;
-    }
-    else if(number == 2){
-      flag = true;
-    }
-    else if(number % 2 == 0){
-      flag = false;
-    }
-    else{
-      for (var i = 2; i < number-1; i++){
-        if (number % i == 0){
-          flag = false;
-          break;
-        }
-      }
-  }
-  
-    if (flag == true){
-            console.log(number + " là số nguyên tố!!!");
-        }
-        else{
-            console.log(number + " không phải là số nguyên tố!!!");
-        }
-  }
-  soNguyenTo(2);
-  </script>
+  <script src="js/custom.js"></script>
 </body>
 </html>

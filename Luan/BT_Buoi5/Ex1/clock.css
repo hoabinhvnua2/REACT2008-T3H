@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+}
+
+.container {
+    height: 400px;
+    width: 400px;
+    background-color: darkgrey;
+    position: relative;
+    margin: 20px;
+    display: flex;
+    justify-items: center;
+}
+
+.circle {
+    display: inline-block;
+    margin: auto;
+    padding: 60px;
+    background-color: white;
+    height: 250px;
+    width: 250px;
+    border: 4px solid darkgrey;
+    border-radius: 50%;
+}
+
+.circle.custom-clock {
+    position: absolute;
+    z-index: 1;
+    height: 250px;
+    width: 250px;
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    background: white;
+    border: 2px solid #1b1b1b;
+    border-radius: 100px;
+    margin: auto;
+    z-index: 1;
+}
+
+.hour {
+    width: 8px;
+    height: 75px;
+    background-color: green;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 124px;
+    left: 195px;
+    z-index: 2;
+    transform: rotate(360deg);
+    animation: hourMove 216000s linear infinite;
+}
+
+@keyframes hourMove {
+    0% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+.minute {
+    width: 6px;
+    height: 87px;
+    background-color: black;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 113px;
+    left: 197px;
+    z-index: 3;
+    transform: rotate(360deg);
+    animation: minuteMove 3600s linear infinite;
+}
+
+@keyframes minuteMove {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+.second {
+    width: 4px;
+    height: 100px;
+    background-color: red;
+    transform-origin: bottom center;
+    position: absolute;
+    top: 100px;
+    left: 198px;
+    z-index: 4;
+    transform: rotate(360deg);
+    animation: secMove 60s linear infinite;
+}
+
+@keyframes secMove {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

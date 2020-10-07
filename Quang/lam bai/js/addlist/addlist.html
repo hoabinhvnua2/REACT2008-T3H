@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var value;
+        var array =[];
+        function add(){
+            value = document.getElementById("input").value;
+            array.push(value);
+            document.getElementById("input").value = "";
+            console.log(array);
+            document.getElementById("added").innerText = array.join("\n");
+        }
+    </script>
+</head>
+<body>
+    <input id="input" type="text" placeholder="add new"> 
+    <button id="btn" onclick="add(id)">Add</button>
+    <hr>
+    <p id="added">...</p>
+</body>
+</html>
