@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng ký</title>
+    <link rel="stylesheet" href="dangkyCss.css">
+</head>
+<body>
+    <div class="main">
+        <h3>Form Đăng Ký</h3>
+        <div class="name">
+            <div class="fname">
+                <p>First Name</p>
+                <p class="batbuoc" title="Bắt buộc hoàn thành">*</p>
+                <input type="text" id="fNameInput">
+            </div>
+            <div class="lname">
+                <p>Last Name</p>
+                <p class="batbuoc" title="Bắt buộc hoàn thành">*</p>
+                <input type="text" id="lNameInput">
+            </div>
+        </div>
+        <div class="email">
+            <p>Email</p>
+            <p class="batbuoc" title="Bắt buộc hoàn thành">*</p>
+            <input type="email" id="ipEmail">
+        </div>
+        <div class="Date-of-birth">
+            <p>Ngày Sinh</p>
+            <p class="batbuoc" title="Bắt buộc hoàn thành">*</p>
+            <input type="date" id="sinhNhat">
+        </div>
+        <div class="sex">
+            <p>Sex  </p>
+            <p class="batbuoc" title="Bắt buộc hoàn thành">*</p>
+            <form class="lChon" action="">
+                <input type="radio" id="" value="nam" name="gender">
+                <label for="Nam">Nam</label>
+                <input type="radio" id="" value="nu" name="gender">
+                <label for="Nữ">Nữ</label>
+            </form>
+        </div>
+        <div class="home-town">
+            <p>Quê quán</p>
+            <p class="batbuoc" title="Bắt buộc hoàn thành" >*</p>
+            <select name="" id="">
+                <option value="">Hà Nội</option>
+                <option value="">Hải Phòng</option>
+                <option value="">Đà Nẵng</option>
+                <option value="">Thành phố Hồ Chí Minh</option>
+                <option value="">Cần Thơ</option>
+                <option value="">Kon Tum</option>
+            </select>
+        </div>
+        <button class="nut-dk" onclick="kiemTra()">Đăng kí</button>
+    </div>
+    <script src="dangkyJS.js"></script>
+</body>
+</html>
