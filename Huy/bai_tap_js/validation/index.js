@@ -5,7 +5,7 @@ var listPerson = [];
 var list = JSON.parse(localStorage.getItem('list-person'));
 var tablePerson = document.getElementById('person-list');
 
-if(list.length > 0) {
+if(list) {
     listPerson = list;
 }
 
