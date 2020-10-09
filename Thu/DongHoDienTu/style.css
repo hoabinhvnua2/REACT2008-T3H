@@ -1,0 +1,53 @@
+body {
+    background-color: thistle;
+}
+.clock {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.rectangle {
+    width: 185px;
+    height: 205px;
+    position: relative;
+}
+.time {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    text-align: center;
+    color: white;
+}
+.blue {
+    background-color: #2196F3;
+}
+.pink {
+    background-color: #FF006A;
+}
+.text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    background-color: rgba(52,58,64,0.2);
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    color: white;
+}
+#hour,
+#min,
+#second {
+    height: 80%;
+    font-family: 'Electrolize', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+}
+.text p {
+    padding: 4%;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+}

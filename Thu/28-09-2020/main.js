@@ -21,7 +21,6 @@ function pusharr(e)
     if(e.target.value == "+")
     {
         arr.push("+");
-        document.getElementById("add").style.backroundColor = "#dea1e6";
     }
     else if(e.target.value == "-")
     {
@@ -40,7 +39,6 @@ function getnumber2(e)
 {
     num2 = parseInt(e.target.value);
     arr.push(num2);
-    return num2;
 }
 function resetInput()
 {
