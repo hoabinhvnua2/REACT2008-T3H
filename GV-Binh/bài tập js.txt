@@ -1,0 +1,16 @@
+bài 1: tạo hình máy tính gồm các số 0 -> 9, 2 inupt chỉ nhập số, chiếc máy tính gồm 5 phép tính +, -, *, /, ^ và button =
+sau khi thực hiện phép tính thì sau kết que ra màn hình. có thêm button C để clear 2 ô input. chú ý khi chọn button phép tính nào thì phải
+dổi màu button phép tính đó.
+Bài 2: Sử dụng Javascript để làm một cái đồng hồ kỹ thuật số, thực hành với các biến và các vòng lặp if đơn giản.
+Bài 3: Nhập vào năm sinh.Vận dụng biến đối tượng Date để tính tuổi của một người, chú ý nếu nhập năm sinh lớn hơn năm hiện tại thì 
+show ra thông báo lỗi
+Bài 4: Thêm 1 từ mới vào danh sách list, giao diện gồm có 1 ô input và button add. Sau khi nhập từ mới vào ô input và nhấn add thì
+từ mới đó được show ra màn hình danh sách
+Bài 5: tạo 1 form bao gồm các trường sau 
+ 1. first name (bắt buộc nhập và lớn hơn 2 ký tự và nhỏ hơn 30 ký tự)
+ 2. last name (bắt buộc nhập và lớn hơn 2 ký tự và nhỏ hơn 30 ký tự)
+ 3. email (chuẩn định dạng email)
+ 4. ngày sinh (bắt buộc nhập)
+ 5. giới tính (sử dụng radio và bắt buộc chọn)
+ 6. quê quán(sử dụng select và bắt buộc chọn)
+viết validation form khi chưa nhập đủ số trường. Nếu nhập đủ sô trường thì hiển thị popup "validate form thành công"
