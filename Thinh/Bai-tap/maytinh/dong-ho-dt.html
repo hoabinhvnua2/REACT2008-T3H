@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dongho.css">
+</head>
+
+<body>
+    <form>
+        <div class="Cin">
+            <input type="text" id="input1" onfocus="focusInput(id)">
+            <input type="text" id="input2" onfocus="focusInput(id)">
+        </div>
+        <div class="mid">
+            <div class="banPhim">
+                <input type="button" id="num1" value="1" onclick="nhapSo(id)"></input>
+                <input type="button" id="num2" value="2" onclick="nhapSo(id)"></input>
+                <input type="button" id="num3" value="3" onclick="nhapSo(id)"></input>
+                <input type="button" id="num4" value="4" onclick="nhapSo(id)"></input>
+                <input type="button" id="num5" value="5" onclick="nhapSo(id)"></input>
+                <input type="button" id="num6" value="6" onclick="nhapSo(id)"></input>
+                <input type="button" id="num7" value="7" onclick="nhapSo(id)"></input>
+                <input type="button" id="num8" value="8" onclick="nhapSo(id)"></input>
+                <input type="button" id="num9" value="9" onclick="nhapSo(id)"></input>
+
+
+            </div>
+            <div class="phep-tinh">
+                <input value="+" type="button" class="btpl pheptinhcl" id="phep-cong" onclick="cong(id)"></input>
+                <input value="-" type="button" class="pheptinhcl" id="phep-tru" onclick="tru(id)"></input>
+                <input value="^" type="button" class="pheptinhcl" id="phep-mu" onclick="mu(id)"></input>
+            </div>
+        </div>
+        <div class="mid-2">
+            <input type="button" id="num0" value="0" onclick="nhapSo()"></input>
+            <input type="button" value="*" class="pheptinhcl" id="phep-nhan" onclick="nhan(id)"></input>
+            <input type="button" value="/" class="pheptinhcl" id="phep-chia" onclick="chia(id)"></input>
+            <button type="button" value="" class="bang" onclick="ketQuaLa()">=</button>
+        </div>
+        <input type="text" id="ketQua" class="ket-qua">
+        <button id="clear" onclick="clearAll()">Clear</button>
+    </form>
+    <script src="donghoJS.js"></script>
+</body>
+
+</html>
