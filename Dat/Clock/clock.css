@@ -1,0 +1,109 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+
+}
+.clock{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://cssanimation.rocks/images/posts/clocks/ios_clock.svg);
+    background-size: cover;
+    
+
+}
+.clock:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: black;
+    border-radius: 50%;
+    z-index: 10000;
+}
+.clock .hour,
+.clock .min,
+.clock .sec
+{
+    position: absolute;
+}
+.clock .hour, .hr 
+{
+    width: 160px;
+    height: 160px;
+}
+.clock .min, .mn 
+{
+    width: 190px;
+    height: 190px;
+}
+.clock .sec, .sc 
+{
+    width: 250px;
+    height: 250px;
+}
+.hr, .mn, .sc{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: black;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+    transform-origin: bottom;
+    animation: sec_anim 4320s linear infinite;
+
+}
+.mn:before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: black;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+    transform-origin: bottom;
+    animation: min_anim 360s linear infinite;
+
+}
+.sc:before{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: black;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+    transform-origin: bottom;
+    animation: sec_anim 30s linear infinite;
+}
+@keyframes sec_anim{
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+}
+@keyframes min_anim{
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+}
+@keyframes hour_anim{
+      from{transform: rotate(0deg);}
+      to{transform: rotate(360deg);}
+}
