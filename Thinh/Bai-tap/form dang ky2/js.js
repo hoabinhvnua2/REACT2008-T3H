@@ -25,12 +25,12 @@ function hoanThanh(){
         gtinh = "Nữ";
     }
     
-    localStorage.removeItem('fname');
-    localStorage.removeItem('lname');
-    localStorage.removeItem('sinhNhat');
-    localStorage.removeItem('email');
-    localStorage.removeItem('que');
-    localStorage.removeItem('gioiTinh');
+    // localStorage.removeItem('fname');
+    // localStorage.removeItem('lname');
+    // localStorage.removeItem('sinhNhat');
+    // localStorage.removeItem('email');
+    // localStorage.removeItem('que');
+    // localStorage.removeItem('gioiTinh');
     
     var valEm = email.value;
     var valSN = sinhNhat.options[sinhNhat.selectedIndex].value;
@@ -48,11 +48,9 @@ function hoanThanh(){
         fname.style.borderBottomColor = "red";
         document.getElementById("p-1").style.display = "block";
     }
-
     if (lname && lname.value) {
-        document.getElementById("p-2").style.display = "none";
-        lname.style.borderBottomColor = "#CED4DA";
-
+            document.getElementById("p-2").style.display = "none";
+            lname.style.borderBottomColor = "#CED4DA";
     }
     else
     {
@@ -60,6 +58,9 @@ function hoanThanh(){
         document.getElementById("p-2").style.display = "block";
     }
 
+    var x = document.getElementById('inputFirstName').length;
+    console.log(x);
+    
     if (email && email.value) {
         document.getElementById("p-3").style.display = "none";
         email.style.borderBottomColor = "#CED4DA";
@@ -85,18 +86,24 @@ function hoanThanh(){
 
     }
     if (email && email.value && kiemTraEmail(email) == true && fname && fname.value && valTP != "Chọn Thành Phố" && valSN != "Chọn năm sinh"){
-        localStorage.setItem('fname', fname.value);
-        localStorage.setItem('lname', lname.value);
-        localStorage.setItem('gioiTinh', gtinh);
-        localStorage.setItem('sinhNhat', valSN);
-        localStorage.setItem('que', valTP);
-        localStorage.setItem('email', email.value);
+        // localStorage.setItem('fname', fname.value);
+        // localStorage.setItem('lname', lname.value);
+        // localStorage.setItem('gioiTinh', gtinh);
+        // localStorage.setItem('sinhNhat', valSN);
+        // localStorage.setItem('que', valTP);
+        // localStorage.setItem('email', email.value);
 
         document.getElementById('exampleModal').style.display = "none";
-        
         var itemList = document.getElementById('listShow');
         itemList.innerHTML +="<tr><td>"+fname.value+"</td><td>"+lname.value+"</td><td>"+sinhNhat.value+"</td><td>"+gtinh+"</td><td>"+email.value+"</td><td>"+thPho.value+"</td></tr>";
 
 }    
 }
+function clearForm(){
+    document.getElementById('inputEmail').value = null;
+    document.getElementById('inputState').value = "Chọn năm sinh";
+    document.getElementById('inputTP').value = "Chọn Thành Phố";
+    document.getElementById('inputFirstName').value = null;
+    document.getElementById('inputLastName').value = null;
 
+}
