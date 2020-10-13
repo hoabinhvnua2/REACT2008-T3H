@@ -26,6 +26,9 @@ p{
 #p-5{
     display: none;
 }
+#p-6{
+    display: none;
+}
 .modal-backdrop.fade.show{
     display: none;
 }
