@@ -1,4 +1,4 @@
-// var taskLists;
+ // var taskLists;
 // var saveTask = localStorage.getItem('tasks');
 // var inputTask;
 // var itemList;
@@ -36,6 +36,5 @@ function submitForm(event) {
     var valueLength = formValue.length;
     for (let index = 0; index < valueLength; index++) {
         console.log(formValue[index].value);
-        
     }
 }
