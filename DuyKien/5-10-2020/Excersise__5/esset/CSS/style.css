@@ -1,0 +1,18 @@
+.form__validate {
+         position: absolute;
+         top: 30%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+}
+label {
+    padding-right: 2rem;
+}
+.t {
+    max-width: 190px;
+}
+.input {
+    width: 100%;
+}
+input {
+    margin-bottom: 10px;
+}

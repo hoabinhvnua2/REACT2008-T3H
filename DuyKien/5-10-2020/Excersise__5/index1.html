@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button> -->
+          <form onfocus="submit(event)" id="formRegister">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Username</label>
+                <input type="email" class="form-control" id="inputEmail4">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">LastName</label>
+                <input type="inputLastnam" class="form-control" id="inputPassword4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Email</label>
+              <input type="text" class="form-control" id="inputEmail" placeholder="1234 Main St">
+            </div>
+
+            <div class="form-group">
+              <label for="inputBirthday">Ngày Sinh</label>
+              <input type="text" class="form-control" id="inputBirthday" placeholder="1234 Main St">
+            </div>
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                <label for="inputState">Xã</label>
+                <select id="inputXa" class="form-control">
+                  <option value="" selected>Chọn Xã</option>
+                  <option value="Sơn Hà">Sơn Hà</option>
+                  <option value="Sơn Hội">Sơn Hội</option>
+                  <option value="Từ Nham">Từ Nham</option>
+                  <option value="Bắc Ninh">Bắc Ninh</option>
+
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Huyện</label>
+                <select id="inputHuyen" class="form-control">
+                  <option value="" selected>Chọn Huyện</option>
+                  <option value="Sơn Hòa">Sơn Hòa</option>
+                  <option value="Tây Hòa">Tây Hòa</option>
+                  <option value="Sông Cầu">Sông Cầu</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputState">Tỉnh</label>
+                <select id="inputTinh" class="form-control">
+                  <option value="" selected>Chọn Tỉnh</option>
+                  <option value="Phú Yên">Phú Yên </option>
+                  <option value="Lâm Đồng">Lâm Đồng </option>
+                  <option value="Khánh Hòa">Khánh Hòa</option>
+                  <option value="Bình Định">Bình Định </option>
+                </select>
+              </div>
+              <div class="form-check form-check-inline" style="margin-top: 10px;">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Nam">
+                <label class="form-check-label" for="inlineRadio1">Nam</label>
+              </div>
+              <div class="form-check form-check-inline" style="margin-top: 10px;">
+                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Nữ">
+                <label class="form-check-label" for="inlineRadio2"> Nữ</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="submitForm(event)">Sign in</button>
+          </form>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+  <table class="table" style="margin-top: 20rem;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">First Name </th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Place of birth </th>
+        <th scope="col">Genner</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+   
+    </tbody>
+  </table>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="esset/JS/main.js">
+  </script>
+</body>
+
+</html>

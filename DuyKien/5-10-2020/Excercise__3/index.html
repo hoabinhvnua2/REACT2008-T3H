@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Tính Tuổi</title>
+    <link rel="stylesheet" href="esets/CSS/style.css">
+</head>
+
+<body>
+    <div class="main__content">
+        <h2>TÍNH TUỔI</h2>
+        <input type="text"  placeholder=" hãy nhập năm sinh">
+        <button onclick="Tinh()">Xác Nhận</button>
+        <div class="result">
+        </div>
+    </div>
+
+
+    
+    <script>
+            const kq = document.querySelector('.result');
+            
+            function Tinh() {
+
+                    var xx =  document.querySelector('input').value;
+
+                    var date = new Date;
+                    var year = date.getFullYear();
+
+                    var tinhtuoi = year - xx;
+                            kq.textContent = 'Tuổi của bạn là ' + tinhtuoi;
+
+                    if ( parseInt(xx) >= year) {
+                        alert('Số tuổi không được lớn hơn năm hiện tại');
+                    }
+                    
+                        }
+    </script>    
+</body>
+
+</html>

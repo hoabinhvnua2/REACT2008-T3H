@@ -29,7 +29,7 @@ function pusharr(e)
     }
     else if(e.target.value == "*")
     {
-        arr.push("*");
+        arr.push("*");  
     }
     else if(e.target.value == "/")
     {
