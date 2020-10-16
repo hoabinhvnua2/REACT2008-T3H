@@ -1,0 +1,20 @@
+.clock {
+    position: fixed;
+    top: 40%;
+    left: 33%;
+    background-color: black;
+    height: 100px;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock .display {
+    display: flex;
+    color: cyan;
+    font-size: 50px;
+    letter-spacing: 5px;
+    font-family: 'Orbitron', sans-serif;
+}
