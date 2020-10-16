@@ -1,15 +1,17 @@
 var danhSach = [];
 
-function showList(){
-    for (let index = 0; index < danhSach.length; index++) {
-        const element = danhSach[index];
-        document.getElementById("theP").innerHTML += ("- " + element + "</br>");
-    }
-}
-function addItem(){
+
+
+function addItemShow(){
+    var list = "";
     var thanhPhan = document.getElementById('nhap').value;
-    var themThanhPhan = danhSach.push(thanhPhan);
-    var newTp = danhSach[danhSach.length - 1 ];
-    document.getElementById('theP').innerHTML += ("- " + newTp + "</br>");
-    document.getElementById('nhap').value = null;
+    var ketQua = {
+        tphan : thanhPhan, 
+    }
+    danhSach.push(ketQua);
+    var legDS = danhSach.length;
+    for (let index = 0; index < legDS; index++) {
+        list += "<li>"+danhSach[index].tphan+"</li>"
+    }
+    document.getElementById('showList').innerHTML = list;
 }
