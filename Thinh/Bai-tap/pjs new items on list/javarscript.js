@@ -1,4 +1,4 @@
-var danhSach = ['Vàng', 'Đỏ'];
+var danhSach = [];
 
 function showList(){
     for (let index = 0; index < danhSach.length; index++) {

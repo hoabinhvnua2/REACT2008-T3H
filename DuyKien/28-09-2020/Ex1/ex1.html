@@ -6,14 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function bmi(weight,height)
-        {
-            var BMI = weight/(height*height/10000);
+    <div class="wrapper">
+        <!-- Bài 1: Tạo hàm tính chỉ số BMI của Toan và Minh. SỬ dụng if else để so sánh chỉ số BMI của Minh và Toàn
+sau đó log ra tab console kết quả BMI của Minh, của Toàn và kết quả so sánh BMI của 2 bạn -->
+        <h1> Tính Chỉ Số BMI    </h1>
+        <div  class="Toan">
+             Nhập cân nặng của Toàn <span> <input id="weightToan" type="text" value="" placeholder="Can nặng của Toàn"></span>
+             Nhập chiều cao của Toàn <span> <input id="heightToan" type="text" value="" placeholder="Chiều cao của Toàn"></span>
+        </div><br>
+        <div class="Minh">
+            Nhập cân nặng của Minh <span><input id="weightMinh" type="text" placeholder="BMT của Minh" value=""></span>
+            Nhập chiều cao của Minh <span><input id="heightMinh" type="text" placeholder="BMT của Minh" value=""></span>
+        </div>
+            
+        <div  class="resutlt">
+        </div>
+        <button style="margin-bottom: 2rem; display: block;" onclick="compare()">Click vào</button>
+    </div>
+</body>
+    <script>    
+         const  bmi_toan = document.getElementById("weightToan");
+         const  bmi_toan1 = document.getElementById("heightToan");
+         const  bmi_minh = document.getElementById("weightMinh");
+         const  bmi_minh1 = document.getElementById("heightMinh");
+
+        function TinhBMI (weight,height) {
+
+            const BMI = weight/(height*height)
             return BMI;
         }
-        var bmiToan = bmi(47.5,260);
-        var bmiMinh = bmi(70,175);
+        
+
         function classify(x)
         {
             if(x < 16.0)
@@ -50,45 +73,50 @@
             }
         }
         function compare()
-        {
-            if(bmiToan < bmiMinh)
+        {   
+            const BMI_Toan = TinhBMI(bmi_toan.value,bmi_toan1.value);
+            const BMI_Minh = TinhBMI(bmi_minh.value,bmi_minh1.value);
+            
+            if(BMI_Toan < BMI_Minh)
             {
                 console.log("Chỉ số BMI của Toàn là : ");
-                console.log(bmiToan);
+                console.log(BMI_Toan);
                 console.log("Nhận xét chỉ số BMI của Toàn : ");
-                classify(bmiToan);
+                classify(BMI_Toan);
                 console.log("Chỉ số BMI của Minh là : ");
-                console.log(bmiMinh);
+                console.log(BMI_Minh);
                 console.log("Nhận xét chỉ số BMI của Minh : ");
-                classify(bmiToan);
+                classify(BMI_Toan);
                 console.log("Chỉ số BMI của Minh lớn hơn BMI của Toàn");
             }
-            else if(bmiToan === bmiMinh)
+            else if(BMI_Toan === BMI_Minh)
             {
                 console.log("Chỉ số BMI của Toàn là : ");
-                console.log(bmiToan);
+                console.log(BMI_Toan);
                 console.log("Nhận xét chỉ số BMI của Toàn : ");
-                classify(bmiToan);
+                classify(BMI_Toan);
                 console.log("Chỉ số BMI của Minh là : ");
-                console.log(bmiMinh);
+                console.log(BMI_Minh);
                 console.log("Nhận xét chỉ số BMI của Minh : ");
-                classify(bmiMinh);
+                classify(BMI_Minh);
                 console.log("Chỉ số BMI của Toàn và Minh bằng nhau");
             }
             else
             {
                 console.log("Chỉ số BMI của Toàn là : ");
-                console.log(bmiToan);
+                console.log(BMI_Toan);
                 console.log("Nhận xét chỉ số BMI của Toàn : ");
-                classify(bmiToan);
+                classify(BMI_Toan);
                 console.log("Chỉ số BMI của Minh là : ");
-                console.log(bmiMinh);
+                console.log(BMI_Minh);
                 console.log("Nhận xét chỉ số BMI của Minh : ");
-                classify(bmiMinh);
+                classify(BMI_Minh);
                 console.log("Chỉ số BMI của Toàn lớn hơn BMI của Minh");
             }
         }
-        compare();
+        
+
+    
+
     </script>
-</body>
 </html>
