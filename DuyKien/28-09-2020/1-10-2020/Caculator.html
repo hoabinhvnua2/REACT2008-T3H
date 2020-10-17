@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính</title>
+    <link rel="stylesheet" href="essets/CSS/style.css">
+    
+</head>
+<body>
+    <form action="">
+        <div class="input__nhap">
+            <input type="text" id="soa" placeholder="Nhập số a" onfocus="focusip(id)">
+            <input type="text" id="sob" placeholder="Nhập số b" onfocus="focusip(id)">
+        </div>
+
+        <div class="button-input">
+            <button onclick="nhap(id)" id="items1" type="button" value="1">1</button>
+            <button onclick="nhap(id)" id="items2" type="button" value="2">2</button>
+            <button onclick="nhap(id)" id="items3" type="button" value="3">3</button>
+            <button  id="sum" type="button" onclick="Cong()" value="+">+</button>
+        </div>
+
+        <div class="button-input">
+            <button id="items4" type="button" onclick="nhap(id)" value="4">4</button>
+            <button type="button"  id="items5" onclick="nhap(id)" value="5">5</button>
+            <button type="button"  id="items6"onclick="nhap(id)" value="6">6</button>
+            <button type="button"  class="Hieu" onclick="Tru()" value="-">-</button>
+        </div>
+        <div class="button-input">
+            <button type="button"  id="items7" onclick="nhap(id)" value="7">7</button>
+            <button type="button"  id="items8"onclick="nhap(id)" value="8">8</button>
+            <button type="button"  id="items9" onclick="nhap(id)"value="9">9</button>
+            <button type="button"  class="Tich" onclick="Nhan()" value="*">*</button>
+        </div>
+        <div class="button-input">
+            <button type="button"  class="" value="C" onclick="reset()">C</button>
+            <button type="button" id="items0"onclick="nhap(id)" value="0">0</button>
+            <button type="button"   class="" onclick="result()" value="=">=</button>
+            <button type="button"  onclick="Chia()" class="items1"value="/">/</button>
+        </div>
+            <div class="kq">
+                <input type="text" class="result">
+            </div>
+    </form>
+
+
+
+
+    <script src="essets/JS/main.js"> </script>
+   
+</body>
+</html>

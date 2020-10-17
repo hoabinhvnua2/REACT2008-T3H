@@ -69,7 +69,7 @@
         type="button"
         class="btn btn-primary"
         data-toggle="modal"
-        data-target="#exampleModal"
+        data-target="#myModal"
       >
         Launch demo modal
       </button>
@@ -77,13 +77,11 @@
       <!-- Modal -->
       <div
         class="modal fade"
-        id="exampleModal"
+        id="myModal"
         tabindex="-1"
         role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" >
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -101,14 +99,15 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">User name</label>
-                    <input type="email" class="form-control" id="inputEmail4" />
+                    <input type="text" class="form-control" id="userName" name="userName"/>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
                     <input
                       type="password"
                       class="form-control"
-                      id="inputPassword4"
+                      name="password"
+                      id="password"
                     />
                   </div>
                 </div>
@@ -117,14 +116,15 @@
                   <input
                     type="email"
                     class="form-control"
-                    id="inputAddress"
+                    id="inputEmail"
                     placeholder="1234 Main St"
+                    name="email"
                   />
                 </div>
                 <div class="form-group">
                   <label for="inputState">Năm sinh</label>
-                  <select id="inputState" class="form-control">
-                    <option selected>Chọn năm sinh</option>
+                  <select id="inputBỉtday" class="form-control" name="birtday">
+                    <option value="" selected>Chọn năm sinh</option>
                     <option value="1990">1990</option>
                     <option value="1991">1991</option>
                   </select>
@@ -132,23 +132,23 @@
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label for="inputState">Xã</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Chọn xã</option>
-                      <option>...</option>
+                    <select id="district" class="form-control" name="district">
+                      <option value="" selected>Chọn xã</option>
+                      <option value="365">Nam định</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">Huyện</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Chọn huyện</option>
-                      <option>...</option>
+                    <select id="commune" class="form-control" name="commune">
+                      <option value='' selected>Chọn huyện</option>
+                      <option value="365">Nam định</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">Tỉnh</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Chọn tỉnh</option>
-                      <option>...</option>
+                    <select id="province" class="form-control" name="province">
+                      <option value="" selected>Chọn tỉnh</option>
+                      <option value="365">Nam định</option>
                     </select>
                   </div>
                 </div>
@@ -160,7 +160,6 @@
                     name="gender"
                     id="exampleRadios1"
                     value="nam"
-                    checked
                   />
                   <label class="form-check-label" for="exampleRadios1">
                     Nam
@@ -192,34 +191,18 @@
         </div>
       </div>
 
-      <table class="table mt-3">
+      <table class="table mt-3" id="myTable">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">STT</th>
+            <th scope="col">User name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Năm sinh</th>
+            <th scope="col">Quê quán</th>
+            <th scope="col">Giới tính</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+        <tbody id="myTBody">
         </tbody>
       </table>
     </div>
