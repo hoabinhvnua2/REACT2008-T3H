@@ -2,14 +2,37 @@ var ursValue, pwdValue, pwdcValue, dateValue, emailValue;
 var natiValue, cityValue, phoneValue, genderValue, myForm;
 var valueList = [];
 var valueObject = {};
+var saveTask = localStorage.getItem("tasks");
 
+valueList = saveTask ? JSON.parse(saveTask) : [];
+
+// Print funtion
+function print(){
+    let text = "";
+    let printValue = document.getElementById("tbody");
+        for (let index = 0; index < valueList.length; index++) {
+            text+= "<tr>" + "<td>" + (index + 1) + "</td>"
+            + "<td>" + valueList[index].name + "</td>"
+            + "<td>" + valueList[index].date + "</td>"
+            + "<td>" + valueList[index].email + "</td>"
+            + "<td>" + valueList[index].gender + "</td>"
+            + "<td>" + valueList[index].national + "</td>"
+            + "<td>" + valueList[index].city + "</td>"
+            + "<td>" + valueList[index].phone + "</td>" + "</tr>";
+            printValue.innerHTML = text;
+        };
+}
+
+print();
 
 // error function
 function errorValue(id){
-    document.getElementById(id).style.borderColor = "red";
-    document.getElementById(id).setAttribute("placeholder" , "Error!!!");
-    document.getElementById(id).classList.add("errorAnimate") ;
-}
+    let getId = document.getElementById(id);
+    getId.scrollIntoView();
+    getId.style.borderColor = "red";
+    getId.setAttribute("placeholder" , "Error!!!");
+    getId.classList.add("errorAnimate");
+};
 
 function checkForm(event){
     event.preventDefault();
@@ -101,7 +124,7 @@ function checkForm(event){
         comfirm = true;
     }
 
-// comfirm and resert 
+// comfirm , reset and print 
     if(comfirm == true){
 
         valueObject = {
@@ -115,20 +138,11 @@ function checkForm(event){
         };
 
         valueList.push(valueObject);
-        let text = "";
-        let printValue = document.getElementById("tbody");
-            for (let index = 0; index < valueList.length; index++) {
-                text+= "<tr>" + "<td>" + (index + 1) + "</td>"
-                + "<td>" + valueList[index].name + "</td>"
-                + "<td>" + valueList[index].date + "</td>"
-                + "<td>" + valueList[index].email + "</td>"
-                + "<td>" + valueList[index].gender + "</td>"
-                + "<td>" + valueList[index].national + "</td>"
-                + "<td>" + valueList[index].city + "</td>"
-                + "<td>" + valueList[index].phone + "</td>" + "</tr>";
-                printValue.innerHTML = text;
-            };
+        localStorage.setItem('tasks',JSON.stringify(valueList));
+        // print
+        print();
         $("#myModal").modal("hide");
+        // reset
         myForm.reset();
         alert("Good job !!!");
     }
