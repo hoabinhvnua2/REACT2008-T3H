@@ -113,12 +113,6 @@ function submitForm(event) {
 
   // District
 
-<<<<<<< HEAD
-    console.log(formValue.length);
-    var valueLength = formValue.length;
-    for (let index = 0; index < valueLength; index++) {
-        console.log(formValue[index].value);
-=======
   if (!valueProvince) {
     alert("Bạn chưa chọn tỉnh");
     return false;
@@ -132,7 +126,6 @@ function submitForm(event) {
     if (ckeckRadio[index].checked) {
       isCheck = true;
       valueRadio = ckeckRadio[index].value;
->>>>>>> 9c57f072a53570fd5576fe1ffd38b7e75e1a03e5
     }
   }
 
