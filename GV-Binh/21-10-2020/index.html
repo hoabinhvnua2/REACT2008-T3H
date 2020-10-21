@@ -1,6 +1,176 @@
 <!-- 
     ES6:
-        1. Default Parameters in ES6
-        2. Template Literals in ES6
-        3. Multi-line String in ES6
+      1. constant: dùng đê khai báo 1 biến và set giá trị cho biến đo, khi đã gán giá trị cho biến đó thì nó ko thể thay
+      đổi giá trị nữa
+        var dùng để khai báo biến và dùng cho global.
+        let dùng để khai báo biến, nhưng let bị giới hạn bởi cặp dấu { }
+
+      var abc = 'react';
+      abc = 'java';
+
+      const PI = 3.14;
+      PI = 3; => ko thể gán lại số PI
+
+      const obj = {
+          name: 'binh',
+          age: 30
+      };
+
+      2. Arrow function: nó giúp cho chúng ta giữu đc context của con trỏ this
+        var showName = () => {}
+
+      3. param default: x = 7
+      4. Rest param: ...b
+      5. Template Literals: cú pháp `` hiển biến bằng cú pháp ${}
+      6. Enhanced Object Properties
+      7. Modules
+
+      8. đồng bộ và bất đồng bộ
+        đồng bô: db là nhận thông tin và xử lý xong mới đến task khác
+        bất đòng bộ: là để task đó vẫn đang xử lý rồi đi xử lý task khác
+    
+      9. Promise là một đối tượng đặc biệt dùng cho các xử lý bất đồng bộ.
+      Nó đại diện cho một xử lý bất đồng bộ và chứa kết quả cũng như các lỗi xảy ra từ xử lý bất đồng bộ đó.
+      new Promise() -> dùng để sử lý bất đồng bộ tức callback
+      nó có 2 tham số truyền vào là (resolve, reject)
+
+      var myPromise = new Promise((resolve, reject) => {
+          // làm gì đó (1) -> có đc value
+          resolve(value) (2)
+          or 
+          reject('show lỗi') (3)
+
+
+          var request = new XMLHttpRequest();
+
+          request.open('post', 'https://www...');
+
+          request.onload = function() {
+              if(request.status === 200 ) {
+                   resolve(value) //xử lý thành công
+              } else {
+                  reject('show lỗi')
+              }
+          }
+      })
+
+      gọi hàm trong hàm -> gopij hàm trong hàm -> gọi hàm trong hàm
+
+      promise lại có 3 trạng thái:
+        1. pending (đang xử lý dữ liệu)
+        2. fulfilled (xử lý xong)
+        3. reject (xử lý thất bại)
+
+    10. asyn và await xử lý bất động bộ
+
+    để sử dụng đc asyn thì chúng ta cần từ khóa asyn kết hợp vs await
+
+    async function asyncCall() {
+        const result = await resolveAfter2Seconds();
+        console.log(result);
+        // expected output: "resolved"
+    }
+
+    ôn tập lại kiến thức của buổi hôm nay
+    
+    chuẩn bị kiến tức cho 28/10
+    Observable: là gì và so sánh vs promise
+    và SCSS, SASS: là gì, và cách hoạt động và các đặc điểm...
+      
  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function blockVar() {
+        "use strict";
+
+        var arr = [];
+
+        for (let index = 0; index < 5; index++) {
+          arr.push(function () {
+            console.log(index * index);
+          });
+        }
+
+        // console.log(index);
+
+        arr[3]();
+      }
+
+      blockVar();
+
+      //   console.log(arr);
+
+      function f(x, ...b) {
+        //   y = 7 || y;
+        //   z = 42 || z;
+        // return x + y + z;
+      }
+
+      f(5, 5, 6, 7, 23, 2);
+      // Spread Operator
+      var a = ["hello", true, 7];
+      var other = [1, 2, ...a];
+      console.log(other);
+
+      //   Template Literals
+
+      // var html = 'tr' + '<td>' + name + '</td';
+      // var html = `<tr><td>${name}</td></tr>
+      //     <td></td>
+      // `;
+
+      //   Enhanced Object Properties
+      var obj;
+      var name1 = "binh",
+        ho = "tran";
+      obj = { name1, ho };
+
+      console.log(obj);
+
+      // Destructuring Assignment
+      var list = [1, 2, 3];
+      var [a, , b] = list;
+      console.log([a, , b]);
+      [b, a] = [a, b];
+
+      var body = {
+        ten: "binh",
+        ho: "tran",
+      };
+
+      var ten = body.ten;
+      var ho = body.ho;
+
+      var { ten, ho } = body;
+
+      //   asyn await
+      function show(ms) {
+        return new Promise(res => setTimeout(res, ms));
+      }
+      async function asyncCall() {
+        console.log("calling...");
+        await show(1000);
+        console.log("hết 1s");
+
+        await show(2000);
+        console.log("hết 2s");
+
+        await show(3000);
+        console.log("hết 3s");
+
+        await show(5000);
+        console.log("đã xong nhé");
+      }
+
+      asyncCall();
+    </script>
+  </body>
+</html>
