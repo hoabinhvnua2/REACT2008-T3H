@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Tổng hợp phần đồng bộ và bất đồng bộ -->
+
+    <!-- + Javascrip là ngôn ngữ đơn luồng, nó chỉ thực hiện duy nhất 1 việc tại 1 thời điểm
+        + đồng bộ hiểu đơn giản là chạy theo 1 quy trình, xong cái trước thì mới đến cái sau
+        + bất đồng bộ đơn giản là chạy song song hay cùng lúc nhiều việc
+
+        = trong việc lập trình thì bất đồng bộ xảy ra rất nhiều, ví dụ call API, Event...
+
+
+        để xử lý bất đồng bộ thì có những cách sau
+        1: call back: sử dụng function à có tham sô truyền là 1 function
+            $(document).ready(function() {
+                $('#button').on('click', function() {
+                    do something
+                })
+            })
+
+        2: Promise (lời hứa): nó như một lời hứa cho một dữ liệu, có 3 trạng thái và có 2 tham số truyền vào
+            - 2 tham số truyền vào là:
+                + resolve
+                + reject
+            - 3 trạng thái: 
+                + pending
+                + fulfilled
+                + reject
+            - đặc trưng của 1 promise
+                + promise chỉ trả về 1 giá trị duy nhất
+                + không thể cancel request
+                + được khởi tạo ngay lập tức mặc dù chưa có đăng ký nào. Tức là nó sẽ chạy ngay khi các bạn new promise
+            Ví dụ: ta uống cf, -> order cái bánh mỳ -> sau khi order xong thì phải đợi 10p (pending)
+                -> trong khi chờ thì vẫn ngồi uống cf và đọc báo -> sau 10p nhận đc bánh mỳ(fulfilled)
+                order cái bánh mỳ -> cửa hàng từ chối làm bánh mỳ (reject)
+
+            var myPromise = new Promise(function(resolve, reject) {
+                làm gì đó (1)
+                if(1){
+                    resolve()
+                } else {
+                    reject()
+                }
+            })
+
+
+            p.then(value => {value}).then(v => v).catch(throw error);
+
+        3: Async await (ES7): xử lý bất đồng bộ, cú pháp cần có từ async đứng trước
+
+            async function testName() {
+                do something
+                let a = await abc();
+            }
+        
+            var testName =  async () => {
+                let b = await abc()
+            }
+
+
+        4: Observable: nó tương tự như Promise, tuy nhiên nó có nhưng ưu điểm ư ddiemr khác nổi trội hơn Promise
+            nó như 1 dòng dữ liệu (stream), chúng ta có thể đẩy rất nhiều dữ liệu qua cái stream đó
+
+            vd: https://www.learnrxjs.io/
+        
+            - đặc điểm:
+                + Trả về một hoặc nhiều giá trị
+                + có cancel request
+                + nó chỉ đc khawir tạo khi vào chỉ khi có đăng ký đến observable(có listener)
+                + nó có retry
+                + có thể xử lý tiền dữ liệu
+        
+    -->
+    
+    <!-- ô input tìm kiếm name -->
+
+    <!-- hoa bin -> sau 0,5s thì nó call api để tìm những bạn có tên là hoa bin, (API1)-->
+    <!-- hoa binh -> sau 0,5s thì nó tiếp call api (API2)--> 
+    <!-- tuy nhiên vì 1 lý do nào đó mà cái thằng API2 nó lại call xong trước rồi thằng API1 nó mới call xong. như thế nó đang hiển
+    thị sai kết quả tìm kiếm so với từ khóa mà người dùng nhập  -->
+
+
+    <!-- vs promise thì phải đợi có kết quả mới xử lý đc dữ liệu -->
+    <!-- vs observable thì các bạn có thể xử lý đc dữ liệu trước khi trả về dữ liệu 
+        result.pipe(map(), filter(), ...).subscribe(val => val)
+    -->
+
+
+    <!-- Giới thiệu vè generator function (*)
+        tại sao ?
+        ở trong react nó có thăng redux(redux-saga) trong thằng redux-saga này nó sử dụng generators function
+    
+        function* là 1 tính năng mới tỏng ES6, nó khai báo ra 1 generator function và trả về 1 generator obkect
+        vs chức này thì hàm có thể dừng thực thi bất cứ lúc nào, đợi async chạy xong thì tiếp thực hiện.
+        (có thể tạm ngừng trước khi hàm kết thúc, sau lại tiếp chạy ở 1 thời điểm khác)
+
+        function* name_function(tham số truyền vào) {
+            thực thi các câu lệnh
+        }
+
+        khai báo hàm xong sẽ ko thực thi ngay, mà chúng ta sẽ gọi hàm next để thực thi generator function
+
+        có 2 từ khóa:
+            + yield: nó tương đương như return và nó trả là số, chữ, object...
+            + yield*: nó tương tự như retunr tuy nhiên nó trả vè 1 function
+    -->
+
+    <!-- 
+        + hướng dẫn mọi người đọc và tìm hiểu cách tạo 1 project reactjs cơ bản bằng câu lệnh.
+
+        buổi sau:
+        tìm hiểu về SASS và SCSS, cacsc chuẩn quốc tế trong cách viết (BEM)
+        + dạy về SASS và SCSS -> viết theo chuẩn BEM, vè bản chất nó sử dụng node-sass haowc gulp để biên dịch thành css
+
+     -->
+
+    <script>
+        // ví dụ về generator function
+
+        // function* testShow() {
+        //     var index = 0;
+        //     while(index < 3) {
+        //         yield index++;
+        //     }
+        // }
+
+        // var result = testShow();
+
+        // console.log(result.next());
+        // console.log(result.next());
+        // console.log(result.next());
+        // console.log(result.next());
+
+        function* g1() {
+            yield 1;
+            yield 2;
+        }
+
+
+        function* g2() {
+            yield 0;
+            yield* g1();
+            yield 3;
+            yield 4;
+        }
+
+
+        var result = g2();
+
+        console.log(result.next());
+        console.log(result.next());
+        console.log(result.next());
+        console.log(result.next());
+        console.log(result.next());
+        console.log(result.next());
+    </script>
+</body>
+</html>
