@@ -1,0 +1,96 @@
+@import './variables';
+// ví dụ về biến
+$color: yellow;
+
+// ví dụ về nesting
+.container {
+  .hello {
+    color: red;
+  }
+
+  .first {
+    .react {
+      color: $color;
+    }
+
+    .node {
+      color: $green;
+    }
+  }
+}
+
+// ví dụ về while
+// item-1 {color: red}
+$i: 1;
+
+@while ($i < 3) {
+  .item-#{$i} {
+    color: red;
+  }
+
+  $i: $i + 1;
+}
+
+// @mixin
+
+@mixin border($color, $number) {
+  border: 1px solid $color;
+  border-radius: $number;
+}
+
+
+
+//@extend
+
+.bg-color {
+  background-color: aqua;
+}
+
+.box {
+  @include border( $green, 10px);
+  @extend .bg-color;
+}
+
+// if
+
+$number: 7;
+
+.box {
+  @if $number < 6 {
+    color: white;
+  }
+  @else {
+    color: yellow;
+  }
+}
+
+//bài tập
+@for $i from 1 through 5 {
+  @if ($i % 2) == 0 {
+    .items-#{$i} {
+      color: yellow;
+    }
+  }
+  @else {
+    .items-#{$i} {
+      color: red;
+    }
+  }
+}
+
+//style theo chuẩn BEM
+
+.container {
+  &__first {
+    color: red;
+    &.-font-30 {
+      font-size: 30px;
+    }
+  }
+
+  &__two {
+    color: blue;
+  }
+}
+
+
