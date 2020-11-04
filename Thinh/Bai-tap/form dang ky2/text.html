@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="indexCSS.css">
+</head>
+
+<body>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="clearForm()">
+    Đăng Ký
+  </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ĐĂNG KÝ</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm formDK">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">First name</label>
+                <input type="text" class="form-control" placeholder="First Name" id="inputFirstName" onsubmit="return validateForm()" />
+                <p id="p-1">*Hãy nhập first name</p>
+                <p id="p-11">* First name phải từ 2 đến 32 ký tự</p>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name"/>
+                <p id="p-2">*Hãy nhập last name</p>
+                <p id="p-21">* Last name phải từ 2 đến 32 ký tự</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" placeholder="Nhập email" />
+              <p id="p-3">Email không được để trống</p>
+              <p id="p-31">Email sai, vui lòng nhập lại</p>
+            </div>
+            <div class="form-group">
+              <label for="inputState">Năm sinh</label>
+              <select id="inputState" class="form-control">
+                <option selected>Chọn năm sinh</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+
+              </select>
+              <p id="p-4">Vui lòng chọn năm sinh</p>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputTP">Thành Phố</label>
+                <select id="inputTP" class="form-control">
+                  <option selected>Chọn Thành Phố</option>
+                  <option>Đà Nẳng</option>
+                  <option>Hồ Chí Minh</option>
+                  <option>Kon Tum</option>
+                </select>
+                <p id="p-5">Vui lòng chọn thành phố của bạn</p>
+              </div>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="nam" />
+              <label class="form-check-label" for="exampleRadios1">
+                Nam
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="nu" />
+              <label class="form-check-label" for="exampleRadios2">
+                Nữ
+              </label>
+            </div>
+            <p id="p-6">Vui lòng chọn giới tính</p>
+            <div style="text-align: center;">
+              <input type="button" class="btn btn-primary" value="Hoàn Thành" onclick="hoanThanh()">
+              </input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Năm Sinh</th>
+        <th scope="col">Giới Tính</th>
+        <th scope="col">Email</th>
+        <th scope="col">Quê quán</th>
+
+      </tr>
+    </thead>
+    <tbody id="listShow">
+    </tbody>
+  </table>
+
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+</body>
+
+</html>

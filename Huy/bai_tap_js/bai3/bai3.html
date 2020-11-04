@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group mt-5">
+              <label for="year-of-birth">Năm sinh:</label>
+              <input type="text" class="form-control" placeholder="Năm sinh" id="year-of-birth" style="width:50%" onfocus="getBirth()">
+            </div>
+        </form>
+        <button class="btn btn-primary" onclick="getAge()">Submit</button>
+        <div class="mt-2" id="result"></div>     
+    </div>
+    <script>
+        var yearOfBirth;
+        var age;
+        function getBirth() {
+            yearOfBirth = document.getElementById("year-of-birth");
+        }
+        var date = new Date();
+        var currentYear = date.getFullYear();
+        function getAge() {
+            if(yearOfBirth) {
+                if(parseInt(yearOfBirth.value) > currentYear) {
+                    document.getElementById("result").innerHTML = "Lỗi: Mời bạn nhập lại năm sinh";
+                }
+                else {
+                    age = currentYear - parseInt(yearOfBirth.value);
+                    document.getElementById("result").innerHTML = "Bạn năm nay " + age + " tuổi!";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

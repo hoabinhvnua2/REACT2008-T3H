@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pjs list</title>
 </head>
-<body onload="showList()">
+<body>
     <div>
         <p id="theP">
 
         </p>
         <div>
             <input type="text" id="nhap" placeholder="Nhập thành phần bạn muốn thêm vào danh sách">
-            <button onclick="addItem()">Add</button>
+            <button onclick="addItemShow()">Add</button>
+            <ul id="showList">
+
+            </ul>
         </div>
     </div>
     <script src="javarscript.js"></script>
