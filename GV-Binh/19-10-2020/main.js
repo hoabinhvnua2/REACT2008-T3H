@@ -1,4 +1,4 @@
- // var taskLists;
+// var taskLists;
 // var saveTask = localStorage.getItem('tasks');
 // var inputTask;
 // var itemList;
@@ -39,10 +39,23 @@ var myModal;
 var tableLists;
 
 var objLists = [];
+// $('.alert').alert('close');
+
+function onChange(e) {
+  console.log(e);
+  // valueUserName = document.getElementById("userName").value;
+
+  if (e.target.value) {
+    document.getElementById(e.target.id).classList.remove('in-valid');
+    document.getElementById("userNameValidator").style.display = 'none'; 
+  } else {
+    document.getElementById("userName").classList.add('in-valid'); 
+    document.getElementById("userNameValidator").style.display = 'block';
+  }
+}
 
 function submitForm(event) {
   event.preventDefault();
-
   valueUserName = document.getElementById("userName").value;
   valuePasswword = document.getElementById("password").value;
   valueEmail = document.getElementById("inputEmail").value;
@@ -58,11 +71,15 @@ function submitForm(event) {
 
   if (valueUserName) {
     if (valueUserName.length < 3 || valueUserName.length > 30) {
-      alert("Bạn nhập chưa nhập đúng số ký tự!");
+      // alert("Bạn nhập chưa nhập đúng số ký tự!");
+      document.getElementById("userName").classList.add('in-valid'); 
       return false;
     }
   } else {
-    alert("Bạn chưa nhập user name");
+    // alert("Bạn chưa nhập user name");
+    document.getElementById("userName").focus();
+    document.getElementById("userName").classList.add('in-valid'); 
+    document.getElementById("userNameValidator").style.display = 'block'; 
     return false;
   }
 
@@ -156,9 +173,17 @@ function submitForm(event) {
 
       tableLists.innerHTML = text;
     }
-    $("#myModal").modal("hide");
-    formValue.reset();
-    alert("bạn đk form thành công");
+    document.getElementById('registerForm').classList.add('custom-opacity');
+    document.getElementById('spinnerModal').style.display = 'block';
+
+    setTimeout(function() {
+
+      $("#myModal").modal("hide");
+      formValue.reset();
+      document.getElementById('registerForm').classList.remove('custom-opacity');
+      document.getElementById('spinnerModal').style.display = 'none';
+    }, 2000);
+
   } else {
     alert("bạn chưa chọn giới tính");
   }
