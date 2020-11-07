@@ -1,0 +1,12 @@
+body{
+    background-color:black;
+}
+#clock{
+    font-size: 50px;
+    text-align: center;
+    
+    
+   
+    background-color: blueviolet;
+    color: white;
+}
