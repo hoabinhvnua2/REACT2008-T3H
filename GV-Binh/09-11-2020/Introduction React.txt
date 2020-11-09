@@ -1,0 +1,123 @@
+Giới thiệu về react:
+React là gì?
+    React Js là một thư viện viết bằng javascript, dùng để xây dựng giao diện người dùng (UI). 
+    React được sử dụng rộng rãi và có hệ sinh thái đa dạng phong phú.
+
+React Js có thể làm được những gì?
+    React Js là một thư viện javascript dùng để xây dựng UI, 
+    UI ở đây được dùng chính ở 2 nền tảng Web và Mobile. Ở lĩnh vực Web, 
+    sử dụng React Js có thể đem lại trải nghiệm tốt cho người dùng, 
+    cũng như khả năng Hot Reload giúp bạn lập trình nhanh hơn.
+có 2 loại ui: thứ nhất Ui dành cho người dùng, thứ 2 UI dành cho admin(CMS)
+
+Đặc điểm của React:
+    1. JSX là gi?
+        JSX là 1 syntax extension của javascript, nó có thể viết mã html trong code js
+        ví dụ cú pháp JSX:
+        let showName = () => {
+            return (
+                <div> Xin chào Nam </div>
+            )
+        }
+        câu hổi phỏng vấn mà các bạn hay gặp:
+        tại sao JSX ko sử dụng class mà lại sử dụng className
+        vì JSX vẫn là ngôn ngữ JS, mà tròn JS có đối tượng class nên bị trùng key vì vậy họ
+        đã thay class bằng className
+        biên dịch từ JSX ra JS như nào?
+        REACT.createElement()
+        từ JSX -> JS
+        let showName = () => {
+            return REACT.createElement('div', 'xin chào nam')
+        }
+
+        1 điểm hơi bất lợi của JSX:
+        return(
+            <div>
+                <div>
+                    <h1>Tôi đang học react</h1>
+                    <h1>Tôi đang học nodejs</h1>
+                </div>
+
+                <div>
+                    <h1>Tôi đang học react</h1>
+                    <h1>Tôi đang học nodejs</h1>
+                </div>
+            </div>
+        )
+    2. React Component là gì?
+        - là các khối xấy dựng nên 1 ứng dụng react, và 1 Component có thể sử dụng riêng biệt
+        hoặc có thể được sử dụng lại và có thể đc kết hợp với các component khác để tạo ra
+        1 component lớn hơn.
+        - React cmponent chia làm 2 loại
+            + class component (nhận được trạng thái, có một sô phương thức có sãn nhằm kích hoạt
+            vào các thời điểm khác nhau trong quá trinh innital và render)
+            + function component (hook) thì nó đơn giản hơn class, ko nhận được trạng thái
+        ví du:
+        - class component
+            class SinhVien extend REACT.component {
+                constructor() {
+                    super();
+                }
+            }
+        - function component
+            function showName() {}
+    3. State là gì?
+        - State là 1 đối tượng của JS nó ghi lại và phản ứng vs các event, nó quản lý
+        trạng thái của 1 component, nó sẽ quyết định sự thay đổi của component đó và tất cả các 
+        component con của nó
+        - State được khai báo ở trong constructor
+        class SinhVien extend REACT.component {
+            constructor() {
+                super();
+
+                this.state = {
+                    name: 'binh',
+                    classReact: [],
+                    age: null,
+                    gender: 'nam'
+                };
+            }
+        }
+
+        - có hàm để chúng ta set state
+        class SinhVien extend REACT.component {
+            constructor() {
+                super();
+
+                this.state = {
+                    name: 'binh',
+                    classReact: [],
+                    age: null,
+                    gender: 'nam'
+                };
+            }
+
+            handleClickChangeGender = () => {
+                this.setState({
+                    gender: 'nữ'
+                })
+            }
+        }
+    4. Props là gì?
+        Props cũng là object và nó được component cha cung cấp cho component con
+        vậy props vs state khác nhau ở điểm nào?
+        Props ko thể thay đổi còn state có thẻ thay đổi
+    
+    5. Redux là gì?
+        Redux nó giúp chúng ta quản lý state 1 cách đơn giản
+        sẽ nói sâu hơn trong bài về redux
+
+    6. Virtual DOM là gì?
+        là DOM ảo, khi có sự thay dổi hay thao thì chúng ta ko cần thhao trực tiếp trên DOM thật
+        mà vẫn có thể phản ánh đc sự thay dổi đó. Vì virtual DOm vừa đóng vai trò là 1 model,
+        vừa đóng vai trò là 1 View, nên khi model thay đổi thì View cũng thay dổi và ngược lại.
+        Và chính vì thế mà hiện nay so sánh về tốc dộ render DOM thì React đang là bá đạo nhất
+
+
+Buổi tới: anh sẽ hướng dẫn cho mọi người về các phần sau: (mọi người sẽ đọc trước)
+    1. Lifecycle (định và ví dụ thực tế)
+    2. điều kiện để render
+    3. Lists và key
+    4. Refs
+    5. Fragments
+    6. Form
