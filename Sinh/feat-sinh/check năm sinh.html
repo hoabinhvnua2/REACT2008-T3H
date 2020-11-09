@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .error{border: 1px solid #f00;}
+        #error_text{ display: none; color: #f00; }
+    </style>
+</head>
+<body>
+    <h2>BT 3</h2>
+    <form id="check_year">
+        <input type="number" max="4" id="year_born" placeholder="Nhập năm sinh của bạn" />
+        <p id="error_text"></p>
+        <button type="button" id="btn-check--year" onclick="kiemtra_namsinh(event)">Kiểm tra</button>
+    </form>
+    <p id="kq-check--year"></p>
+    <script>
+        var now = new Date();
+        now_year = now.getFullYear();
+        function kiemtra_namsinh(event){
+            let dom_kq_year = document.getElementById('kq-check--year');
+            let dom_year = document.getElementById('year_born');
+            let dom_error = document.getElementById('error_text');
+            let year = dom_year.value;
+            let dom_class = dom_year.classList;
+            dom_error.setAttribute('style','display: none');
+            if(year.length != 4){
+                dom_class.add("error");
+                dom_year.setAttribute('class',dom_class);
+                dom_error.setAttribute('style','display: block');
+                dom_error.innerHTML = 'Năm sinh phải 4 chữ số';
+            }
+            else if(now_year < year){
+                dom_class.add("error");
+                dom_year.setAttribute('class',dom_class);
+                dom_error.setAttribute('style','display: block');
+                dom_error.innerHTML = 'Năm sinh trong tương lai rồi. Bạn du hành thời gian về à';
+            }
+            else{
+                dom_class.remove("error");
+                dom_kq_year.innerHTML = "Năm nay bạn đã "+(now_year - year)+" tuổi rồi đó."
+            }
+        }
+    </script>
+</body>
+</html>
