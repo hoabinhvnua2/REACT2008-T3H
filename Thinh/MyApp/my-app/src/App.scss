@@ -1,4 +1,4 @@
-@for $i from 1 through 5 {
+@for $i from 1 through 5  {
   @if ($i % 2 == 0) {
     .el#{$i}{
       color: red;
