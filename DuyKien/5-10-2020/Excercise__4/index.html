@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="item" value="">
+        <button id="add" onclick="addItem()"> Add</button>
+    </div>
+    <ul class="list">
+        <li class="list__item"></li>
+    </ul>
+
+
+</body>
+<script>
+    var List =[0];
+    var saveList = localStorage.getItem('list');
+
+    //Toán tử 3 ngôi
+    List = saveList ? JSON.parse(saveList): [];
+
+    function show() {
+        var list__un = "";
+        var list = document.querySelector('.list');
+        var listLenght = List.length;
+        for (let index = 0; index < listLenght; index++) {
+            list__un += ' <li class="list__item"> ' + List[index] + '</li>';
+            list.innerHTML = list__un;
+        }
+    }
+    show();
+
+    function addItem() {
+        var input = document.querySelector('#item').value;
+        List.unshift(input);
+        localStorage.setItem("list", JSON.stringify(List));
+        show();
+    }
+</script>
+
+</html>

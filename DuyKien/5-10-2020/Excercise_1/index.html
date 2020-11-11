@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- //xác định từ tỉ lệ màn hình -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise 2</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="reslut"></div>
+
+    <script>
+        
+       
+        function getDate(){
+            var today = new Date(); 
+
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+
+            setTimeout(() => {
+                getDate();
+            }, 1000);
+
+            var showDate = hour + ":" + minute + ":" + second + " AM";
+
+            document.querySelector('.reslut').innerHTML = showDate;
+            
+        }
+       getDate();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+CSS Preprocessors là gì?
+ - là ngôn ngữ tiền xử lý CSS, nó sẽ mã hóa các câu lệnh ra ra css 
+ - Đặc điểm:
+    + Tiết kiệm thời gian viết css
+    + Dễ dàng bảo trì và phát triển
+    + có tính linh hoạt và sử dụng lại
+    + tổ chức các đoạn code rõ ràng, minh bạch
+1. SASS - người dùng trên thế là nhiều nhất -> base trên ngôn ngữ Ruby
+    - ko sử dụng cặp thẻ  {}
+    - ko sử dụng dấu ;
+-> SCSS nó đực cải tiến và vì thế nó mang được rất nhiều tinh tú.
+    - sử dụng cặp dấu {}
+    - sử dụng dấu ;
+
+2. LESS - đứng thứ 2 -> base js
+
+Các đặc trưng của Preprocessors (SASS)
+
+    1. Variables(đặt biến)
+
+    //đây là code của css
+    .width {
+        width: 20px;
+        height: 20px;
+    }
+
+    .height {
+        width: 20px;
+    }
+
+    .width {
+        width: 20px;
+        height: 20px;
+    }
+
+    .height {
+        width: 20px;
+    }
+    -> giả sử bjo tôi muôn sửa width từ 20px thành 30px
+    //SCSS: thì khai báo biến sẽ có dấu $ ở đằng trước
+    $kichThuoc: 30px;
+
+    .width {
+        width: $kichThuoc;
+        height: 20px;
+    }
+
+    .height {
+        width: $kichThuoc;
+    }
+
+    .width {
+        width:$kichThuoc;
+        height: 20px;
+    }
+
+    .height {
+        width: $kichThuoc;
+    }
+
+    //LESS: thì khai báo biến sẽ có dấu @ ở đằng trước 
+    @kichThuoc: 30px;
+
+    2. Mixin giống như các bạn viết ra 1 cái hàm dùng chung, sau đó ở đâu cần thì gọi
+
+    cú pháp mixin của SCSS thì khai báo dùng tiền tố là: @mixin và lúc gọi mixin thì dùng tiền tố @include
+    //khái mixin
+    @mixin color-text($color, $background) {
+        corlor: $color;
+        background-color: $background;
+    }
+
+    .box {
+        @include color-text(green, blue);
+    }
+
+    cú pháp mixin của LESS:
+    @color: green;
+    @background: blue
+    .color-text {
+        corlor: @color;
+        background-color: @background;
+    }
+
+    .box {
+        .color-text();
+    }
+
+    3. Import: nó giống như thẻ script hay thẻ link bên html
+     có thể chèn 1 file scss khác vào file scss mà bạn đang viết
+    4. extend: là kế thừa và nó là 1 trong những cái rất hay ho, để sử dụng thì chúng phải có tiền tố @extend
+        // SCSS
+        .border {
+            border: 1px solid green;
+        }
+
+        .container {
+            width: 500px;
+            height: 300px
+            @extend .border;
+        }
+
+        // LESS
+
+        .container {
+            width: 500px;
+            height: 300px
+            :extend(.border);
+        }
+
+    5. Nesting: nó có khả năng xếp chồng, thì nó viết theo dạng tree cha con
+
+        // CSS
+
+        .container {
+            width:200px
+        }
+
+        .container .box {
+            color: green;
+        }
+
+        // SCSS
+        .container {
+            width: 200px;
+            .box {
+                color: green;
+            }
+        }
+    6. @for, @each, @while, @if, @else
+
+    <div class="one">
+        <p>xin chào</p>
+    </div>
+    <div class="two">
+        <p>bye bye</p>
+    </div>
+
+    -> nếu như number < 5 thì p của .one có màu đỏ và ngược lại thì có màu xanh
+
+    $number: 6;
+    .one {
+        p {
+            @if $number < 5 {
+                color: red;
+            }
+            @else {
+                color: blue;
+            }
+        }
+    }
+
+    //vòng lặp
+    giả sử muốn tạo ra các class như sau:
+    .item-0 {}
+    .item0-1 {}
+
+    .width-10 {
+        width: 10px;
+    }
+
+    .width-20 {
+        width: 20px;
+    }
+
+    $i: 0;
+
+    @while($i < 5) {
+        .item-#{$i} {
+            color: green;
+        }
+
+        $i: $i + 1;
+    }
+
+    7. function: để cho các bạn có thể return về giá trị
+    @function corlorFunction($value) {
+        @return $value + rgba(220, 258, 260, 276);
+    }
+
+    p {
+        color: corlorFunction(aqua);
+    }
+
+// Giới thiệu chuẩn BEM
+Chuẩn BEM nó chỉ là convention, hay nói cách khác nó là cách đặt tên class mà thôi
+BEM có 2 chuẩn:
+    1: dành cho thành phần con __
+    2: dành cho thành phần hiện tại và bổ sung cho nó --
+
+<div class="container container--green">
+    <div class="container__first container__first--red"></div>
+    <div class="container__two"></div>
+</div>
+
+<div class="container -green">
+    <div class="container__first -red"></div>
+    <div class="container__two"></div>
+</div>
+
+
+
+Buổi sau bắt đầu vào Reactjs
+- đọc doc như buổi trước anh đã hướng dẫn 

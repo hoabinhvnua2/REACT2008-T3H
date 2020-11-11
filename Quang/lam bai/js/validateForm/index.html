@@ -1,29 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css.css">
 </head>
 <body>
-    <form action="">
-        <p>First Name <input type="text" onblur="checkText(id)" id="firstName" > Last Name <input type="text"  onblur="checkText(id)" id="lastName"></p>
-        <p>Email <input type="email" onblur="checkEmail(id)" id="email" ></p>
-        <p>Gender <input type="radio"  id="male" onclick="gender()" >Male <input type="radio" onclick="gender()" id="felmale">Felmale </p>
-        <p>Date of birth</p>
-        <input type="date" id="date" onchange="birthDay()">
-        <p>From <select id="select" onchange="queQuan()">
-            <option  value="0">Select</option>
-            <option  value="1">Da Nang</option>
-            <option  value="2">Ha Noi</option>
-            <option  value="3">Ho Chi Minh</option>
-            <option  value="4">Hai Phong</option>
-            <option  value="5">Da Lat</option>
-            <option  value="6">Quang Nam</option>
-            <option  value="7">Hue</option>
-        </select></p>
-    </form>
-    <button id="btn" onclick="validator(id)"> O K </button>
-    <script src="./ap.js"></script>
+
+<div class="container">
+  <h2>Add new member</h2>
+  <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModal">
+    Add New
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content customModal">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add New Member</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form id="myForm">
+            <div class="form-group">
+                <label for="usr"></label>Name:</label>
+                <input type="text"  placeholder="" class="form-control" id="usr">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+              </div>
+              <div class="form-group">
+                <label for="pwdc">Password comfirm:</label>
+                <input type="password" class="form-control" id="pwdc">
+              </div>
+              <div class="form-group">
+                <label for="date">Date of birth</label>
+                <input type="date" class="form-control" id="date">
+              </div>
+              <label for="demo">Write your email here:</label>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Email" id="demo" name="email">
+                <div class="input-group-append">
+                  <span class="input-group-text">@example.com</span>
+                </div>
+              </div>
+              <p>Gender:</p>
+              <div class="form-check-inline mb-1">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" id="gender" value="Male">Male
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" id="gender" value="Female">Female
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="optradio" id="gender" value="Other" >Other
+                </label>
+              </div>
+              <div class="form-group ">
+                <label for="national">National:</label>
+                <select class="form-control mb-1" id="national">
+                  <option value="0">Select</option>
+                  <option value="Viet Nam">Viet Nam</option>
+                  <option value="Japan">Japan</option>
+                  <option value="USA">USA</option>
+                  <option value="China">Chia</option>
+                </select>
+                <label for="city">City:</label>
+                <select class="form-control mb-1" id="city">
+                  <option value="0">Select</option>
+                  <option value="Osaka">Osaka</option>
+                  <option value="Tokyo">Tokyo</option>
+                  <option value="Nagoya">Nagoya</option>
+                  <option value="Nara">Nara</option>
+                </select>
+              </div>
+              <input type="text" placeholder="Your phone" id="phone" class="form-control form-control">
+            </form>
+          </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger errorAnimate"  onclick="checkForm(event)">Add</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <table class="table table-dark table-hover ">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>National</th>
+        <th>City</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      
+    </tbody>
+  </table>
+</div>
+
+<script src="./ap.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
