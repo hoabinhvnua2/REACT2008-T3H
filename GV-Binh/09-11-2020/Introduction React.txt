@@ -19,7 +19,7 @@ có 2 loại ui: thứ nhất Ui dành cho người dùng, thứ 2 UI dành cho 
                 <div> Xin chào Nam </div>
             )
         }
-        câu hổi phỏng vấn mà các bạn hay gặp:
+        câu hỏi phỏng vấn mà các bạn hay gặp:
         tại sao JSX ko sử dụng class mà lại sử dụng className
         vì JSX vẫn là ngôn ngữ JS, mà tròn JS có đối tượng class nên bị trùng key vì vậy họ
         đã thay class bằng className
@@ -48,7 +48,7 @@ có 2 loại ui: thứ nhất Ui dành cho người dùng, thứ 2 UI dành cho 
         - là các khối xấy dựng nên 1 ứng dụng react, và 1 Component có thể sử dụng riêng biệt
         hoặc có thể được sử dụng lại và có thể đc kết hợp với các component khác để tạo ra
         1 component lớn hơn.
-        - React cmponent chia làm 2 loại
+        - React component chia làm 2 loại
             + class component (nhận được trạng thái, có một sô phương thức có sãn nhằm kích hoạt
             vào các thời điểm khác nhau trong quá trinh innital và render)
             + function component (hook) thì nó đơn giản hơn class, ko nhận được trạng thái
