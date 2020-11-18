@@ -1,0 +1,73 @@
+form {
+    background: #ccc;
+    margin: 0 auto;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  form * {
+    box-sizing: border-box;
+  }
+
+  form table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  form table tr, form table td {
+    border: 1px solid #eee;
+  }
+
+
+form table tr:first-child button {
+  height: 50px;
+  padding: 0 10px;
+  font-weight: 700;
+}
+form table tr:not(:first-child) td {
+    height: 70px;
+  }
+  form table tr:not(:first-child) td button {
+    height: 100%;
+  }
+  form table button {
+    width: 100%;
+    display: block;
+    border: 0;
+    font-size: 16px;
+  }  
+
+form table button:focus{
+    outline: none;
+}
+
+form table button:hover{
+    background: red;
+    transition: all  .2s ease-in-out;
+}
+form table button.operator{
+    font-weight: 700;
+    color: green;
+    background: cyan;
+}
+
+form table button.numbercolor{
+    color: greenyellow;
+    font-weight: 700;
+    background: hotpink;
+}
+
+.text{
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+    height: 100px;
+}
+#text-1{
+    width: 135px;
+    height: 100%;
+}
+#text-2{
+    width: 280px;
+    height: 100%;
+}

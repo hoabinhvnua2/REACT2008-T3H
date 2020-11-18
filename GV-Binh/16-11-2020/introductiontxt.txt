@@ -1,0 +1,64 @@
+1. lifecycle trong reactjs
+    - khởi tạo component: tạo state
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        };
+    }
+    - mounting: nó là lần đầu tiên load trang
+        + componentWillmount: được chạy đầu tiên và trong lần load trang đầu tiên
+        + render: render ra DOM
+        + componentDidmount: chạy sau hàm render, là nơi để chúng ta call API hoặc setState
+    - Update: là giai đoạn mà người dùng tương tác và tạo event
+        với Props tức là cha con:
+            + componentWillReceiveProps: kiểm tra xem thằng con có nhận đc props từ cha hay ko
+            + shouldComponentUpdate: nó sẽ trả về true or false, nếu trả về false thì tất cả các hàm đằng sau
+            nó sẽ ko được gọi, nếu nó trả về true thì tiếp chạy
+            + componentWillUpdate: báo cho chương trình sẽ update lại DOM
+            + render: render ra DOM
+            + componentDidUpdate: được gọi sau cùng của giai đoạn update và đây là nơi rất tốt để thực hiện
+            animation
+
+        với state:
+    - unmounting: đóng trang
+
+2. điều kiện để render
+    var showList = true thì nếu nó bằng true mới hiển thị danh sách
+    { điều kiện && componet cần render}
+3. Lists là danh sách các item và các item này cần có 1 properte là key
+    <li key={index}> </li>
+
+    arr = [1,2,3,4];
+
+    arr.map((value, index) => {
+        <li key={index}> value </li>
+    }) 
+4. Refs: tính chất khá giống với id, tức là có thế lấy đc value... bằng refs, tuy nhiên trong thực thế
+hạn chế dùng refs vì làm cho performance kém hơn
+5. fragment: được react tạo ra nhằm hỗ trojwoj việc render
+    + khi sử dụng sẽ ko tạo ra 1 node dom dư thừa
+    <>
+       <td></td>
+        <td></td>
+        <td></td>
+    </>
+
+Bài tập 
+    ôn tập chia component: component cha , con, ngang hàng
+    ôn tập props và state,
+
+    change color: tạo ra 2 component riêng biệt rồi import vào app.jsx
+    app.jsx là cha. component 1 là show ra bảng màu, component 2 là show ra text sau khi chọn màu
+    ở componet 1
+    bổ sung: tạo ra 1 ô select box font-size bao gồm từ 12px ->26px và khi chọn vào size chưa nào thì text
+    ở phần result sẽ thay đổi theo
+
+
+    B1: Tạo giao diện thành công
+    B2: truyền mảng mã màu từ cha vào con thành công
+    B3: viết hàm chọn mã màu ở component 1
+    B4: Sau khi chon được mã màu thì truyền lại cho thằng cha và set lại state cho thằng cha
+    B5: Truyền Props từ component cha cho component 2 và hiển thị màu cho text
+
+

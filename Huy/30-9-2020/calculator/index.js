@@ -33,15 +33,18 @@ function myOperator(op) {
 }
 
 function getDelete() {
-    if(operand1 && switchNumber === 1) {
-        operand1.value = '';
-    }
-    if(operand2 && switchNumber === 2) {
-        operand2.value = '';
-    }
-    if(operator && switchNumber === 3) {
-        operator.value = '';
-    }
+    // if(operand1 && switchNumber === 1) {
+    //     operand1.value = '';
+    // }
+    // if(operand2 && switchNumber === 2) {
+    //     operand2.value = '';
+    // }
+    // if(operator && switchNumber === 3) {
+    //     operator.value = '';
+    // }
+    document.querySelector('#operand-1').value = "";
+    document.querySelector('#operator-1').value = "";
+    document.querySelector('#operand-2').value = "";
 }
 
 function getResult() {
