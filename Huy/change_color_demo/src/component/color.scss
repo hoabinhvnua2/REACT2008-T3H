@@ -11,6 +11,9 @@
         margin: 10px;
         cursor: pointer;
     }
+    .active {
+        border: 3px solid black;
+    }
 }
 
 .custom-select {

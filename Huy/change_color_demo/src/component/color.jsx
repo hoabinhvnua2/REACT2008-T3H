@@ -19,20 +19,14 @@ class Colors extends Component {
 
   render() {
     const { color } = this.state;
-    console.log(this.props.data);
     return (
       <div className="custom-wap">
-        {/* <div className="custom-span"></div>
-        <div className="custom-span"></div>
-        <div className="custom-span"></div>
-        <div className="custom-span"></div> */}
-
         {color &&
           color.map((value, index) => {
             return (
               <div
                 key={index}
-                className="custom-span"
+                className={this.props.color === value ? "custom-span active" : "custom-span"}
                 style={this.myStyle(value)}
                 onClick={() => {this.props.handler(value)}}
               ></div>
