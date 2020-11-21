@@ -67,7 +67,7 @@ class Form extends Component {
     render() {
         return(
             <div className="form-container" onSubmit={this.handleSubmit}>
-                <button type="button" className="btn btn-primary ml-3 mt-3" data-toggle="modal" data-target="#exampleModal" onClick={this.handleClickShowAddTask}>
+                <button type="button" className="btn btn-primary btn-sm ml-3 mt-3" data-toggle="modal" data-target="#exampleModal" onClick={this.handleClickShowAddTask}>
                     Add Task
                 </button>
 

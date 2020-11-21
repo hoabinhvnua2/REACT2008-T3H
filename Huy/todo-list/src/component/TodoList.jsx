@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ShowList from './ShowList';
 import './component.scss';
 import Form from './Form';
+import Search from './Search';
 
 let listLocalstorage = JSON.parse(localStorage.getItem('list-task'));
 let list;
@@ -23,11 +24,12 @@ class TodoList extends Component {
     }
 
     handleAddList = (task) => {
-        list.push(task);
+        let listTask = this.state.listTask;
+        let listAdd = listTask.concat(task);
+        localStorage.setItem('list-task', JSON.stringify(listAdd));
         this.setState({
-            listTask: list
+            listTask: listAdd
         });
-        localStorage.setItem('list-task', JSON.stringify(this.state.listTask));
     }
 
     handleComplete = (index) => {
@@ -43,17 +45,46 @@ class TodoList extends Component {
         value.isComplete = !checkComplete;
         let listCheckComplete = [...listTask.slice(0, index), value, ...listTask.slice(index + 1)];
         console.log(listCheckComplete);
+        localStorage.setItem('list-task', JSON.stringify(listCheckComplete));
         this.setState({
             listTask: listCheckComplete
         })
-        localStorage.setItem('list-task', JSON.stringify(this.state.listTask));
+    }
+
+    handleDeleteTask = (index) => {
+        let listTask = this.state.listTask;
+        let listDelete = [...listTask.slice(0, index), ...listTask.slice(index + 1)];
+        localStorage.setItem('list-task', JSON.stringify(listDelete));
+        this.setState({
+            listTask: listDelete
+        })
+    }
+
+    handleSearchTask = (value) => {
+        let listTask = this.state.listTask;
+        let listSearch = listTask.filter( (item) => {
+            return item.name.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+        })
+        this.setState({
+            listTask: listSearch
+        })
+    }
+
+    handleBack = () => {
+        let listBack = JSON.parse(localStorage.getItem('list-task'));
+        this.setState({
+            listTask: listBack
+        })
     }
 
     render() {
         return(
             <div className="todo-container">
                 <Form addList={this.handleAddList} />
-                <ShowList listTask={this.state.listTask} complete={this.handleComplete}/>
+                <Search searchTask={this.handleSearchTask} back={this.handleBack}/>
+                <ShowList listTask={this.state.listTask} 
+                complete={this.handleComplete}
+                deleteTask={this.handleDeleteTask}/>
             </div>
         )
     }
