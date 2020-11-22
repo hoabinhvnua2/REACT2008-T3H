@@ -77,12 +77,32 @@ class TodoList extends Component {
         })
     }
 
+    handleEditList = (task, index) => {
+        let listTask = this.state.listTask;
+        let value;
+        for(let i = 0; i < listTask.length; i++) {
+            if(i === index) {
+                value = listTask[i];
+                break;
+            }
+        }
+        value.name = task.nameEdit;
+        value.description = task.description;
+        let listEdit = [...listTask.slice(0, index), value, ...listTask.slice(index + 1)];
+        localStorage.setItem('list-task', JSON.stringify(listEdit));
+        this.setState({
+            listTask: listEdit
+        })
+        
+    }
+
     render() {
         return(
             <div className="todo-container">
                 <Form addList={this.handleAddList} />
                 <Search searchTask={this.handleSearchTask} back={this.handleBack}/>
-                <ShowList listTask={this.state.listTask} 
+                <ShowList listTask={this.state.listTask}
+                editList={this.handleEditList} 
                 complete={this.handleComplete}
                 deleteTask={this.handleDeleteTask}/>
             </div>
