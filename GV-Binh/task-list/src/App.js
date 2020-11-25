@@ -1,10 +1,6 @@
 import "./App.scss";
-import Table from './component/table';
-const obj = {
-  ten: 'Bình',
-  ho: "Trần",
-  age: 30,
-}
+import SiderDemo from './layout/layout';
+
 function App() {
   return (
     // sử dụng ul li tạo ra 1 list môn học tầm 5 cái
@@ -12,10 +8,11 @@ function App() {
     // như sau: cứ li là số chẵn thì có màu vàng còn li là số lẻ sẽ có màu đỏ
 
     
-    <div className="container">
+    <>
       {/* props là chúng dùng để truyền data từ cha vào con */}
-      <Table nameCol={obj}/>
-    </div>
+      {/* <Table nameCol={obj}/> */}
+      <SiderDemo />
+    </>
   );
 }
 
