@@ -1,0 +1,17 @@
+Redux là gì? tại sao lại phải dùng Redux? khi nào thì sử dụng Redux?
+
+Redux là thư viện dùng để quản lý state của toàn bộ App.
+    Tư tưởng của Redux: quản lý tập trung state của toàn bộ app tại 1 nơi người ta gọi đó là Store
+
+    Nguyên lý hoạt động:
+        - View: view dùng để render giao cho người dùng. button, table, form ...
+        - Action: là tất cả các event mà người dụng thao tác với DOM: cick, keyUp, keyDown, submit, change...
+        - Store: Khi người dùng tạo ra action, thì action sẽ đc dispatch đến Store và Store gửi action và state
+        vào reducer
+        - Reducer: là 1 function và nó dùng để xử lý các action rồi cập nhật lại state để DOM đc render lại
+    Khi nào thì mình dùng Redux:
+        ví dụ: project task-list nhỏ mà dùng Redux thừa tài Nguyên
+        - Redux thì dùng để quản lý state, 
+        Số lượng state như nào? có lướn hay ko?
+        Độ phức tạp của viêc truyền state?
+

@@ -21,6 +21,7 @@ import {
 import TaskForm from "../component/task-form";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
+import '../component/redux';
 
 import "./layout.scss";
 
