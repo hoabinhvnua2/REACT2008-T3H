@@ -47,13 +47,7 @@ const { Header, Sider, Content } = Layout;
 //   },
 // ];
 
-const layout = {
-  labelCol: { span: 8 },
-  wrapperCol: { span: 16 },
-};
-const tailLayout = {
-  wrapperCol: { offset: 8, span: 16 },
-};
+const data = JSON.parse(localStorage.getItem("tasks"));
 
 class SiderDemo extends Component {
   state = {
@@ -61,8 +55,8 @@ class SiderDemo extends Component {
     sortedInfo: null,
     filteredInfo: null,
     visible: false,
-    data: [],
-    editForm: false,
+    data,
+    editForm: null,
   };
 
   toggle = () => {
@@ -79,17 +73,14 @@ class SiderDemo extends Component {
     });
   };
 
-  showModal = (condition, resource) => {
-      console.log(resource);
-    const editForm = condition ? true : false;
+  showModal = (resource) => {
     this.setState({
       visible: true,
-      editForm,
+      editForm: resource,
     });
   };
 
   handleOk = (e) => {
-    console.log(e);
     this.setState({
       visible: false,
     });
@@ -104,23 +95,21 @@ class SiderDemo extends Component {
 
   getValueForm = (value) => {
     const { data } = this.state;
-    value.key = uuidv4();
-
-    console.log("value", value);
-    data.push(value);
+    if (value.key) {
+      const index = _.findIndex(data, (resource) => {
+        return resource.key === value.key;
+      });
+      data[index] = value;
+    } else {
+      value.key = uuidv4();
+      data.push(value);
+    }
     this.setState({
       data,
     });
     this.handleOk();
     localStorage.setItem("tasks", JSON.stringify(data));
   };
-
-  componentWillMount() {
-    const data = JSON.parse(localStorage.getItem("tasks"));
-    this.setState({
-      data,
-    });
-  }
 
   myStyle = (value) => {
     if (value === "active") {
@@ -143,9 +132,25 @@ class SiderDemo extends Component {
     this.setState({
       data,
     });
+    localStorage.setItem("tasks", JSON.stringify(data));
   };
   cancel = () => {
     console.log("không thay đổi trạng thái");
+  };
+
+  onDelete = (value) => {
+    console.log(value);
+
+    const {data} = this.state;
+
+    const newArray = _.remove(data, (v) => {
+      return v.key !== value;
+    });
+    console.log(newArray);
+    this.setState({
+      data: newArray
+    });
+    localStorage.setItem("tasks", JSON.stringify(newArray));
   };
 
   render() {
@@ -202,10 +207,23 @@ class SiderDemo extends Component {
               type="primary"
               icon={<EditOutlined />}
               onClick={() => {
-                this.showModal(true, record);
+                this.showModal(record);
               }}
             />
-            <Button type="danger" icon={<DeleteOutlined />} />
+            <Popconfirm
+              onConfirm={() => {
+                this.onDelete(record.key);
+              }}
+              onCancel={this.cancel}
+              title="Bạn có chắc chắn muốn xóa công việc không？"
+              okText="Đồng ý"
+              cancelText="Không"
+            >
+              <Button
+                type="danger"
+                icon={<DeleteOutlined />}
+              />
+            </Popconfirm>
           </Space>
         ),
       },
@@ -260,13 +278,15 @@ class SiderDemo extends Component {
               onChange={this.onChange}
             />
             <Modal
-              title={editForm ? "Cập nhật công việc" : "Thêm mới công việc"}
+              title={
+                editForm?.key ? "Cập nhật công việc" : "Thêm mới công việc"
+              }
               visible={this.state.visible}
               onOk={this.handleOk}
               onCancel={this.handleCancel}
               footer={null}
             >
-              <TaskForm getForm={this.getValueForm} data={data} />
+              <TaskForm getForm={this.getValueForm} data={editForm} />
             </Modal>
           </Content>
         </Layout>
