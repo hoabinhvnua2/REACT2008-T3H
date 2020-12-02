@@ -1,0 +1,86 @@
+Tốm tắt buổi 20
+    1. chữa bài tập
+    2. giới cho mọi người về redux
+buổi 21
+-context
+    1. context: giúp chúng ta chia sẻ các state hay value giữa các component với nhau một đơn giản
+    2. khi nào thì dùng 
+    -> chia sẻ kinh nghiệm thực tế về việc sử dụng context và redux
+        redux thì mình dùng đê quản các state cho toàn bộ app
+        context thì dùng để chia sẻ state cho 1 module
+    3. hiểu về về nhưng ko đc lạm dụng vì nếu ko cẩn thạn chúng sẽ khó tái sử dụng component
+
+- height-order function: nó nhận vào một function và trả một function
+
+    const showName = () => {
+        return 3;
+    }
+
+    const wrapShowName = (function) => {
+
+        const count = function() + 1;
+        const functionF1 = () => {
+            return `số lần chạy là ${count + 1}`;
+        }
+    }
+
+- height-order component: nó cũng nhận vào 1 component và trả về một component
+
+- hook: 
+    // không đc viết như này
+    if(true) {
+        useEffect()
+    }
+    // mà phải viết như này
+    useEffect(() => {
+        if() {
+            .....
+        }
+    });
+
+    từ bản 16.8 react nó chia 2 tư tưởng
+    1 là Class component
+    2 là function component
+
+    1. Chỉ gọi Hooks trên cùng. Không gọi Hooks bên trong vòng lặp, điều kiện, hoặc các hàm lồng nhau.
+    2. Chỉ gọi Hooks từ các React components dạng hàm. Không gọi Hooks từ hàm JavaScript bình thường.
+    API hook:
+    1. useState: dùng để tạo ra state và hàm setState và gán giá trị mặc định cho state
+    2. useEffect: nó được chạy khi DOm render nếu thỏa mãn điều kiện bạn đặt ra
+    3. useContext: là 1 hook cho phép chúng ta sử dụng react context trong function, nó như thằng react context
+    4. useReducer: nó tương tự như hàm reducer trong redux, nó nhận vào 2 tham số(state, action)
+    5. useMemo: bắt buộc phải ở trong quá trình render, nó kiểm soát việc render nhằm hạn các lần render thừa, không cần thiết
+       //không sử dung useMemo
+        const NotUsingMemo = ({ products }) => {
+            const soldoutProducts = products.filter(x => x.isSoldout === true); // soldoutProducts sẽ luôn luôn thực thi mỗi khi NotUsingMemo được re-render
+        };
+        //Có sử dụng useMemo
+        const UsingMemo = ({ products }) => {
+            const soldoutProducts = useMemo(
+                () => products.filter(x => x.isSoldout === true), // / soldoutProducts sẽ chỉ thực thi khi props products thay đổi
+                [products] // watch products
+            );
+        };
+    6. useCallback: tương tự như thường useMemo nó khác ở chỗ nó chỉ call back khi có event ví click...
+     const toggleChecked = useCallback(() => setIsChecked(!isChecked), [
+            isChecked
+        ]);
+
+
+    Mùng 7/12 chốt danh sách đề tại
+    - router và cách fake API
+    - Redux saga middleware
+    5 buổi cuối sẽ là thời để các bạn làm bài tập lớn
+    - tổng hợp lại kiến thức và các câu hỏi phỏng vấn
+    - chữa bài tập, hỗ trợ các bạn làm đồ án
+    - chia sẻ kinh nghiệm thực tế, đưa ra các yêu của bài tập lớn
+
+    các yêu của bài tập lớn:
+        + phải hoàn thành 1 trang quản trị: thêm, sửa, xóa sản phẩm, thêm sửa xóa user
+        + Dashboard -> chartjs
+
+        +hoàn thành 1 trang show sản phẩm
+         1 là danh sách sản phẩm
+         2 là giỏ hàng và danh sách sản phẩm trong giỏ hàng
+         3 là các điều lọc
+         4 bắt buộc phải responsive

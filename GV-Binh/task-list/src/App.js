@@ -1,5 +1,7 @@
 import "./App.scss";
+import { CartProvider } from "./component/cart-product";
 import SiderDemo from './layout/layout';
+import {CountNumber} from './component/count';
 
 function App() {
   return (
@@ -11,7 +13,12 @@ function App() {
     <>
       {/* props là chúng dùng để truyền data từ cha vào con */}
       {/* <Table nameCol={obj}/> */}
-      <SiderDemo />
+      <CartProvider>
+        <SiderDemo />
+
+        <CountNumber />
+      </CartProvider>
+      
     </>
   );
 }

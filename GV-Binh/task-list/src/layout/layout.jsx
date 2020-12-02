@@ -17,13 +17,15 @@ import {
   UploadOutlined,
   EditOutlined,
   DeleteOutlined,
+  ShoppingCartOutlined,
 } from "@ant-design/icons";
 import TaskForm from "../component/task-form";
 import { v4 as uuidv4 } from "uuid";
 import _ from "lodash";
-import '../component/redux';
+import "../component/redux";
 
 import "./layout.scss";
+import { CartContext } from "../component/cart-product";
 
 const { Header, Sider, Content } = Layout;
 
@@ -142,14 +144,14 @@ class SiderDemo extends Component {
   onDelete = (value) => {
     console.log(value);
 
-    const {data} = this.state;
+    const { data } = this.state;
 
     const newArray = _.remove(data, (v) => {
       return v.key !== value;
     });
     console.log(newArray);
     this.setState({
-      data: newArray
+      data: newArray,
     });
     localStorage.setItem("tasks", JSON.stringify(newArray));
   };
@@ -220,10 +222,7 @@ class SiderDemo extends Component {
               okText="Đồng ý"
               cancelText="Không"
             >
-              <Button
-                type="danger"
-                icon={<DeleteOutlined />}
-              />
+              <Button type="danger" icon={<DeleteOutlined />} />
             </Popconfirm>
           </Space>
         ),
@@ -255,6 +254,13 @@ class SiderDemo extends Component {
                 onClick: this.toggle,
               }
             )}
+            <CartContext.Consumer>
+              {({ cartLists }) => (
+                <Badge count={cartLists.length}>
+                  <ShoppingCartOutlined />
+                </Badge>
+              )}
+            </CartContext.Consumer>
           </Header>
           <Content
             className="site-layout-background"
@@ -272,6 +278,17 @@ class SiderDemo extends Component {
             >
               Thêm mới
             </Button>
+
+            <CartContext.Consumer>
+              {({ updateCart }) => (
+                <Button
+                  type="primary"
+                  onClick={() => updateCart("Xin chào các bạn")}
+                >
+                  Mua hàng
+                </Button>
+              )}
+            </CartContext.Consumer>
 
             <Table
               columns={columns}
