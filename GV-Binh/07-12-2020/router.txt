@@ -1,0 +1,33 @@
+REST là gì?
+REST là viết tắt của Representational State Transfer.
+Nó là một phong cách kiến ​​trúc cho việc thiết kế các ứng dụng có kết nối.
+Nó sử dụng HTTP đơn giản để tạo cho giao tiếp giữa các máy. Vì vậy, 
+thay vì sử dụng một URL cho việc xử lý một số thông tin người dùng, 
+REST gửi một yêu cầu HTTP như GET, POST, DELETE, vv đến một URL để xử lý dữ liệu.
+
+REST API ở trong hình thức của một back-end cho các ứng dụng di động và web. 
+Khi phát triển ứng dụng, đôi khi bạn sẽ không có sẵn REST API để sử dụng cho các mục đích phát triển. 
+Để xem ứng dụng di động hoặc web hoạt động, chúng ta cần một máy chủ, ném vào đó một số dữ liệu JSON giả.
+
+1. Mock API
+2. JSON server
+
+
+
+1. Giới thiệu về router
+ - dùng router để điều hướng trang web
+2. tích hợp thư viện router
+
+3. Link: để hiển thị menu, chú ý <Link > luôn luôn để trong thẻ <Router></Router>
+   + to: có thể nhận vào string hoặc nhận vào object hoặc 1 function
+   + component: tạo 1 cái navigation bằng cách truyền thông qua prop component
+
+API router hook
+ - useParams: lấy toàn bộ param đc truyền lên url.
+
+4. <NavLink> : là phiên bản đặc biệt của Link, nó có thể thêm các style khi mà match url
+ - activeClassName: thêm class name khi actived
+ - activeStyle: thêm style khi được actived
+ - exact: 
+6. notfound
+7. 
