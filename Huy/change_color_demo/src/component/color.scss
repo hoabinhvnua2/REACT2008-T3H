@@ -11,8 +11,13 @@
         margin: 10px;
         cursor: pointer;
     }
-
     .active {
-        border: 2px solid blue;
+        border: 3px solid black;
     }
+}
+
+.custom-select {
+    width: 190px;
+    height: 40px;
+    margin: 10px;
 }

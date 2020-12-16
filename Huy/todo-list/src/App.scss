@@ -1,0 +1,10 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+$color-text: blue;
+$font: 30px;
+
+
+.App {
+  font-size: $font;
+  color: $color-text;
+}
