@@ -1,0 +1,9 @@
+1. Nhật Quang: 
+    1.1: ví dụ như mỗi lần nhập giá tiền nhật thì tự động lấy tỷ giá tại thời điểm đó để đổi sang tiền việt ấy a
+đúng rồi a
+    1.2 làm 1 demo về redux CRUD
+
+2. Anh Thư: 
+    1.1 Demo login vs google or facebook
+3. Thái Tài: 
+    1.1 a có gì demo cho e cái nãy a nói luôn nha, đăng nhập vào hiện cái tên admin trên thanh menu ấy
