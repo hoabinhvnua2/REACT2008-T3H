@@ -4,7 +4,7 @@ import { history } from "../helper/history";
 
 export const useActions = {
   register,
-  login,
+  login
 };
 
 function register(user) {
@@ -59,3 +59,29 @@ function login(user, from) {
     return { type: useConstants.LOGIN_FAILURE, user };
   }
 }
+
+// function loginFace() {
+//   return (dispatch) => {
+    
+//     dispatch(request());
+
+//     userService.loginFB().then(
+//       (data) => {
+//         dispatch(success());
+//       },
+//       (error) => {
+//         dispatch(failure(error.toString()));
+//       }
+//     );
+//   }
+
+//   function request() {
+//     return { type: useConstants.LOGIN_FB_REQUEST };
+//   }
+//   function success() {
+//     return { type: useConstants.LOGIN_FB_SUCCESS };
+//   }
+//   function failure() {
+//     return { type: useConstants.LOGIN_FB_FAILURE };
+//   }
+// }

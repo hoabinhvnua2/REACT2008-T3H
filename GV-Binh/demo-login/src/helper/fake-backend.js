@@ -1,3 +1,4 @@
+import axios from 'axios';
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -15,6 +16,8 @@ export function configureFakeBackend() {
         switch (true) {
           case url.endsWith("/users/authenticate") && method === "POST":
             return authenticate();
+          case url.endsWith("/users/authenticateFace") && method === "POST":
+            return authenticateFace();
           case url.endsWith("/users/register") && method === "POST":
             return register();
           case url.endsWith("/users") && method === "GET":
@@ -44,6 +47,49 @@ export function configureFakeBackend() {
           lastName: user.lastName,
           token: "fake-jwt-token",
         });
+      }
+
+      function authenticateFace() {
+        const { accessToken } = body;
+        axios
+          .get(`https://graph.facebook.com/v8.0/me?access_token=${accessToken}`)
+          .then((response) => {
+            const { data } = response;
+            if (data.error) return unauthorized(data.error.message);
+
+            let user = users.find((x) => x.facebookId === data.id);
+            if (!user) {
+             
+              // create new account if first time logging in
+              user = {
+                id: newAccountId(),
+                facebookId: data.id,
+                userName: data.name,
+                extraInfo: `This is some extra info about ${data.name} that is saved in the API`,
+              };
+              users.push(user);
+              localStorage.setItem("users", JSON.stringify(users));
+            }
+
+            return ok({
+              ...user,
+              token: generateJwtToken(user),
+            });
+          });
+      }
+
+          
+      function generateJwtToken(account) {
+        // create token that expires in 15 minutes
+        const tokenPayload = { 
+            exp: Math.round(new Date(Date.now() + 15*60*1000).getTime() / 1000),
+            id: account.id
+        }
+        return `fake-jwt-token.${btoa(JSON.stringify(tokenPayload))}`;
+    }
+
+      function newAccountId() {
+        return users.length ? Math.max(...users.map((x) => x.id)) + 1 : 1;
       }
 
       function register() {
