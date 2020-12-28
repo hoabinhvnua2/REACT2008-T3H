@@ -23,6 +23,8 @@ function register(user) {
 }
 
 function login(user) {
+  console.log('đã vào đây');
+  console.log('user', user);
   const { userName, password } = user;
   const request = {
     method: "POST",
@@ -39,7 +41,6 @@ function login(user) {
     })
     .then((user) => {
       localStorage.setItem("user", JSON.stringify(user));
-
       return user;
     });
 }

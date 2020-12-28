@@ -1,0 +1,15 @@
+Redux saga là 1 thư viện Middleware, dùng để quản lý các effect bằng việc sử dụng 
+hàm generator function
+effect nó giống việc call API cần phải xử lý bất đồng bộ
+
+- cách hoạt động của Saga:
+ + nằm giữa action và store, nó được gọi trước khi mà action đến đc reducer
+ + dùng để xử lý việc call API( async)
+
+- Các API của redux saga: 
+    + fork: thực hiện một action non-blocking trên function được truyền cho nó
+    + put: có nhiệm vụ dispatch 1 action
+    + call: call 1 funtion, trả về Promise và nó sẽ tạm dừng saga cho đến khi Promise đc xủa lý
+    + takeEvery: thực thi và trả về kết quả của action đc gọi
+    + all: thực hiện song song tất cả cá saga
+    + take: tạm dừng cho tới khi nhận đc action
