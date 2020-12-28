@@ -1,0 +1,11 @@
+redux-form -> giúp cho việc tạo form và validte rất tôt
+formmik-> 
+react-hook-form: -> nó được viết bằng hook và theo như trang tự giới thiệu thì số lần
+ render ít hơn so với các thằng trên 10 lần
+ https://react-hook-form.com/
+
+
+để validate form thì cần có
+    + react-hook-form
+    + yup
+    + @hookform/resolver

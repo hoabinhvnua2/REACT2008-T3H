@@ -1,0 +1,47 @@
+HTML: 
+    1. Nêu sự khác nhau giữa canvas và svg, Khi nào thì dùng canvas và khi nào thì dùng svg
+
+CSS: 
+    1. Z-index thì đi với giá trị nào của thuộc tính position
+    2. đảo ngược màu nền thì dùng thuộc tính nào (sáng tối)
+    3. ở thuộc tính width nếu dùng auto thì width sẽ ăn theo thành phần nào? và nếu dung 100% thì width sẽ ăn theo 
+    theo thành phần nào? 
+    4. bạn biết bao nhiêu selector và hãy nói ý nghĩa của các selector đó
+    5. Nêu sự hiểu biết của bạn về mixin, variable, extend trong scss
+
+JS: 
+    1: Nêu ra sự khác biệt giữa var, let, const.
+    2: Nêu ra khái niệm về scope, cloure, block.
+    3: ví dụ
+        for(let i = 0; i < 5 ; i++)
+        for(var i = 0; i < 5 ; i++)
+        nếu in ra giá trị của i thì có sự khác nhau hay ko và giá trị của i là bao nhiêu?
+    4: sự khác nhau giữ map, reduce và filter;
+    5: sự khác nhau giữa "==" và "===";
+    6: trong js nối chuỗi bằng ký tự nào?
+    7: có bao nhiêu cách để tạo 1 function trong js;
+    8: prototype là gì? và để tạo ra 1 prototype thì cần khai báo class như nào?
+    9: module trong js là?
+    10: event loop là gì?
+    11: hight-order function là gì và ý nghĩa?
+    12: nêu ý hiểu về từ khóa "this"
+    13: chế độ strict mode là gì? và những lợi ích khi sử dụng chế độ strict mode
+    14: sử dụng thuật toán quick sort sắp xếp lại mảng sau: [1,2,5,3,7,6];
+    15: đệ quy là gì? tại sao phải dùng đệ quy?
+    16: mảng là gì? sắp sếp nhanh lại mảng thì sử dụng hàm gì?
+    17: có bao nhiêu các tạo 1 đối tượng lấy ví dụ?
+
+React: 
+    1: Nếu ra sự khác nhau giữa DOM thật và DOM ảo
+    2: sụ khác giữa state và props?
+    3: context dúng để làm gì?
+    4: thế nào là redux? nếu về các thành phần và cách hoạt động của redux?
+    5: bạn đã làm việc về nextjs chưa? nêu ra cảm nhận của bạn về nó?
+    6: bạn có biết về hook ko? nêu ra khái niệm và các hook API  căn bản?
+    7: bạn có suwrr dụng axios ko?  muốn add thêm tooken vào trong các request thì bạn sẽ add token vào từng cái call
+    API 1 hay bạn viết ra 1 file riêng?
+
+Câu hoir khác
+    1: Dự án nào làm bạn nhớ và ấn tượng nhất? tại sao nó lại làm bạn ấn tượng nhất và trong dự án đó bạn tiếp thu được những gì?
+    2: Kế hoạch phát triển bản thân của bạn trong tương lai là gì? bạn có thể chia sẻ nó vs chúng tôi ko?
+    3: theo bạn full stack là gì? và bạn được bao nhiêu điểm trong check list trở thành full stack
