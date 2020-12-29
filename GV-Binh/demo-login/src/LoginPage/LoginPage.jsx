@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useActions } from "../actions/user.actions";
+import * as useActions from "../redux/authentication/action";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -137,12 +137,10 @@ export function LoginPage() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log(user);
-
     setSubmitted(true);
     if (user.userName && user.password) {
       const { from } = location.state || { from: { pathname: "/" } };
-      dispatch(useActions.login(user, from));
+      dispatch(useActions.request(user));
     }
   }
 
