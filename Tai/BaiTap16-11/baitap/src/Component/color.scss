@@ -1,0 +1,14 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.custom-wap {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin: 10px;
+    .custom-span {
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        margin: 10px;
+    }
+}
