@@ -1,0 +1,94 @@
+flex: chia layout đơn giản, nó chỉ hỗ trợ chia layout theo 1 hướng tại 1 thời điểm
+grid: thường dùng để chia layout phức tạp và có số lượng lớn các item. và nó hỗ trợ được nhiều hướng
+tại cùng 1 thời điểm
+
+grid: để hiển thị theo grid thì cần phải có 
+    display: grid | inline-grid
+
+- grid-template-columns: giúp chia template thành bao nhiêu cột
+- grid-template-rows: giúp chia template thành bao nhiêu hàng
+
+- grid-template: rút gọn cho template-colums và template-row;
+    grid-template: grid-template-columns / grid-template-row
+
+- grid-column-start: quy định item đó xuất phát từ line dọc(y) nào
+- grid-column-end:  quy định item kết thúc ở line dọc (y) nào
+- grid-row-start: quy định item được bắt đầu từ line ngang (x) nào
+- grid-row-end: quy định item được kết thúc từ line ngang (x) nào
+
+- grid-column: được tạo ra để kết hợp grid-column-start, grid-column-end
+- grid-row: được tạo ra để kết hợp grid-row-start, grid-row-end
+
+- grid-area: được tạo ra để rút gọn hơn cho grid column và grid-rows
+    grid-area: row-start column-start row-end column-end;
+
+- grid-template-areas: dùng để chia giao theo name và các name được đặt bởi thuộc tính
+    grid-area.
+
+- row-gap: tạo ra khoảng trống giữa các row với nhau
+- column-gap: tạo ra khoảng trống giữa các column với nhau
+- gap: rút ngắn row-gap và column-gap  
+    gap: row-gap column-gap;
+
+- justify-items và justify-self đều quy định các item hiển thị theo chiều ngang (x).
+    sự khác nhau giữa 2 thằng là sự ảnh hưởng tới nhiều item và 1 item
+    + cú pháp với justify-self:
+    .item-a {
+        justify-self: start;
+    }
+    + cú pháp với justify-items:
+    .container {
+        justify-items: start | end | center | stretch;
+    }
+
+    + giá trị:
+        start: có vị trí bắt đầu từ đường line ngang
+        end: có vị trí ở cuối từ đường line ngang
+        center: có vị trí ở giữa từ đường line ngang
+        stretch: có vịphủ kín từ đầu đến cuối đường line ngang
+
+- align-items và align-self đều quy định vị trí các item hiển thị theo chiều dọc (y).
+    sự khác của 2 thằng này là sự ảnh hưởng tới nhiều item và 1 item
+    + cú pháp với align-self:
+    .item-a {
+        align-self: start;
+    }
+    + cú pháp với align-items:
+    .container {
+        align-items: start | end | center | stretch;
+    }
+
+    + giá trị:
+        start: có vị trí bắt đầu từ đường line ngang
+        end: có vị trí ở cuối từ đường line ngang
+        center: có vị trí ở giữa từ đường line ngang
+        stretch: có vịphủ kín từ đầu đến cuối đường line ngang
+- place-items: rút gọn của justify-items và align-items;
+    + cú pháp: palce-items: align-items / justify-items
+- place-self: rút gọn của justify-self và align-self;
+    + cú pháp: place-self: align-self / justify-self;
+- justify-content: quy định vị trí hiển của toàn bộ grid content theo chiều ngang trong grid container
+    + start
+    + end
+    + center
+    + space-around
+    + space-between
+    + space-evenly(tìm hiểu thêm)
+- align-content: quy định vị trí hiển của toàn bộ grid content theo chiều dọc
+ trong grid container
+    + start
+    + end
+    + center
+    + space-around
+    + space-between
+    + space-evenly(tìm hiểu thêm)
+- place-content: rút của justify-content và align-content;
+    + cú pháp:
+        place-content: align-content / justify-content;
+
+- grid-auto-flow (tìm hiểu thêm)
+- grid-auto-column (tìm hiểu thêm)
+- grid-auto-row (tìm hiểu thêm)
+- grid (tìm hiểu thêm)
+
+bài tập dựa vào hình mẫu sử dụng grid để dựng layout
